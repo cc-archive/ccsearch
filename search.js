@@ -5,7 +5,8 @@
  */
 
 var d = "Enter search query";
-var engine = "google";
+var engines = ["google", "yahoo", "flickr"];
+var engine = "";
 var rights = "";
 
 // mmm, cookies...
@@ -22,7 +23,7 @@ function getCookie(name) {
     var begin = dc.indexOf("; " + prefix);
     if (begin == -1) {
         begin = dc.indexOf(prefix);
-        if (begin != 0) return engine;
+        if (begin != 0) return null;
     } else {
         begin += 2;
     }
@@ -111,7 +112,7 @@ function setEngine(e) {
 	var previous = engine;
 	
 	engine = e;
-	id(previous).className="inactive";
+	try { id(previous).className="inactive"; } catch(err) {}
 	id(engine).className="active";
 	
 	var d = new Date();
@@ -122,11 +123,14 @@ function setEngine(e) {
 }
 
 function getEngine() {
-	var e = getCookie('ccsearch');
-
-	id(e).className = "active";
+	engine = getCookie('ccsearch');
 	
-	return e;
+	if (engine == null)
+		setEngine(engines[Math.floor(Math.random() * engines.length)]);
+	
+	id(engine).className = "active";
+	
+	return engine;
 }
 
 // build advanced search query strings
