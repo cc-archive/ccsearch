@@ -35,7 +35,6 @@ function getCookie(name) {
 }
 ////
 
-
 // function by Pete Freitag (pete@cfdev.com)
 function getQueryStrVariable(variable) {
   var query = window.location.search.substring(1);
@@ -49,8 +48,8 @@ function getQueryStrVariable(variable) {
 	return null;
 }
 
-// make life quicker and easier with jQuery.
-function id(i) { /*return $("#" + i).get(0);*/ return document.getElementById(i); }
+// don't need an entire framework just for this
+function id(i) { return document.getElementById(i); }
 
 // initialise app
 function setupQuery() {
@@ -62,26 +61,22 @@ function setupQuery() {
 	// display firefox branding 
 	if (moz == "Mozilla-search") {
 		id('ff-box').style.display = "block";
-		//$("#ff-box").hover (function() { id('thanks').style.display = "block"; }, function() { id('thanks').style.display = "none"; })
 	}
 	
 	// grab cookie and setup default engine
-	engine = getEngine();
+	getEngine();
 	if (e) setEngine (e);
 	
 	// keep the results iframe fully in the browser window
 	resizeResults();
 	window.onresize = function() { resizeResults(); }
+
+	query.value = qs;
 	
 	if (query.value == "") {
 		query.value = d;
 	} else if (query.value != d){
 		query.className = "active";
-	}
-	
-	if (qs) {
-		query.className = "active";
-		query.value = qs;
 		
 		// since there's query data...
 		doSearch();
@@ -129,8 +124,6 @@ function getEngine() {
 		setEngine(engines[Math.floor(Math.random() * engines.length)]);
 	
 	id(engine).className = "active";
-	
-	return engine;
 }
 
 // build advanced search query strings
@@ -204,7 +197,6 @@ function doSearch() {
 				break;
 		}
 		frames['results'].location.href = str;
-		//$("#results").load (str);
 	}
 	return false;
 }
@@ -226,19 +218,10 @@ function resizeResults() {
 	results.style.height = Math.round(height - 140) + "px";
 }
 
-
 function showFox() {
 	id('thanks').style.display = "block";
 }
+
 function hideFox() {
-	//id('ff-box').style.display = "none";
 	id('thanks').style.display = "none";
 }
-
-
-// void main()
-/*
-$(document).ready(function(){
-  setupQuery();
-});
-*/
