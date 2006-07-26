@@ -1,0 +1,146 @@
+/*
+ * Creative Commons Search Interface
+ * 1.0 - 2006-07
+ * 
+ */
+
+body {
+	background-color: #fafafa;
+	color: #333;
+	font: 0.8em/150% "Lucidia Grande", verdana, arial, sans-serif;
+	padding: 0;
+	margin: 15px;
+	margin-bottom: 0;
+}
+
+#ff-box {
+	width: 110px;
+	height: 45px;
+	background-image: url("images/ff-logo.png");
+	position: fixed;
+	background-repeat: no-repeat;
+	bottom: 0px;
+	left: -10px;
+	display: none;
+}
+
+#thanks {
+	margin-left: 112px;
+	margin-top: 23px;
+	font-size: 10px;
+	width: 250px;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	font-size: 9px;
+	margin-top: 2px;
+}
+
+#header-box {
+	overflow:hidden;
+}
+#header {
+	width: 930px;
+}
+
+#title {
+	float: left;
+	width: 190px;
+	height: 60px;
+	/*border-right: 1px solid #b0b0b0;*/
+	margin-right: 10px;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+#title span {
+	display: none;
+}
+#title img {
+	padding: 7px 5px;
+}
+
+#search {
+	float: left;
+	padding: 10px 0 5px 10px;
+	margin-left: 10px;
+	width: 640px;
+/*	border-right: 1px solid #b0b0b0;*/
+}
+
+#left {
+	padding-top: 15px;
+	float: left;
+}
+#right {
+	float: right;
+	font-size: 0.8em;
+	margin-top: 0px;
+}
+
+#results {
+	clear: both;
+	width: 100%;
+	border: 1px solid #ccc;
+	overflow: auto;
+	margin-top: 0px;
+	background-color: #fff;
+}
+
+.inactive {
+	color: #bbb;
+}
+.active {
+	color: #333;
+}
+.google {
+	margin-bottom: -4px;
+	
+}
+
+#menu {
+	margin-top: 7px;
+	margin-left: 6px;
+}
+ul.tabs {
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	clear: both;
+	border-bottom: 1px solid #ccc;
+	
+}
+ul.tabs li {
+	display: inline;
+	padding: 10px 0px 0px;
+	margin: 0;
+}
+ul.tabs li.inactive {
+	background-color: #f7f7f7;
+	padding-bottom: 0px;
+	background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+ul.tabs li.active {
+	padding-top: 12px;
+	padding-bottom: 1px;
+	background: #fff;
+	border-bottom: #fff;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+ul.tabs img {
+	padding-top: 7px;
+}
+
+ul.tabs a {
+	padding: 10px 30px 3px;
+	width: 100%;
+}

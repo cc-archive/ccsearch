@@ -1,0 +1,240 @@
+/*
+ * Creative Commons Search Interface
+ * 1.0 - 2006-07
+ * 
+ */
+
+var d = "Enter search query";
+var engine = "google";
+var rights = "";
+
+// mmm, cookies...
+function setCookie(name, value, expires, path, domain, secure) {
+    document.cookie = name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires.toGMTString() : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return engine;
+    } else {
+        begin += 2;
+    }
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+        end = dc.length;
+    }
+    return unescape(dc.substring(begin + prefix.length, end));
+}
+////
+
+
+// function by Pete Freitag (pete@cfdev.com)
+function getQueryStrVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+	return null;
+}
+
+// make life quicker and easier with jQuery.
+function id(i) { /*return $("#" + i).get(0);*/ return document.getElementById(i); }
+
+// initialise app
+function setupQuery() {
+	var query = id("q");
+	var qs = getQueryStrVariable('q');
+	var moz = getQueryStrVariable('sourceid');
+	var e = getQueryStrVariable('engine');
+	
+	// display firefox branding 
+	if (moz == "Mozilla-search") {
+		id('ff-box').style.display = "block";
+		//$("#ff-box").hover (function() { id('thanks').style.display = "block"; }, function() { id('thanks').style.display = "none"; })
+	}
+	
+	// grab cookie and setup default engine
+	engine = getEngine();
+	if (e) setEngine (e);
+	
+	// keep the results iframe fully in the browser window
+	resizeResults();
+	window.onresize = function() { resizeResults(); }
+	
+	if (query.value == "") {
+		query.value = d;
+	} else if (query.value != d){
+		query.className = "active";
+	}
+	
+	if (qs) {
+		query.className = "active";
+		query.value = qs;
+		
+		// since there's query data...
+		doSearch();
+	}
+}
+
+// bell
+function wakeQuery() {
+	var query = id('q');
+	
+	if (query.value == d) {
+		query.value = "";
+		query.className = "active";
+	}
+}
+
+// whistle
+function resetQuery() {
+	var query = id('q');
+	
+	if (query.value == "") {
+		query.className = "inactive";
+		query.value = d;
+	}
+}
+
+function setEngine(e) {
+	var previous = engine;
+	
+	engine = e;
+	id(previous).className="inactive";
+	id(engine).className="active";
+	
+	var d = new Date();
+	d.setFullYear(2020,0,1);
+	setCookie('ccsearch', engine, d, '/', '.creativecommons.org');
+	
+	doSearch();
+}
+
+function getEngine() {
+	var e = getCookie('ccsearch');
+
+	id(e).className = "active";
+	
+	return e;
+}
+
+// build advanced search query strings
+// each engine has vastly different ways to do this. :/
+function modRights() {
+	
+	switch (engine) {
+		case "google":
+			//.-(cc_noncommercial|cc_nonderived)
+			rights = ".-(";
+			
+			if (id('comm').checked) {
+				rights += "cc_noncommercial";
+			}
+			if (id('deriv').checked) {
+				(id('comm').checked) ? rights += "|" : null;
+				rights += "cc_nonderived";
+			}
+			
+			rights += ")";
+			break;
+			
+		case "yahoo":
+			rights = "&";
+			if (id('comm').checked) {
+				rights += "ccs=c&";
+			}
+			if (id('deriv').checked) {
+				rights += "ccs=e";
+			}
+			break;
+			
+		case "flickr":
+			rights = "l=";
+			if (id('comm').checked) {
+				rights += "comm";
+			}
+			if (id('deriv').checked) {
+				rights += "deriv"
+			}
+			break;
+	}
+	if (rights.length < 5) rights = "";
+	
+}
+
+// "main logic", no turning back.
+function doSearch() {
+	var query = id("q");
+	var str = "";
+	
+	// search only if there is something to search with
+	if ((query.value.length > 0) && (query.className == "active")) {
+		// set up rights string, works if user hits "go" or a tab. 
+		modRights();
+		
+		switch (engine) {
+			case "flickr":
+				str = 'http://flickr.com/search/?' + ((rights.length > 2) ? rights : "l=cc") + '&q=' + query.value;
+				break;
+				
+			case "yahoo":
+				str = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
+				break;
+				
+			case "google":
+			default:
+				str = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
+						((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + 
+							rights + '&q=' + query.value; 
+				break;
+		}
+		frames['results'].location.href = str;
+		//$("#results").load (str);
+	}
+	return false;
+}
+
+// keep results iframe as big as window
+function resizeResults() {
+	var results = id('results');
+	var height = 0;
+	
+	// get height of window
+	if (window.innerHeight) {
+		height = window.innerHeight - 18;
+	} else if (document.documentElement && document.documentElement.clientHeight) {
+		height = document.documentElement.clientHeight;
+	} else if (document.body && document.body.clientHeight) {
+		height = document.body.clientHeight;
+	}
+	
+	results.style.height = Math.round(height - 140) + "px";
+}
+
+
+function showFox() {
+	id('thanks').style.display = "block";
+}
+function hideFox() {
+	//id('ff-box').style.display = "none";
+	id('thanks').style.display = "none";
+}
+
+
+// void main()
+/*
+$(document).ready(function(){
+  setupQuery();
+});
+*/

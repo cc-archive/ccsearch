@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Creative Commons Search</title>
+		<script type="text/javascript" src="search.js"></script>
+		<style type="text/css" media="screen">
+			@import "search.css";
+		</style>
+		
+	</head>
+	<body onload="setupQuery()">
+		<div id="ff-box" onclick="hideFox()" onmouseover="showFox()" onmouseout="hideFox()"><span id="thanks" style="display:none">Thanks for using CC Search via Firefox.</span></div>
+		<div id="header-box">
+		 <div id="header">
+			<div id="title"><a href="index.html"><img src="images/cc-search.png" alt=" " border="0"/></a></div>
+			<div id="search">
+				<form onsubmit="return doSearch()">
+					<div id="left">
+						<input type="text" name="q" id="q" class="inactive" size="30" onclick="wakeQuery()" onblur="resetQuery()"/>
+						<input type="submit" name="some_name" value="go" id="some_name" onclick="doSearch()" />
+						<br/>
+					</div>
+					<div id="right">
+						<input type="checkbox" name="comm" value="" id="comm" />
+						<label for="comm">Search for works I can use for commercial purposes.</label><br/>
+						<input type="checkbox" name="deriv" value="" id="deriv" />
+						<label for="deriv">Search for works I can modify, adapt, or build upon.</label><br/>
+						<a href="http://wiki.creativecommons.org/CcSearch">What is this?</a>
+					</div>
+				</form>
+			</div>
+		 </div>
+		</div>
+		<!-- insert tabs here for various search results? -->
+		
+		<div id="menu">
+			<ul class="tabs">
+				<li id="google" class="inactive"><a href="#" onclick="setEngine('google')"><img src="images/cc-google.gif" class="google" border="0"/></a></li>
+				<li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')"><img src="images/cc-yahoo.gif" border="0"/></a></li>
+				<li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')"><img src="images/cc-flickr.png" border="0"/></a></li>
+			</ul>
+		</div>
+		
+		<iframe id="results" name="results" frameborder="0" border="0"></iframe>
+		
+		<div id="footer">
+			<a href="http://creativecommons.org/">Creative Commons</a> | <a href="http://creativecommons.org/contact">Contact</a>
+		</div>
+	</body>
+</html>
