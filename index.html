@@ -8,18 +8,19 @@
 		<style type="text/css" media="screen">
 			@import "search.css";
 		</style>
+		<!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
 		
 	</head>
 	<body onload="setupQuery()">
 		<div id="ff-box" onclick="hideFox()" onmouseover="showFox()" onmouseout="hideFox()"><span id="thanks" style="display:none">Thanks for using CC Search via Firefox.</span></div>
 		<div id="header-box">
 		 <div id="header">
-			<div id="title"><a href="index.html"><img src="images/cc-search.png" alt=" " border="0"/></a></div>
+			<div id="title"><a href="index.html"><img src="images/cc-search.png" alt=" " width="179" height="48" border="0" class="png" /></a></div>
 			<div id="search">
 				<form onsubmit="return doSearch()">
 					<div id="left">
 						<input type="text" name="q" id="q" class="inactive" size="30" onclick="wakeQuery()" onblur="resetQuery()"/>
-						<input type="submit" name="some_name" value="go" id="some_name" onclick="doSearch()" />
+						<input type="submit" name="some_name" value="go" id="qsubmit" />
 						<br/>
 					</div>
 					<div id="right">
@@ -33,13 +34,11 @@
 			</div>
 		 </div>
 		</div>
-		<!-- insert tabs here for various search results? -->
-		
 		<div id="menu">
 			<ul class="tabs">
 				<li id="google" class="inactive"><a href="#" onclick="setEngine('google')"><img src="images/cc-google.gif" class="google" border="0"/></a></li>
 				<li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')"><img src="images/cc-yahoo.gif" border="0"/></a></li>
-				<li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')"><img src="images/cc-flickr.png" border="0"/></a></li>
+				<li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" /></a></li>
 			</ul>
 		</div>
 		

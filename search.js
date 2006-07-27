@@ -73,7 +73,7 @@ function setupQuery() {
 
 	query.value = qs;
 	
-	if (query.value == "") {
+	if ((query.value == "") || (query.value == "null")) {
 		query.value = d;
 	} else if (query.value != d){
 		query.className = "active";
@@ -162,7 +162,7 @@ function modRights() {
 				rights += "comm";
 			}
 			if (id('deriv').checked) {
-				rights += "deriv"
+				rights += "deriv";
 			}
 			break;
 	}
@@ -205,17 +205,20 @@ function doSearch() {
 function resizeResults() {
 	var results = id('results');
 	var height = 0;
+	var heightMinus = 145;
 	
 	// get height of window
 	if (window.innerHeight) {
 		height = window.innerHeight - 18;
 	} else if (document.documentElement && document.documentElement.clientHeight) {
 		height = document.documentElement.clientHeight;
+		heightMinus = 165;
 	} else if (document.body && document.body.clientHeight) {
 		height = document.body.clientHeight;
+		
 	}
 	
-	results.style.height = Math.round(height - 140) + "px";
+	results.style.height = Math.round(height - heightMinus) + "px";
 }
 
 function showFox() {

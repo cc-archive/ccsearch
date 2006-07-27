@@ -52,6 +52,7 @@ body {
 	/*border-right: 1px solid #b0b0b0;*/
 	margin-right: 10px;
 	margin-bottom: 15px;
+	padding: 7px 5px;
 	overflow: hidden;
 }
 
@@ -59,7 +60,7 @@ body {
 	display: none;
 }
 #title img {
-	padding: 7px 5px;
+/*	padding: 7px 5px;*/
 }
 
 #search {
@@ -101,7 +102,7 @@ body {
 }
 
 #menu {
-	margin-top: 7px;
+	margin-top: 5px;
 	margin-left: 6px;
 }
 ul.tabs {

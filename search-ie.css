@@ -1,0 +1,67 @@
+/*
+ * Creative Commons Search Interface
+ * 1.0 - 2006-07
+ * 
+ * IE related fixes/hacks
+ *
+ */
+
+
+/* Transparent png's */
+img.png {
+	behavior: url("pngie.htc");
+}
+
+#header {
+	padding-bottom: 20px;
+}
+
+#menu {
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+
+#results {
+	width: 99%;
+}
+
+.google { margin-bottom: 0px; }
+
+ul.tabs {
+	margin-bottom: 0px;
+}
+
+ul.tabs li {
+	margin-right: 5px;
+	padding: 0;
+}
+
+ul.tabs li.inactive {
+	background-color: #f7f7f7;
+	padding-bottom: 0px;
+	background-image: none;
+}
+ul.tabs li.active {
+	padding-top: 8px !important;
+	padding-bottom: 0px;
+	margin-bottom: -2px;
+	background: #fff;
+	border-bottom: none;
+}
+
+
+#flickr { padding-top: 5px; margin: 0;}
+#yahoo  { padding-top: 8px; }
+#google { padding-top: 3px;}
+
+li.active#yahoo { padding-top: 12px !important;	}
+
+ul.tabs img {
+	padding-top: 0;
+	padding-bottom: 0px;
+}
+
+ul.tabs a {
+	padding: 0px 30px 0px;
+	width: 100%;
+}
