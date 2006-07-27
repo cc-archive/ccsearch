@@ -205,7 +205,7 @@ function doSearch() {
 function resizeResults() {
 	var results = id('results');
 	var height = 0;
-	var heightMinus = 145;
+	var heightMinus = 150;
 	
 	// get height of window
 	if (window.innerHeight) {
@@ -215,7 +215,6 @@ function resizeResults() {
 		heightMinus = 165;
 	} else if (document.body && document.body.clientHeight) {
 		height = document.body.clientHeight;
-		
 	}
 	
 	results.style.height = Math.round(height - heightMinus) + "px";

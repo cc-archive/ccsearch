@@ -97,13 +97,14 @@ body {
 	color: #333;
 }
 .google {
-	margin-bottom: -4px;
-	
+/*	margin-bottom: -4px;
+	*/
 }
 
 #menu {
 	margin-top: 5px;
 	margin-left: 6px;
+	height: 32px;
 }
 ul.tabs {
 	list-style: none;
@@ -112,7 +113,6 @@ ul.tabs {
 	margin: 0;
 	clear: both;
 	border-bottom: 1px solid #ccc;
-	
 }
 ul.tabs li {
 	display: inline;
