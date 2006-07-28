@@ -8,6 +8,7 @@ var d = "Enter search query";
 var engines = ["google", "yahoo", "flickr"];
 var engine = "";
 var rights = "";
+var url = "";
 
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -173,7 +174,7 @@ function modRights() {
 // "main logic", no turning back.
 function doSearch() {
 	var query = id("q");
-	var str = "";
+	url = "";
 	
 	// search only if there is something to search with
 	if ((query.value.length > 0) && (query.className == "active")) {
@@ -182,21 +183,22 @@ function doSearch() {
 		
 		switch (engine) {
 			case "flickr":
-				str = 'http://flickr.com/search/?' + ((rights.length > 2) ? rights : "l=cc") + '&q=' + query.value;
+				url = 'http://flickr.com/search/?' + ((rights.length > 2) ? rights : "l=cc") + '&q=' + query.value;
 				break;
 				
 			case "yahoo":
-				str = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
+				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
 				break;
 				
 			case "google":
 			default:
-				str = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
+				url = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
 						((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + 
 							rights + '&q=' + query.value; 
 				break;
 		}
-		frames['results'].location.href = str;
+		//frames['results'].location.href = str;
+		window.results.location.href = url;
 	}
 	return false;
 }
@@ -226,4 +228,8 @@ function showFox() {
 
 function hideFox() {
 	id('thanks').style.display = "none";
+}
+
+function breakOut() {
+	if (url.length > 10) window.location = url;
 }
