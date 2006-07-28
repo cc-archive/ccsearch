@@ -230,6 +230,10 @@ function hideFox() {
 	id('thanks').style.display = "none";
 }
 
+function clickFox() {
+	top.location = "http://spreadfirefox.com";
+}
+
 function breakOut() {
 	if (url.length > 10) window.location = url;
 }
