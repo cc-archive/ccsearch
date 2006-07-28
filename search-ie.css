@@ -16,6 +16,10 @@ img.png {
 	padding-bottom: 20px;
 }
 
+#subNFO { margin: 0; }
+#subCC { margin: 0; }
+#subBreak { margin: 0; }
+
 #menu {
 	margin-top: 5px;
 	margin-bottom: 2px;
