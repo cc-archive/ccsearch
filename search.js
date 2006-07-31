@@ -231,7 +231,7 @@ function hideFox() {
 }
 
 function clickFox() {
-	top.location = "http://spreadfirefox.com";
+//	top.location = "http://spreadfirefox.com";
 }
 
 function breakOut() {
