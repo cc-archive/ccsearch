@@ -5,7 +5,7 @@
  */
 
 var d = "Enter search query";
-var engines = ["google", "yahoo", "flickr"];
+var engines = ["google", "yahoo", "flickr", "blip"];
 var engine = "";
 var rights = "";
 var url = "";
@@ -158,12 +158,22 @@ function modRights() {
 			break;
 			
 		case "flickr":
-			rights = "l=";
+			rights = "license=";
 			if (id('comm').checked) {
 				rights += "comm";
 			}
 			if (id('deriv').checked) {
 				rights += "deriv";
+			}
+			break;
+		case "blip":
+			rights = "license=1,6,7"; // by,by-sa,pd
+			if (!id('comm').checked && !id('deriv').checked) {
+				rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
+			} else if (id('comm').checked) {
+				rights += ",2"; // by-nd
+			} else { // deriv must be checked
+				rights += ",4,5"; // by-nc,by-nc-sa
 			}
 			break;
 	}
@@ -182,6 +192,10 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+			case "blip":
+				url = 'http://blip.tv/posts/view/?search=' + query.value + '&section=/posts/view&sort=popularity&' + rights;
+				break;
+				
 			case "flickr":
 				url = 'http://flickr.com/search/?' + ((rights.length > 2) ? rights : "l=cc") + '&q=' + query.value;
 				break;
