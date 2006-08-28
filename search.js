@@ -58,6 +58,8 @@ function setupQuery() {
 	var qs = getQueryStrVariable('q');
 	var moz = getQueryStrVariable('sourceid');
 	var e = getQueryStrVariable('engine');
+	var docom = getQueryStrVariable('commercial');
+	var doder = getQueryStrVariable('derivatives');
 	
 	// display firefox branding 
 	if (moz == "Mozilla-search") {
@@ -71,7 +73,11 @@ function setupQuery() {
 	// keep the results iframe fully in the browser window
 	resizeResults();
 	window.onresize = function() { resizeResults(); }
-
+	
+	// set commercial + derivative checkboxes
+	if (docom) id('comm').checked = true;
+	if (doder) id('deriv').checked = true;
+	
 	query.value = qs;
 	
 	if ((query.value == "") || (query.value == "null")) {
