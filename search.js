@@ -164,7 +164,7 @@ function modRights() {
 			break;
 			
 		case "flickr":
-			rights = "license=";
+			rights = "l=";
 			if (id('comm').checked) {
 				rights += "comm";
 			}
