@@ -9,6 +9,7 @@ var engines = ["google", "yahoo", "flickr", "blip"];
 var engine = "";
 var rights = "";
 var url = "";
+var lang = "";
 
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -60,7 +61,7 @@ function setupQuery() {
 	var e = getQueryStrVariable('engine');
 	var docom = getQueryStrVariable('commercial');
 	var doder = getQueryStrVariable('derivatives');
-	
+
 	// display firefox branding 
 	if (moz == "Mozilla-search") {
 		id('ff-box').style.display = "block";
@@ -69,6 +70,8 @@ function setupQuery() {
 	// grab cookie and setup default engine
 	getEngine();
 	if (e) setEngine (e);
+
+	lang = getQueryStrVariable('lang');
 	
 	// keep the results iframe fully in the browser window
 	resizeResults();
@@ -215,6 +218,7 @@ function doSearch() {
 				url = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
 						((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + 
 							rights + '&q=' + query.value; 
+				if (lang != null) url += '&hl=' + lang;
 				break;
 		}
 		//frames['results'].location.href = str;
