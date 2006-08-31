@@ -5,7 +5,7 @@
  */
 
 var d = "Enter search query";
-var engines = ["google", "yahoo", "flickr", "blip"];
+var engines = ["google", "yahoo", "flickr", "blip", "jamendo"];
 var engine = "";
 var rights = "";
 var url = "";
@@ -185,6 +185,15 @@ function modRights() {
 				rights += ",4,5"; // by-nc,by-nc-sa
 			}
 			break;
+		case "jamendo":
+			rights = "cani=";
+			if (id('deriv').checked) {
+				rights += "d";
+			}
+			if (id('comm').checked) {
+				rights += "c";
+			}
+			break;
 	}
 	if (rights.length < 5) rights = "";
 	
@@ -201,6 +210,10 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+			case "jamendo":
+				url = 'http://www.jamendo.com/us/?p=music&tag=' + query.value + '&l=all&o=rating_desc&' + rights + '&aclass=2+3';
+				break;
+				
 			case "blip":
 				url = 'http://blip.tv/posts/view/?search=' + query.value + '&section=/posts/view&sort=popularity&' + rights;
 				break;
