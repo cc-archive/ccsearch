@@ -194,6 +194,13 @@ function modRights() {
 				rights += "c";
 			}
 			break;
+		case "ccmixter":
+			rights = "";
+			// everything on ccmixter permits derivs
+			if (id('comm').checked) {
+				rights += "+attribution";
+			}
+			break;
 	}
 	if (rights.length < 5) rights = "";
 	
@@ -210,6 +217,10 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+			case "ccmixter":
+				url = 'http://ccmixter.org/media/tags/' + query.value + rights;
+				break;
+				
 			case "jamendo":
 				url = 'http://www.jamendo.com/us/?p=music&tag=' + query.value + '&l=all&o=rating_desc&' + rights + '&aclass=2+3';
 				break;
@@ -236,6 +247,7 @@ function doSearch() {
 		}
 		//frames['results'].location.href = str;
 		window.results.location.href = url;
+		document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);
 	}
 	return false;
 }
