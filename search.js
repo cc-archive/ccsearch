@@ -1,11 +1,30 @@
-/*
- * Creative Commons Search Interface
- * 1.0 - 2006-07
+/**
+ * Creative Commons has made the contents of this file
+ * available under a CC-GNU-GPL license:
+ *
+ * http://creativecommons.org/licenses/GPL/2.0/
+ *
+ * A copy of the full license can be found as part of this
+ * distribution in the file COPYING.
  * 
+ * You may use the ccSearch software in accordance with the
+ * terms of that license. You agree that you are solely 
+ * responsible for your use of the ccSearch software and you
+ * represent and warrant to Creative Commons that your use
+ * of the ccSearch software will comply with the CC-GNU-GPL.
+ *
+ * Copyright 2006, Creative Commons.
+ *
+ * $Id: index.php 4296 2006-09-21 01:45:18Z kidproto $
+ *
+ * Creative Commons Search Interface
+ *
+ * TODO: Have to figure out how to do gettext stuff with javascript.
  */
 
 var d = "Enter search query";
-var engines = ["google", "yahoo", "flickr", "blip", "jamendo"];
+var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "ccmixter", 
+               "openclipart" ];
 var engine = "";
 var rights = "";
 var url = "";
@@ -71,8 +90,6 @@ function setupQuery() {
 	getEngine();
 	if (e) setEngine (e);
 
-	lang = getQueryStrVariable('lang');
-	
 	// keep the results iframe fully in the browser window
 	resizeResults();
 	window.onresize = function() { resizeResults(); }
@@ -134,6 +151,17 @@ function getEngine() {
 		setEngine(engines[Math.floor(Math.random() * engines.length)]);
 	
 	id(engine).className = "active";
+}
+
+function updateLanguage () {
+    // give us the xml preferred lang string
+    lang = id('lang').value.replace("_", "-");
+    // yahoo does some two letter and others 4 letters
+    lang_short = lang.substr(0, 2);
+    // alert(lang_short);
+    // NOTE: Could set so page reloads as soon as a lang. changes
+    // window.results.location.href = "asdasdf";
+    // window.location.href = "/?lang=" + id(lang);
 }
 
 // build advanced search query strings
@@ -201,6 +229,13 @@ function modRights() {
 				rights += "+attribution";
 			}
 			break;
+		case "openclipart":
+			rights = "+publicdomain";
+			// everything on ocal is pd 
+			/* if (id('comm').checked) {
+				rights += "+attribution";
+			} */
+			break;
 	}
 	if (rights.length < 5) rights = "";
 	
@@ -210,6 +245,7 @@ function modRights() {
 function doSearch() {
 	var query = id("q");
 	url = "";
+    updateLanguage();
 	
 	// search only if there is something to search with
 	if ((query.value.length > 0) && (query.className == "active")) {
@@ -217,6 +253,11 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+			case "openclipart":
+				url = 'http://openclipart.org/cchost/media/tags/' + 
+                      query.value + rights;
+				break;
+                
 			case "ccmixter":
 				url = 'http://ccmixter.org/media/tags/' + query.value + rights;
 				break;
@@ -235,6 +276,7 @@ function doSearch() {
 				
 			case "yahoo":
 				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
+				if (lang != null) url += '&x=op&fl=1&ei=UTF-8&vl=lang_' + lang;
 				break;
 				
 			case "google":

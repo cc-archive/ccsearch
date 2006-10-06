@@ -1,0 +1,4 @@
+POTFILES = \
+    ./index.php \
+    ./cc-language.php \
+    ./cc-language-ui.php
