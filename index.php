@@ -56,11 +56,11 @@ $cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
 // echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 // echo phpinfo();
 
-print_r($cc_lang);
+// print_r($cc_lang);
 
 // print_r($_COOKIE);
 
-print_r($_REQUEST);
+// print_r($_REQUEST);
 
 
 ?>
