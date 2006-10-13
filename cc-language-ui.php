@@ -134,8 +134,6 @@ class CCLanguageUISelector extends CCLanguageUI
                 "<label for=\"lang\">" . _('Language') . "</label> ";
 
         if ( $this->_use_autoload )
-            $onrelease_text = " onrelease=reload();";
-        else
             $onrelease_text = " onchange=updateLanguage();";
 
         $this->_selector .= "<select name=\"lang\" id=\"lang\"$onrelease_text>";

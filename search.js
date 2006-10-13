@@ -29,6 +29,14 @@ var engine = "";
 var rights = "";
 var url = "";
 var lang = "";
+var lang_xml = "";
+var lang_short = "";
+
+var refresh = false;
+
+// NOTE: set this to your test environment if not main installation
+// var domain = ".creativecommons.org";
+var domain = "ccsearch.localhost";
 
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -139,8 +147,10 @@ function setEngine(e) {
 	
 	var d = new Date();
 	d.setFullYear(2020,0,1);
-	setCookie('ccsearch', engine, d, '/', '.creativecommons.org');
-	
+	setCookie('ccsearch', engine, d, '/', domain);
+
+    // updateLanguage();
+
 	doSearch();
 }
 
@@ -154,14 +164,39 @@ function getEngine() {
 }
 
 function updateLanguage () {
+    var cooklang = getCookie('lang');
+    if ( cooklang != id('lang').value || null == cooklang )
+        lang_new = id('lang').value;
+    else
+        lang_new = cooklang;
+
     // give us the xml preferred lang string
-    lang = id('lang').value.replace("_", "-");
+    lang_xml_new = lang_new.replace("_", "-");
+
     // yahoo does some two letter and others 4 letters
-    lang_short = lang.substr(0, 2);
-    // alert(lang_short);
-    // NOTE: Could set so page reloads as soon as a lang. changes
-    // window.results.location.href = "asdasdf";
-    // window.location.href = "/?lang=" + id(lang);
+    lang_short_new = lang_new.substr(0, 2);
+
+
+
+
+    if ( lang_new == lang && lang_xml_new == lang_xml && 
+         lang_short_new == lang_short && cooklang == lang_new)
+        return;
+
+    lang = lang_new;
+    lang_xml = lang_xml_new;
+    lang_short = lang_short_new;
+
+	var d = new Date();
+	d.setFullYear(2020,0,1);
+    setCookie('lang', lang, d, '/', domain );
+
+    // document.write(lang + " " + lang_xml + " " + lang_short);
+
+    // need to reload the top part of the browser for php
+    var query = id('q');
+    if ((query.value.length > 0) && (query.className == "active"))
+        refresh = true;
 }
 
 // build advanced search query strings
@@ -276,7 +311,8 @@ function doSearch() {
 				
 			case "yahoo":
 				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
-				if (lang != null) url += '&x=op&fl=1&ei=UTF-8&vl=lang_' + lang;
+				if (lang_xml != null) 
+                    url += '&x=op&fl=1&ei=UTF-8&vl=lang_' + lang_xml;
 				break;
 				
 			case "google":
@@ -284,13 +320,20 @@ function doSearch() {
 				url = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
 						((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + 
 							rights + '&q=' + query.value; 
-				if (lang != null) url += '&hl=' + lang;
+				if (lang_xml != null) url += '&hl=' + lang_xml;
 				break;
 		}
 		//frames['results'].location.href = str;
-		window.results.location.href = url;
-		document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);
-	}
+        if ( refresh ) {
+            // alert( window.location.pathname );
+            window.location.href = unescape(window.location.pathname) + 
+                                     '?q=' + query.value;
+        } else {
+            window.results.location.href = url;
+
+        }
+        document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);	
+    }
 	return false;
 }
 

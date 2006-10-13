@@ -32,21 +32,22 @@ session_start();
 $cc_lang = &$_SESSION['lang'];
 
 if ( ! isset($cc_lang) || isset($_REQUEST['update'] ) ) {
-    $cc_lang = new CCLanguage(&$_REQUEST['lang']);
-    // if (DEBUG) echo "<p>created new object</p>";
+    $cc_lang = new CCLanguage($_REQUEST['lang']);
+    if (DEBUG) echo "<p>created new object</p>";
 }
 else 
 {
+    if (DEBUG) echo "<p>Using session language</p>";
+
     if ( isset($_REQUEST['localepref']) ) {
-        $cc_lang->SetLocalePref(&$_REQUEST['localepref']);
-        // if (DEBUG) echo "<p>set new locale pref</p>";
+        $cc_lang->SetLocalePref($_REQUEST['localepref']);
+        if (DEBUG) echo "<p>set new locale pref</p>";
     }
 
     if ( isset($_REQUEST['lang']) ) {
-        $cc_lang->SetLanguage(&$_REQUEST['lang']);
-        // if (DEBUG) echo "<p>set new language</p>";
+        $cc_lang->SetLanguage($_REQUEST['lang']);
+        if (DEBUG) echo "<p>set new language</p>";
     }
-    // if (DEBUG) echo "<p>Using session language</p>";
 }
 
 $cc_lang->Init();
@@ -54,6 +55,13 @@ $cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
 // $cc_lang->DebugLanguages();
 // echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 // echo phpinfo();
+
+print_r($cc_lang);
+
+// print_r($_COOKIE);
+
+print_r($_REQUEST);
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -79,6 +87,9 @@ $cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
                     <div id="left">
                         <input type="text" name="q" id="q" class="inactive" size="30" onclick="wakeQuery()" onblur="resetQuery()"/>
                         <input type="submit" name="some_name" value="go" id="qsubmit" /><br/>
+<?php
+    $cc_lang_selector->output();
+?><br />
 
                     </div>
                     <div id="right">
@@ -87,9 +98,6 @@ $cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
                         <input type="checkbox" name="deriv" value="" id="deriv" />
                         <label for="deriv"><?= _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
 
-<?php
-    $cc_lang_selector->output();
-?><br />
                         <a href="http://wiki.creativecommons.org/CcSearch" title="<?= _('Understand your search results') ?>">
                             <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
                             <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" />
