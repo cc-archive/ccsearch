@@ -72,6 +72,20 @@ class CCLanguageUI
     * @see		??
     */
     function output () {}
+    
+    /**
+     * Basic accessor.
+     */
+    function set ($var_name, $value)
+    {
+        $this->$var_name = $value;
+    }
+
+    function get ($var_name)
+    {
+        return $this->$var_name;
+    } 
+
 
 } // end of CCLanguageUI class
 
@@ -127,14 +141,19 @@ class CCLanguageUISelector extends CCLanguageUI
         parent::CCLanguageUI($cc_lang);
 
         $this->_use_label = true;
-        $this->_use_autoload = false;
+        // $this->_use_autoload = false;
+
+    }
+
+    function output ()
+    {
 
         if ( $this->_use_label )
             $this->_selector .= 
                 "<label for=\"lang\">" . _('Language') . "</label> ";
 
         if ( $this->_use_autoload )
-            $onrelease_text = " onchange=updateLanguage();";
+            $onrelease_text = " onchange=\"updateLanguage();\"";
 
         $this->_selector .= "<select name=\"lang\" id=\"lang\"$onrelease_text>";
         foreach ( $this->_cc_lang->getPossibleLanguages() as $key => $value )
@@ -147,19 +166,7 @@ class CCLanguageUISelector extends CCLanguageUI
         }
         $this->_selector .= "</select>\n";
 
-/*d
-<select id="lang" name="lang" class="">
-<option value="de_DE"  >de_DE</option>
-<option value="it_IT"  >it_IT</option>
-<option value="pt_BR"  >pt_BR</option>
-<option value="zh_CN"  >zh_CN</option>
-<option value="zh_TW"  >zh_TW</option>
-<option value="default"  >default</option>
-<option value="en_US"  selected="selected"  >en_US</option>
-<option value="autodetect"  >autodetect</option>
-</select>
-*/
-        
+        echo $this->_selector;
     }
     
     /**
@@ -180,20 +187,6 @@ class CCLanguageUISelector extends CCLanguageUI
         echo "<script></script>\n";
     }
     
-    /**
-    *
-    * This is the short Description for the Function
-    *
-    * This is the long description for the Class
-    *
-    * @return	mixed	 Description
-    * @access	public
-    * @see		??
-    */
-    function output () 
-    {
-        echo $this->_selector;
-    }
 }
 
 ?>

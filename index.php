@@ -52,16 +52,21 @@ else
 
 $cc_lang->Init();
 $cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
+$cc_lang_selector->set("_use_autoload", true);
 // $cc_lang->DebugLanguages();
 // echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 // echo phpinfo();
 
-// print_r($cc_lang);
+
+// echo "<pre>";
+//print_r($cc_lang);
+// print_r($cc_lang_selector);
 
 // print_r($_COOKIE);
 
-// print_r($_REQUEST);
+//print_r($_REQUEST);
 
+// echo "</pre>";
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

@@ -164,11 +164,16 @@ function getEngine() {
 }
 
 function updateLanguage () {
-    var cooklang = getCookie('lang');
-    if ( cooklang != id('lang').value || null == cooklang )
+
+    var lang_temp = getQueryStrVariable('lang');
+
+    if ( "" != lang_temp )
+        lang_temp = getCookie('lang');
+
+    if ( lang_temp != id('lang').value || "" == lang_temp )
         lang_new = id('lang').value;
     else
-        lang_new = cooklang;
+        lang_new = lang_temp;
 
     // give us the xml preferred lang string
     lang_xml_new = lang_new.replace("_", "-");
@@ -177,11 +182,11 @@ function updateLanguage () {
     lang_short_new = lang_new.substr(0, 2);
 
 
-
-
     if ( lang_new == lang && lang_xml_new == lang_xml && 
-         lang_short_new == lang_short && cooklang == lang_new)
+         lang_short_new == lang_short && lang_temp == lang_new)
         return;
+
+    // alert("updateLanguage: " + lang_new + " <-> " + lang);
 
     lang = lang_new;
     lang_xml = lang_xml_new;
@@ -191,12 +196,17 @@ function updateLanguage () {
 	d.setFullYear(2020,0,1);
     setCookie('lang', lang, d, '/', domain );
 
+    // alert("updateLanguage: " + lang_new + " <-> " + lang);
+
+
     // document.write(lang + " " + lang_xml + " " + lang_short);
 
     // need to reload the top part of the browser for php
     var query = id('q');
     if ((query.value.length > 0) && (query.className == "active"))
-        refresh = true;
+        window.location.href = unescape(window.location.pathname) + 
+                               '?q=' + query.value + '&lang=' + lang;
+        // refresh = true;
 }
 
 // build advanced search query strings
@@ -280,7 +290,7 @@ function modRights() {
 function doSearch() {
 	var query = id("q");
 	url = "";
-    updateLanguage();
+    // updateLanguage();
 	
 	// search only if there is something to search with
 	if ((query.value.length > 0) && (query.className == "active")) {
@@ -324,14 +334,14 @@ function doSearch() {
 				break;
 		}
 		//frames['results'].location.href = str;
-        if ( refresh ) {
+        /* if ( refresh ) {
             // alert( window.location.pathname );
             window.location.href = unescape(window.location.pathname) + 
                                      '?q=' + query.value;
-        } else {
+        } else { */
             window.results.location.href = url;
 
-        }
+        // }
         document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);	
     }
 	return false;
