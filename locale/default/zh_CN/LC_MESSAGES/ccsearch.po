@@ -1,13 +1,13 @@
-# ccSearch English-US PO File
-# Copyright (C) 2006 Creative Commons
+# ccSearch zh_CN PO File
 # This file is distributed under the same license as the ccSearch package.
+# Copyright (C) 2006 Creative Commons
 # Jon Phillips <jon@rejon.org>, 2006
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-17 10:19-0700\n"
+"POT-Creation-Date: 2006-10-17 10:22-0700\n"
 "PO-Revision-Date: 2006-10-17 01:40-0800\n"
 "Last-Translator: deerfang <lu@deerfang.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
