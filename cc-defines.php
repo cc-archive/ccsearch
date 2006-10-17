@@ -40,7 +40,7 @@ define('CC_PROJECT_SHORT_NAME', 'ccsearch');
  * default. In general however, language is general english and not en_US.
  * @see CCLanguage
  */
-define('CC_LANG', 'pt_BR');
+define('CC_LANG', 'en_US');
 
 /**
  * This constant is the default locale folder to find i18n translations.

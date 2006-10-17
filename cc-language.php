@@ -377,9 +377,9 @@ class CCLanguage
     // set to the constant, CC_LANG, and if that setting is not available
     // or set to nothing, then the default is to use the strings in the
     // code
-        $possible_langs['default'] = _('default');
+        // $possible_langs['default'] = _('default');
         $possible_langs[CC_LANG] = CC_LANG;
-        $possible_langs['autodetect'] = _('autodetect');
+        // $possible_langs['autodetect'] = _('autodetect');
     
         return $possible_langs;
     }
