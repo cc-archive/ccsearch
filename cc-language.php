@@ -127,56 +127,6 @@ class CCLanguage
             $this->SetLanguage( $this->_browser_default_language );
         else
             $this->SetLanguage($language);
-
-        /*
-        if ( isset($CC_GLOBALS['lang_locale_pref']) )
-            $this->SetLocalePref( $CC_GLOBALS['lang_locale_pref'] );
-        else
-            $this->SetLocalePref( $locale );
-*/
-        /* Sets the current language depending upon the user and
-           global setting for languages with a couple of presets */
-
-        // The code is an example of how to do things once the
-        // user_language field is sure to work...
-        // it tries to set the global users language with top priority
-        /*
-        if ( 'default' == $CC_GLOBALS['user_language'] &&
-             'default' == $CC_GLOBALS['lang'] ) {
-                $this->SetLanguage( $this->_browser_default_language );
-        } else if ( 'default' == $CC_GLOBALS['user_language'] ) {
-            $this->SetLanguage( $CC_GLOBALS['lang'] );
-            } else if ( !empty($CC_GLOBALS['user_language']) ) {
-                $this->SetLanguage( $CC_GLOBALS['user_language'] );
-        // next, tries to set the global selected for everyone
-            } else if ( !empty($CC_GLOBALS['lang']) ) {
-                $this->SetLanguage( $CC_GLOBALS['lang'] );
-        // the next attempts language detection from the browser
-        } else if ( !empty($this->_browser_default_language ) ) {
-            // echo $browser_language;
-                $this->SetLanguage( $this->_browser_default_language );
-        } else {
-                $this->SetLanguage( $language );
-        }
-        */
-        /*
-        if ( !empty($CC_GLOBALS['lang']) ) 
-        {
-            if ( 'default' == $CC_GLOBALS['lang'] ) 
-                $this->SetLanguage( $this->_browser_default_language );
-            else
-                $this->SetLanguage( $CC_GLOBALS['lang'] );
-        
-        } 
-        else if ( !empty($this->_browser_default_language ) ) 
-        {
-            $this->SetLanguage( $this->_browser_default_language );
-        } 
-        else 
-        {
-            $this->SetLanguage( $language );
-        }
-        */
     }
     
 
