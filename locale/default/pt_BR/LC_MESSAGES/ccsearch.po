@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-17 00:31-0700\n"
+"POT-Creation-Date: 2006-10-17 10:19-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: Brazilian Portuguese <cc-devel@lists.ibiblio.org>\n"
@@ -115,10 +115,6 @@ msgstr ""
 
 #: index.php:140
 msgid "Contact"
-msgstr ""
-
-#: index.php:143
-msgid "stat"
 msgstr ""
 
 #: cc-language-ui.php:178
