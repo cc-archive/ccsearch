@@ -140,7 +140,7 @@ $cc_lang_selector =
             <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> | 
             <a href="http://validator.w3.org/check?uri=referer">Valid HTML</a> |
             <a href="http://jigsaw.w3.org/css-validator/validator?profile=css2&warning=2&uri=<?php echo "http://" . $_SERVER['HTTP_HOST'] . "/" ?>">Valid CSS</a>
-            <img id ="stat" src="transparent.gif?init" alt="<?php echo _('stat') ?>"/>
+            <img id ="stat" src="transparent.gif?init" alt=""/>
         </div>
     </body>
 </html>
