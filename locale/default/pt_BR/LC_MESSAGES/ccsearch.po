@@ -1,4 +1,4 @@
-# ccSearch English-US PO File
+# ccSearch pt_BR PO File
 # Copyright (C) 2006 Creative Commons
 # This file is distributed under the same license as the ccSearch package.
 # Jon Phillips <jon@rejon.org>, 2006
@@ -8,108 +8,120 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-05 05:53-0700\n"
+"POT-Creation-Date: 2006-10-16 22:34-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
-"Language-Team: English <cc-devel@lists.ibiblio.org>\n"
+"Language-Team: Brazilian Portuguese <cc-devel@lists.ibiblio.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:33 index.php:91
+#: index.php:77 index.php:144
 msgid "Creative Commons"
-msgstr ""
+msgstr "Reatac Oijdx"
 
-#: index.php:33
+#: index.php:77
 msgid "Search"
-msgstr ""
+msgstr "sfweioo"
 
-#: index.php:42
+#: index.php:91
 msgid ""
 "Thanks for using CC Search via <a href=\"http://spreadfirefox.com/"
 "\">Firefox</a>."
 msgstr ""
 
-#: index.php:55
+#: index.php:107
 msgid "Search for works I can use for commercial purposes."
 msgstr "asdfa sdf asdf  weof asdfa."
 
-#: index.php:57
+#: index.php:109
 msgid "Search for works I can modify, adapt, or build upon."
 msgstr ""
 
-#: index.php:58
+#: index.php:111
 msgid "Understand your search results"
 msgstr ""
 
-#: index.php:61
+#: index.php:114
 msgid "What is this?"
 msgstr ""
 
-#: index.php:64
+#: index.php:117
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr ""
 
-#: index.php:66
+#: index.php:119
 msgid "Content Directories"
 msgstr ""
 
-#: index.php:68
+#: index.php:121
 msgid "Only show search results"
 msgstr ""
 
-#: index.php:70
+#: index.php:123
 msgid "Remove Frame"
 msgstr ""
 
-#: index.php:78 index.php:79
+#: index.php:131 index.php:132
 msgid "Web Search"
 msgstr ""
 
-#: index.php:78
+#: index.php:131
 msgid "Google"
 msgstr ""
 
-#: index.php:79
+#: index.php:132
 msgid "Yahoo"
 msgstr ""
 
-#: index.php:80
+#: index.php:133
 msgid "Image Search"
 msgstr ""
 
-#: index.php:80
+#: index.php:133
 msgid "flicrk"
 msgstr ""
 
-#: index.php:81
+#: index.php:134
 msgid "Video Search"
 msgstr ""
 
-#: index.php:81
+#: index.php:134
 msgid "blip.tv"
 msgstr ""
 
-#: index.php:82 index.php:83
+#: index.php:135 index.php:136
 msgid "Music Search"
 msgstr ""
 
-#: index.php:82
+#: index.php:135
 msgid "jamendo"
 msgstr ""
 
-#: index.php:83
+#: index.php:136
 msgid "ccMixter"
 msgstr ""
 
-#: index.php:84
+#: index.php:137
 msgid "Clip Art Search"
 msgstr ""
 
-#: index.php:84
+#: index.php:137
 msgid "Open Clip Art Library"
 msgstr ""
 
-#: index.php:91
+#: index.php:144
 msgid "Contact"
+msgstr ""
+
+#: cc-language.php:380
+msgid "default"
+msgstr ""
+
+#: cc-language.php:382
+msgid "autodetect"
+msgstr ""
+
+#: cc-language-ui.php:153
+msgid "Language"
 msgstr ""

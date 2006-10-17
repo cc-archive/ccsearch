@@ -46,6 +46,26 @@ class CCLanguageUI
     var $_cc_lang;
     
     /**
+     * This is storage for our UI items by storage.
+     * @var		array
+     * @access	private
+     */
+    var $_text;
+
+    /**
+     * This is content put before a string. 
+     * @var		string
+     * @access	private
+     */
+    var $_text_pre;
+
+    /**
+     * This is content to be at the end of a string. 
+     * @var		string
+     * @access	private
+     */
+    var $_text_post;
+    /**
     *
     * This is the short Description for the Function
     *
@@ -57,9 +77,13 @@ class CCLanguageUI
     function CCLanguageUI ($cc_lang) 
     {
         $this->_cc_lang = $cc_lang;
+        $this->init();
     }
 
-
+    /**
+     * This is basically an abstract interface to init the language ui.
+     */
+    function init () {}
 
     /**
     *
@@ -71,7 +95,10 @@ class CCLanguageUI
     * @access	public
     * @see		??
     */
-    function output () {}
+    function output () 
+    {
+        echo $this->_text;    
+    }
     
     /**
      * Basic accessor.
@@ -105,13 +132,6 @@ class CCLanguageUI
  */
 class CCLanguageUISelector extends CCLanguageUI
 {
-    /**
-     * This is storage for our UI items by storage.
-     * @var		array
-     * @access	private
-     */
-    var $_selector;
-
 
     /**
      * Should we use a label or not.
@@ -135,38 +155,44 @@ class CCLanguageUISelector extends CCLanguageUI
     *
     * @access	public
     */
-    function CCLanguageUISelector ($cc_lang) 
+    function CCLanguageUISelector ($cc_lang, $text_pre = '', 
+                                   $text_post = '', $use_autoload = true, 
+                                   $use_label = true ) 
     {
-        // no super keyword?
-        parent::CCLanguageUI($cc_lang);
 
-        $this->_use_label = true;
-        // $this->_use_autoload = false;
+        $this->_use_label = $use_label;
+        $this->_use_autoload = $use_autoload;
+        $this->_text_pre = $text_pre;
+        $this->_text_post = $text_post;
 
+        parent::CCLanguageUI($cc_lang); // this runs the init() code polymorph
     }
 
-    function output ()
+    function init ()
     {
+        if ( ! empty($this->_text_pre) )
+            $this->_text .= $this->_text_pre;
 
         if ( $this->_use_label )
-            $this->_selector .= 
+            $this->_text .= 
                 "<label for=\"lang\">" . _('Language') . "</label> ";
 
         if ( $this->_use_autoload )
-            $onrelease_text = " onchange=\"updateLanguage();\"";
+            $onrelease_text = " onchange=\"onLanguageChange();\"";
 
-        $this->_selector .= "<select name=\"lang\" id=\"lang\"$onrelease_text>";
+        $this->_text .= "<select name=\"lang\" id=\"lang\"$onrelease_text>";
         foreach ( $this->_cc_lang->getPossibleLanguages() as $key => $value )
         {
             $selected_text = "";
             if ($this->_cc_lang->getLanguage() == $key )
                 $selected_text = " selected=\"selected\"";
-            $this->_selector .= 
+            $this->_text .= 
                 "<option value=\"$value\"$selected_text>$key</option>\n";
         }
-        $this->_selector .= "</select>\n";
+        $this->_text .= "</select>\n";
 
-        echo $this->_selector;
+        if ( ! empty($this->_text_post) )
+            $this->_text .= $this->_text_post;
     }
     
     /**
@@ -187,6 +213,34 @@ class CCLanguageUISelector extends CCLanguageUI
         echo "<script></script>\n";
     }
     
+}
+
+class CCLanguageUIHelp extends CCLanguageUI 
+{
+    var $_link;
+
+    var $_title;
+
+    function CCLanguageUIHelp ($link, $title)
+    {
+        $this->_link = $link;
+        $this->_title = $title;
+
+        $this->init();
+    }
+
+    function init()
+    {
+        if ( ! empty($this->_text_pre) )
+            $this->_text .= $this->_text_pre;
+
+        $this->_text .= 
+            '<a href="' . $this->_link . '" id="language_help">' . 
+            $this->_title . '</a>';
+
+        if ( ! empty($this->_text_post) )
+            $this->_text .= $this->_text_post;
+    }
 }
 
 ?>

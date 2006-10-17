@@ -12,6 +12,7 @@
 
 all:
 	$(MAKE) -f Makefile.language all
+	$(MAKE) update-po-files
 
 clean:
 	$(MAKE) -f Makefile.language clean 

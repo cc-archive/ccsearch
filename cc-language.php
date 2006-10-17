@@ -570,6 +570,18 @@ class CCLanguage
         echo "</pre>";
     }
 
+    /**
+     * Basic accessor.
+     */
+    function set ($var_name, $value)
+    {
+        $this->$var_name = $value;
+    }
+
+    function get ($var_name)
+    {
+        return $this->$var_name;
+    } 
     // got rid of OnInitApp()
 
 } // end of CCLanguage class

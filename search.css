@@ -10,8 +10,7 @@ body {
 	color: #333;
 	font: 0.8em/150% "Lucidia Grande", verdana, arial, sans-serif;
 	padding: 0;
-	margin: 15px;
-	margin-bottom: 0;
+	margin: 15px 14px 0 14px;
 }
 
 a, a:link {
@@ -19,6 +18,10 @@ a, a:link {
 }
 a:hover {
 	text-decoration: underline;
+}
+
+iframe {
+    border: none;
 }
 
 #ff-box {
@@ -79,6 +82,19 @@ a:hover {
 	margin-left: 10px;
 	width: 640px;
 /*	border-right: 1px solid #b0b0b0;*/
+}
+
+#language_selector {
+    float: right;
+    font-size: 90%;
+    text-align: right;
+}
+#language_selector select {
+    font-size: 90%;
+}
+
+#language_help {
+    font-size: 85%;
 }
 
 #left {

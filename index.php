@@ -51,71 +51,71 @@ else
 }
 
 $cc_lang->Init();
-$cc_lang_selector = new CCLanguageUISelector(&$cc_lang);
-$cc_lang_selector->set("_use_autoload", true);
+$cc_lang_help = 
+    new CCLanguageUIHelp(
+        "http://translate.creativecommons.org/projects/ccsearch",
+        _("Help Translate"));
+$cc_lang_selector = 
+    new CCLanguageUISelector(&$cc_lang, 
+                             "<div id=\"language_selector\">", 
+                             $cc_lang_help->get('_text') . "</div>");
+
 // $cc_lang->DebugLanguages();
 // echo "<h4>" . $_REQUEST['lang'] . "</h4>";
-// echo phpinfo();
-
-
 // echo "<pre>";
-//print_r($cc_lang);
 // print_r($cc_lang_selector);
-
 // print_r($_COOKIE);
-
-//print_r($_REQUEST);
-
+// print_r($_REQUEST);
 // echo "</pre>";
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html lang="<?php echo $cc_lang->get('_language_xml') ?>" xml:lang="<?php echo $cc_lang->get('_language_xml') ?>" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title><?= _('Creative Commons') . " " . _('Search') ?></title>
+        <title><?php echo _('Creative Commons') . " " . _('Search') ?></title>
+        <meta name="keywords" content="creativecommons, ccsearch, search, 
+                                       engine, searchengine, license, find" />
+        <meta name="description" content="A Creative Commons-based search
+                                          search engine of search engines." />
+        <meta name="robots" content="index, follow" />
         <script type="text/javascript" src="search.js"></script>
-        <style type="text/css" media="screen">
-            @import "search.css";
-        </style>
+        <link rel="stylesheet" type="text/css" media="screen" href="search.css" />
         <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
         
     </head>
     <body onload="setupQuery()">
-        <div id="ff-box"><div id="thanks"><?= _('Thanks for using CC Search via <a href="http://spreadfirefox.com/">Firefox</a>.') ?></div></div>
+        <?php $cc_lang_selector->output(); ?>
+        <div id="ff-box"><div id="thanks"><?php echo _('Thanks for using CC Search via <a href="http://spreadfirefox.com/">Firefox</a>.') ?></div></div>
         <div id="header-box">
          <div id="header">
             <div id="title"><a href="./"><img src="images/cc-search.png" alt="ccSearch" width="179" height="48" border="0" class="png" /></a></div>
             <div id="search">
-                <form onsubmit="return doSearch()">
+                <form onsubmit="return doSearch()" action="">
                     <div id="left">
                         <input type="text" name="q" id="q" class="inactive" size="30" onclick="wakeQuery()" onblur="resetQuery()"/>
                         <input type="submit" name="some_name" value="go" id="qsubmit" /><br/>
-<?php
-    $cc_lang_selector->output();
-?><br />
 
                     </div>
                     <div id="right">
                         <input type="checkbox" name="comm" value="" id="comm" />
-                        <label for="comm"><?= _('Search for works I can use for commercial purposes.') ?></label><br/>
+                        <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
                         <input type="checkbox" name="deriv" value="" id="deriv" />
-                        <label for="deriv"><?= _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
+                        <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
 
-                        <a href="http://wiki.creativecommons.org/CcSearch" title="<?= _('Understand your search results') ?>">
+                        <a href="http://wiki.creativecommons.org/CcSearch" title="<?php echo _('Understand your search results') ?>">
                             <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
-                            <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" />
-                            <?= _('What is this?') ?>
+                            <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" alt="<?php echo _('What is this?')?>" />
+                            <?php echo _('What is this?') ?>
                         </a>
                         &nbsp;&nbsp;
-                        <a href="http://wiki.creativecommons.org/Content_Curators" title="<?= _('Browse directories of licensed images, sounds, videos and more') ?>">
-                            <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16"/>
-                            <?= _('Content Directories') ?></a>
+                        <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
+                            <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
+                            <?php echo _('Content Directories') ?></a>
                         &nbsp;&nbsp;
-                        <a href="#" onclick="breakOut(); return false;" title="<?= _('Only show search results') ?>">
-                            <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12"/>
-                            <?= _('Remove Frame') ?></a>
+                        <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
+                            <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
+                            <?php echo _('Remove Frame') ?></a>
                     </div>
                 </form>
             </div>
@@ -123,20 +123,24 @@ $cc_lang_selector->set("_use_autoload", true);
         </div>
         <div id="menu">
             <ul class="tabs">
-                <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?= _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?= _('Google') ?>" /></a></li>
-                <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?= _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?= _('Yahoo') ?>" /></a></li>
-                <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?= _('Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?= _('flicrk') ?>" /></a></li>
-                <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?= _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?= _('blip.tv') ?>" /></a></li>
-                <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?= _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?= _('jamendo') ?>" /></a></li>
-                <li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?= _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?= _('ccMixter') ?>" /></a></li>
-                <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?= _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?= _('Open Clip Art Library') ?>" /></a></li>
+                <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>
+                <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" /></a></li>
+                <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flicrk') ?>" /></a></li>
+                <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /></a></li>
+                <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
+                <li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
+                <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>
             </ul>
         </div>
         
-        <iframe id="results" name="results" frameborder="0" border="0"></iframe>
+        <iframe id="results" name="results" frameborder="0"></iframe>
         
         <div id="footer">
-            <a href="http://creativecommons.org/"><?= _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?= _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/>
+            <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | 
+            <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> | 
+            <a href="http://validator.w3.org/check?uri=referer">Valid HTML</a> |
+            <a href="http://jigsaw.w3.org/css-validator/validator?profile=css2&warning=2&uri=<?php echo "http://" . $_SERVER['HTTP_HOST'] . "/" ?>">Valid CSS</a>
+            <img id ="stat" src="transparent.gif?init" alt="<?php echo _('stat') ?>"/>
         </div>
     </body>
 </html>
