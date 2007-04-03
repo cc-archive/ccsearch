@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Creative Commons Search</title>
+		<script type="text/javascript" src="search.js"></script>
+		<style type="text/css" media="screen">
+			@import "search.css";
+		</style>
+		<!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
+		
+	</head>
+	<body onload="setupQuery()">
+		<div id="ff-box"><div id="thanks">Thanks for using CC Search via <a href="http://spreadfirefox.com/">Firefox</a>.</div></div>
+		<div id="header-box">
+		 <div id="header">
+			<div id="title">
+			  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+			  <div id="title-by">by <a href="http://creativecommons.org/">Creative Commons</a></div>
+			</div>
+			<div id="search">
+				<form onsubmit="return doSearch()">
+					<div id="left">
+						<input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
+						<input type="submit" name="some_name" value="go" id="qsubmit" />
+						<br/>
+					</div>
+					<div id="right">
+						<input type="checkbox" name="comm" value="" id="comm" />
+						<label for="comm">Search for works I can use for commercial purposes.</label><br/>
+						<input type="checkbox" name="deriv" value="" id="deriv" />
+						<label for="deriv">Search for works I can modify, adapt, or build upon.</label><br/>
+					</div>
+				</form>
+			</div>
+		 </div>
+		</div>
+		<div id="results-box">
+		  <div id="options">
+			  <a href="http://wiki.creativecommons.org/CcSearch" title="Understand your search results">
+				  <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
+				  <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" />
+				  What is this?
+			  </a>
+			  &nbsp;&nbsp;
+			  <a href="http://wiki.creativecommons.org/Content_Curators" title="Browse directories of licensed images, sounds, videos and more">
+				  <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16"/>
+				  Content Directories</a>
+			  &nbsp;&nbsp;
+			  <a href="#" onclick="breakOut(); return false;" title="Only show search results">
+				  <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12"/>
+				  Remove Frame</a>
+			</div>
+		  <span style="float: right"><a href="http://creativecommons.org/support/"><img src="http://creativecommons.org/images/support/2006/spread-3.gif" border="0"/></a></span>
+		  <div id="menu">
+			  <ul class="tabs">
+				  <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="Web Search"><img src="images/cc-google.gif" class="google" border="0"/></a></li>
+				  <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="Web Search"><img src="images/cc-yahoo.gif" border="0"/></a></li>
+				  <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="Image Search"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" /></a></li>
+				  <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="Video Search"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" /></a></li>
+				  <li id="owlmm" class="inactive"><a href="#" onclick="setEngine('owlmm')" title="Music Search"><img src="images/cc-owlmm.png" border="0" class="png" /></a></li>
+				  <!--
+				  <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="Music Search"><img src="images/cc-jamendo.png" border="0" class="png" /></a></li>
+				  <li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="Music Search"><img src="images/cc-ccmixter.png" border="0" class="png" /></a></li>
+				  -->
+			  </ul>
+		  </div>
+		
+	    <iframe id="results" name="results" frameborder="0" border="0"></iframe>
+		</div>
+		
+		<div id="footer">
+			<a href="http://creativecommons.org/">Creative Commons</a> | <a href="http://creativecommons.org/contact">Contact</a> <img id ="stat" src="transparent.gif?init"/>
+		</div>
+	</body>
+</html>
