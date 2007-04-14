@@ -5,7 +5,7 @@
  */
 
 var d = "Enter search query";
-var engines = ["google", "yahoo", "flickr", "blip", "jamendo"];
+var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin"];
 var engine = "";
 var rights = "";
 var url = "";
@@ -211,6 +211,18 @@ function modRights() {
 				rights += "+attribution";
 			}
 			break;
+		case "spin":
+			rights = "_license=";
+			if (!id('comm').checked && !id('deriv').checked) {
+				rights += "11"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
+			} else if (id('comm').checked && !id('deriv').checked) {
+				rights += "8"; // by-nd
+			} else if (!id('comm').checked && id('deriv').checked) {
+				rights += "9";
+			} else { 
+				rights += "10"; // by-nc,by-nc-sa
+			}
+			break;
 	}
 	if (rights.length < 5) rights = "";
 	
@@ -227,6 +239,10 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+			case "spin":
+				url = 'http://www.spinxpress.com/getmedia' + rights + '_searchwords=' + query.value
+				break;
+				
 			case "ccmixter":
 				url = 'http://ccmixter.org/media/tags/' + query.value + rights;
 				break;
