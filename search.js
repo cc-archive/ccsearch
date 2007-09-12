@@ -5,7 +5,7 @@
  */
 
 var d = "Enter search query";
-var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin"];
+var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
 var engine = "";
 var rights = "";
 var url = "";
@@ -142,6 +142,7 @@ function getEngine() {
 function modRights() {
 	
 	switch (engine) {
+	     
 		case "google":
 			//.-(cc_noncommercial|cc_nonderived)
 			rights = ".-(";
@@ -223,6 +224,15 @@ function modRights() {
 				rights += "10"; // by-nc,by-nc-sa
 			}
 			break;
+
+			/* Add Jon's two new engines */
+        case "openclipart":
+            rights = "+publicdomain";
+            // everything on ocal is pd 
+            /* if (id('comm').checked) {
+	       rights += "+attribution";
+	       } */
+            break;
 	}
 	if (rights.length < 5) rights = "";
 	
@@ -239,6 +249,11 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
+            case "openclipart":
+                url = 'http://openclipart.org/cchost/media/tags/' + 
+                      query.value + rights;
+                break;
+                
 			case "spin":
 				url = 'http://www.spinxpress.com/getmedia' + rights + '_searchwords=' + query.value
 				break;
