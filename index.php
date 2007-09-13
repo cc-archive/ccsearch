@@ -95,22 +95,23 @@ $cc_lang_selector =
 	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	  <div id="title-by">by <a href="http://creativecommons.org/">Creative Commons</a></div>
 	</div>
-        <div id="search">
-          <form onsubmit="return doSearch()">
-            <div id="left">
-              <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
-              <input type="submit" name="some_name" value="go" id="qsubmit" />
-	      <br/>
-	      
-            </div>
-            <div id="right">
+        <form onsubmit="return doSearch()">
+          <div id="left">
+            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
+            <input type="submit" name="some_name" value="go" id="qsubmit" />
+	    
+          </div>
+          <div id="right">
+	    <div>
               <input type="checkbox" name="comm" value="" id="comm" />
               <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
+	    </div>
+	    <div>
               <input type="checkbox" name="deriv" value="" id="deriv" />
               <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
 	    </div>
-	  </form>
-	</div>
+	  </div>
+	</form>
       </div>
     </div>
     <div id="results-box">
