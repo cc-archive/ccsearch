@@ -61,7 +61,6 @@ iframe {
 	overflow:hidden;
 }
 #header {
-	width: 860px;
 	padding: 10px;
 	margin-left: 5px;
 }
@@ -97,14 +96,6 @@ iframe {
 	color: #13332a;
 }
 
-#search {
-	float: left;
-	padding: 10px 0 5px 10px;
-	margin-left: 0px;
-	width: 650px;
-/*	border-right: 1px solid #b0b0b0;*/
-}
-
 #language_selector {
     float: right;
     font-size: 90%;
@@ -119,14 +110,14 @@ iframe {
 }
 
 #left {
-	padding-top: 11px;
 	float: left;
+	margin-left: 1em;
+	line-height: 60px;
 }
 #right {
-	float: right;
+	float: left;
 	font-size: 0.8em;
-	margin-top: -3px;
-	margin-left: 5px;
+	margin-left: 2ex;
 	background-color: #c8d7a0;
 	border: 1px solid #729032;
 	padding: 3px 0 3px 5px;
