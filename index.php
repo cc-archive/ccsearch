@@ -92,7 +92,6 @@ $cc_lang_selector =
     
   </head>
   <body onload="setupQuery()">
-    <?php $cc_lang_selector->output(); ?>
     <div id="ff-box"><div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?></div></div>
     <div id="header-box">
       <div id="header">
@@ -156,7 +155,8 @@ $cc_lang_selector =
     </div>
     
     <div id="footer">
-      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/>
+      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> |     <?php $cc_lang_selector->output(); ?>
+
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>

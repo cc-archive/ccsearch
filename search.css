@@ -55,6 +55,7 @@ iframe {
 	margin-top: 2px;
 }
 
+
 #header-box {
 	background: url('http://creativecommons.org/images/header-main-b.png') repeat-x bottom left ;
 	height: 80px;
@@ -97,10 +98,9 @@ iframe {
 }
 
 #language_selector {
-    float: right;
-    font-size: 90%;
-    text-align: right;
+		 display: inline;
 }
+
 #language_selector select {
     font-size: 90%;
 }
