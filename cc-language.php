@@ -125,7 +125,6 @@ class CCLanguage
         
         if ( !empty($this->_browser_default_language ) ) {
             $this->SetLanguage( $this->_browser_default_language );
-	    print_r($this->_language);
 	}
         else
             $this->SetLanguage($language);
@@ -187,8 +186,8 @@ class CCLanguage
 	      // if there is no readable mo file, then get the hell out
 	      if ( is_readable( "$lang_dir/LC_MESSAGES/$po_fn" ) ) {
 		$this->
-		  _all_languages['locale'][$locale_pref]['language'][$lower_lang_name] =
-		  array('path' => $lang_dir, 'case_name' => $lang_name);
+		  _all_languages['locale'][$locale_pref]['language'][$lang_name] =
+		  array('path' => $lang_dir);
                 }
             }
         }
@@ -258,20 +257,15 @@ class CCLanguage
     
         // test to see if we can set to some default in order of the array
         foreach ( $lang_tests as $test )
-        {
-	  echo '<pre>';
-	  print_r($test);
-	  echo ' bbq ';
-	    print_r($lang_possible);
-	    echo '</pre>';
-            if ( isset($lang_possible[$test]) ) {
-	      print 'yowza';
-	      print ' ' . $test . ' baba ';
-	      $this->_language = $lang_possible[$test]['case_name'];
+	  {
+	    foreach ($lang_possible as $key => $value) {
+	      $lowerkey = strtolower($key);
+	      if ($lowerkey == $lang_pref) {
+		$this->_language = $key;
                 $this->_language_xml = str_replace('_', '-', $this->_language);
-		print 'bbqq ' . $this->_language;
                 return true;
-            }
+	      }
+	    }
         } 
         // if all else fails set it to the default
         $this->_language = CC_LANG;
@@ -333,7 +327,7 @@ class CCLanguage
         $possible_langs = array();
 
         foreach ( $lang_list as $item ) {
-        $possible_langs[$item] = $item;
+        $possible_langs[$item] = $this->_all_languages[$item]['case_name'];
         }
     
     // This is dumb in that if it is selected for user preferences, it
