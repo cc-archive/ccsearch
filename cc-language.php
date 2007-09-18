@@ -123,8 +123,10 @@ class CCLanguage
   
         $this->SetLocalePref( $locale );
         
-        if ( !empty($this->_browser_default_language ) ) 
+        if ( !empty($this->_browser_default_language ) ) {
             $this->SetLanguage( $this->_browser_default_language );
+	    print_r($this->_language);
+	}
         else
             $this->SetLanguage($language);
     }
@@ -174,14 +176,19 @@ class CCLanguage
             $locale_pref = basename($dir);
             $this->_all_languages['locale'][$locale_pref] = 
             array('path' => $dir);
-    
+	    
+	    
+	    
             foreach ( $lang_dirs as $lang_dir ) {
-                $lang_name = basename($lang_dir);
-                // if there is no readable mo file, then get the hell out
-                if ( is_readable( "$lang_dir/LC_MESSAGES/$po_fn" ) ) {
-                    $this->
-            _all_languages['locale'][$locale_pref]['language'][$lang_name] =
-            array('path' => $lang_dir); 
+	      $lang_name = basename($lang_dir);
+	      $lower_lang_name = strtolower($lang_name); // HTTP spec says
+	                                           // this is case-insensitive
+
+	      // if there is no readable mo file, then get the hell out
+	      if ( is_readable( "$lang_dir/LC_MESSAGES/$po_fn" ) ) {
+		$this->
+		  _all_languages['locale'][$locale_pref]['language'][$lower_lang_name] =
+		  array('path' => $lang_dir, 'case_name' => $lang_name);
                 }
             }
         }
@@ -243,7 +250,7 @@ class CCLanguage
     
         $lang_possible = 
             &$this->_all_languages['locale'][$this->_locale_pref]['language'];
-   
+	
         // Yet again, the conditions to test for default language
         // in order
         $lang_tests = array(&$lang_pref, 
@@ -252,9 +259,17 @@ class CCLanguage
         // test to see if we can set to some default in order of the array
         foreach ( $lang_tests as $test )
         {
+	  echo '<pre>';
+	  print_r($test);
+	  echo ' bbq ';
+	    print_r($lang_possible);
+	    echo '</pre>';
             if ( isset($lang_possible[$test]) ) {
-                $this->_language = $test;
+	      print 'yowza';
+	      print ' ' . $test . ' baba ';
+	      $this->_language = $lang_possible[$test]['case_name'];
                 $this->_language_xml = str_replace('_', '-', $this->_language);
+		print 'bbqq ' . $this->_language;
                 return true;
             }
         } 
@@ -373,8 +388,12 @@ class CCLanguage
 
         if( !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) )
         {
+	  // First, convert the incoming language to underscores
+	  // rather than hyphens
+	  $given_lang = strtr($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-', '_');
+	  $given_lang = strtolower($given_lang);
             list($this->_browser_default_language) =  
-                 explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'], 2);
+                 explode(',', $given_lang, 2);
         } 
         else if ( !empty($_SERVER['HTTP_USER_AGENT']) )
         {

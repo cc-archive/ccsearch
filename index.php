@@ -30,6 +30,11 @@ session_start();
 
 // This nastiness handles session storage 
 $cc_lang = &$_SESSION['lang'];
+if (DEBUG) {
+  echo "<pre>";
+  print_r($_SESSION);
+  echo "</pre>";
+}
 
 if ( ! isset($cc_lang) || isset($_REQUEST['update'] ) ) {
     $cc_lang = new CCLanguage($_REQUEST['lang']);
@@ -60,13 +65,13 @@ $cc_lang_selector =
                              "<div id=\"language_selector\">", 
                              $cc_lang_help->get('_text') . "</div>");
 
-// $cc_lang->DebugLanguages();
-// echo "<h4>" . $_REQUEST['lang'] . "</h4>";
-// echo "<pre>";
-// print_r($cc_lang_selector);
-// print_r($_COOKIE);
-// print_r($_REQUEST);
-// echo "</pre>";
+//$cc_lang->DebugLanguages();
+//echo "<h4>" . $_REQUEST['lang'] . "</h4>";
+//echo "<pre>";
+//print_r($cc_lang_selector);
+//print_r($_COOKIE);
+//print_r($_REQUEST);
+//echo "</pre>";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

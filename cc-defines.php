@@ -28,7 +28,7 @@ define('DEBUG', false);
  * @see CCLanguage::SetLocalePref()
  * @see CCLanguage::GetLocalePref()
  */
-define('CC_PROJECT_NAME', 'ccsearch.localhost');
+define('CC_PROJECT_NAME', 'ccsearch');
 
 define('CC_PROJECT_SHORT_NAME', 'ccsearch');
 
