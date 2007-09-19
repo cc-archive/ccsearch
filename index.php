@@ -37,7 +37,7 @@ if (DEBUG) {
 }
 
 if ( ! isset($cc_lang) || isset($_REQUEST['update'] ) ) {
-    $cc_lang = new CCLanguage($_REQUEST['lang']);
+  $cc_lang = new CCLanguage($_REQUEST['lang']);
     if (DEBUG) echo "<p>created new object</p>";
 }
 else 

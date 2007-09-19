@@ -107,10 +107,11 @@ class CCLanguage
      * @param string $locale The default locale preference folder
      * @param string $domain The domain to access strings with from .po files
      */
-    function CCLanguage ( $language   = CC_LANG,
+    function CCLanguage ( $override_lang = null,
+			  $language   = CC_LANG,
                           $locale_dir = CC_LANG_LOCALE, 
                           $locale     = CC_LANG_LOCALE_PREF,
-                          $domain     = CC_LANG_LOCALE_DOMAIN )
+                          $domain     = CC_LANG_LOCALE_DOMAIN)
     {
         // CCHOST: global $CC_GLOBALS;
         // CCDebug::StackTrace();
@@ -118,16 +119,16 @@ class CCLanguage
     
         $this->_all_languages = array();
         $this->_domain = $domain;
-        $this->LoadBrowserDefaultLanguage();
+        $this->LoadBrowserDefaultLanguage($override_lang);
         $this->LoadLanguages( $locale_dir );
   
         $this->SetLocalePref( $locale );
         
-        if ( !empty($this->_browser_default_language ) ) {
-            $this->SetLanguage( $this->_browser_default_language );
+	if (empty($this->_browser_default_language)) {
+	  $this->SetLanguage($language);
+	} else {
+	  $this->SetLanguage( $this->_browser_default_language );
 	}
-        else
-            $this->SetLanguage($language);
     }
     
 
@@ -249,25 +250,46 @@ class CCLanguage
     
         $lang_possible = 
             &$this->_all_languages['locale'][$this->_locale_pref]['language'];
+
+	// First try for a case-insensitive exact match
 	
-        // Yet again, the conditions to test for default language
-        // in order
-        $lang_tests = array(&$lang_pref, 
-                            $lang_pref . "_" . strtoupper($lang_pref));
-    
-        // test to see if we can set to some default in order of the array
-        foreach ( $lang_tests as $test )
-	  {
-	    foreach ($lang_possible as $key => $value) {
-	      $lowerkey = strtolower($key);
-	      if ($lowerkey == $lang_pref) {
-		$this->_language = $key;
-                $this->_language_xml = str_replace('_', '-', $this->_language);
-                return true;
-	      }
-	    }
-        } 
+	foreach ($lang_possible as $key => $value) {
+	  $lowerkey = strtolower($key);
+	  if ($lowerkey == $lang_pref) {
+	    $this->_language = $key;
+	    $this->_language_xml = str_replace('_', '-', $this->_language);
+	    return true;
+	  }
+	}
+
+	// failing that, try for a leading substring match
+	
+	foreach ($lang_possible as $key => $value) {
+	  $lowerkey = strtolower($key);
+	  $first_part_lowerkey = explode('-', $lowerkey); // PHP can't
+	  // do array indexing from function return values.
+	  // complaining of a syntax error.  Geez.
+	  $first_part_lowerkey = $first_part_lowerkey[0];
+	  $first_part_lowerkey = explode('_', $first_part_lowerkey);
+	  $first_part_lowerkey = $first_part_lowerkey[0];
+
+	  $first_part_lang_pref = explode('-', $lang_pref);
+	  $first_part_lang_pref = $first_part_lang_pref[0];
+	  $first_part_lang_pref = explode('_', $first_part_lang_pref);
+	  $first_part_lang_pref = $first_part_lang_pref[0];
+
+	  if ($first_part_lowerkey == $first_part_lang_pref) {
+	    $this->_language = $key;
+	    $this->_language_xml = str_replace('_', '-', $this->_language);
+	    return true;
+	  }
+	}
+	
+
         // if all else fails set it to the default
+	if (DEBUG) {
+	  echo "you suck, going to default<p>";
+	}
         $this->_language = CC_LANG;
         $this->_language_xml = str_replace('_', '-', $this->_language);
         return false;
@@ -373,34 +395,37 @@ class CCLanguage
      *
      * @return bool <code>true</code> if loads, <code>false</code> otherwise
      */
-    function LoadBrowserDefaultLanguage()
+    function LoadBrowserDefaultLanguage($override_lang)
     {
-    // return true if this is set
-        if ( !empty($this->_browser_default_language) )
-            return true;
-
-
-        if( !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) )
-        {
+      // return true if this is set
+      if ( !empty($this->_browser_default_language) ) {
+	return true;
+      }
+      
+      if( !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) )
+	{
 	  // First, convert the incoming language to underscores
 	  // rather than hyphens
 	  $given_lang = strtr($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-', '_');
 	  $given_lang = strtolower($given_lang);
-            list($this->_browser_default_language) =  
-                 explode(',', $given_lang, 2);
+	  list($this->_browser_default_language) =  
+	    explode(',', $given_lang, 2);
         } 
-        else if ( !empty($_SERVER['HTTP_USER_AGENT']) )
+      else if ( !empty($_SERVER['HTTP_USER_AGENT']) )
         {
-            // get language from browser's user-agent
-            $browser = preg_replace("/^.*\((.*)\).*/", "\\1", 
-                                    $_SERVER['HTTP_USER_AGENT']);
-            list(,,,$browser_language) = explode(';', $browser);
-            $this->_browser_default_language = 
-                strtr($browser_language, '-', '_');
+	  // get language from browser's user-agent
+	  $browser = preg_replace("/^.*\((.*)\).*/", "\\1", 
+				  $_SERVER['HTTP_USER_AGENT']);
+	  list(,,,$browser_language) = explode(';', $browser);
+	  $this->_browser_default_language = 
+	    strtr($browser_language, '-', '_');
         }
-        return !empty($this->_browser_default_language);
+      if ($override_lang != null) { 
+	$this->_browser_default_language = strtolower($override_lang);
+      }
+      return !empty($this->_browser_default_language);
     }
-
+    
     /**
      * This is where the main guts of this code takes place. I'm actually
      * splitting this out from the constructor because I think that it is
