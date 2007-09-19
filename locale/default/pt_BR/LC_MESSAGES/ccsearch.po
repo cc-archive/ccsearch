@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-17 10:22-0700\n"
+"POT-Creation-Date: 2007-09-18 16:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: Brazilian Portuguese <cc-devel@lists.ibiblio.org>\n"
@@ -16,104 +16,108 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:57
+#: index.php:62
 msgid "Help Translate"
 msgstr ""
 
-#: index.php:76 index.php:139
+#: index.php:81 index.php:158
 msgid "Creative Commons"
 msgstr ""
 
-#: index.php:76
+#: index.php:81
 msgid "Search"
 msgstr ""
 
-#: index.php:89
+#: index.php:95
 #, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr ""
 
-#: index.php:102
+#: index.php:111
 msgid "Search for works I can use for commercial purposes."
 msgstr ""
 
-#: index.php:104
+#: index.php:115
 msgid "Search for works I can modify, adapt, or build upon."
 msgstr ""
 
-#: index.php:106
+#: index.php:123
 msgid "Understand your search results"
 msgstr ""
 
-#: index.php:108 index.php:109
+#: index.php:125 index.php:126
 msgid "What is this?"
 msgstr ""
 
-#: index.php:112
+#: index.php:129
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr ""
 
-#: index.php:113 index.php:114
+#: index.php:130 index.php:131
 msgid "Content Directories"
 msgstr ""
 
-#: index.php:116
+#: index.php:133
 msgid "Only show search results"
 msgstr ""
 
-#: index.php:117 index.php:118
+#: index.php:134 index.php:135
 msgid "Remove Frame"
 msgstr ""
 
-#: index.php:126 index.php:127
+#: index.php:140 index.php:141
 msgid "Web Search"
 msgstr ""
 
-#: index.php:126
+#: index.php:140
 msgid "Google"
 msgstr ""
 
-#: index.php:127
+#: index.php:141
 msgid "Yahoo"
 msgstr ""
 
-#: index.php:128
+#: index.php:142
 msgid "Image Search"
 msgstr ""
 
-#: index.php:128
+#: index.php:142
 msgid "flickr"
 msgstr ""
 
-#: index.php:129
+#: index.php:143
 msgid "Video Search"
 msgstr ""
 
-#: index.php:129
+#: index.php:143
 msgid "blip.tv"
 msgstr ""
 
-#: index.php:130 index.php:131
+#: index.php:144 index.php:147 index.php:148
 msgid "Music Search"
 msgstr ""
 
-#: index.php:130
+#: index.php:145
+msgid "Media Search"
+msgstr ""
+
+#: index.php:147
 msgid "jamendo"
 msgstr ""
 
-#: index.php:131
+#: index.php:148
 msgid "ccMixter"
 msgstr ""
 
-#: index.php:132
+#: index.php:149
 msgid "Clip Art Search"
 msgstr ""
 
-#: index.php:132
+#: index.php:149
 msgid "Open Clip Art Library"
 msgstr ""
 
-#: index.php:140
+#: index.php:158
 msgid "Contact"
 msgstr ""
 

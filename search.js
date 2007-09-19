@@ -331,3 +331,9 @@ function clickFox() {
 function breakOut() {
 	if (url.length > 10) window.location = url;
 }
+
+function onLanguageChange() {
+	/* get value of the language */
+	/* do something useful with that */
+	/* FIXME */
+}
