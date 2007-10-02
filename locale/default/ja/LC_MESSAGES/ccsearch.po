@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ccSearch\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-07-08 21:19+0900\n"
+"Last-Translator: Takashi Tsuda <pixyserbia@gmail.com>\n"
+"Language-Team: CCJP <info@creativecommons.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: index.php:57
+msgid "Help Translate"
+msgstr "ÝõÎØë×"
+
+#: index.php:76
+#: index.php:139
+msgid "Creative Commons"
+msgstr "Creative Commons"
+
+#: index.php:76
+msgid "Search"
+msgstr "¡÷"
+
+#: index.php:89
+#, php-format
+msgid "Thanks for using CC Search via %sFirefox%s."
+msgstr "%sFirefox%s¡«éccSearchòÈÃÆ¤¿À­¢ê¬È¦´¶¤Þ¹"
+
+#: index.php:102
+msgid "Search for works I can use for commercial purposes."
+msgstr ""
+
+#: index.php:104
+msgid "Search for works I can modify, adapt, or build upon."
+msgstr ""
+
+#: index.php:106
+msgid "Understand your search results"
+msgstr ""
+
+#: index.php:108
+#: index.php:109
+msgid "What is this?"
+msgstr "³ìÏ¿©"
+
+#: index.php:112
+msgid "Browse directories of licensed images, sounds, videos and more"
+msgstr ""
+
+#: index.php:113
+#: index.php:114
+msgid "Content Directories"
+msgstr "Content Directories"
+
+#: index.php:116
+msgid "Only show search results"
+msgstr "¡÷ëÌÎßò½¨"
+
+#: index.php:117
+#: index.php:118
+msgid "Remove Frame"
+msgstr "Õì¼àòÃ¹"
+
+#: index.php:126
+#: index.php:127
+msgid "Web Search"
+msgstr "¦§Ö¡÷"
+
+#: index.php:126
+msgid "Google"
+msgstr "Google"
+
+#: index.php:127
+msgid "Yahoo"
+msgstr "Yahoo"
+
+#: index.php:128
+msgid "Image Search"
+msgstr "èü¡÷"
+
+#: index.php:128
+msgid "flickr"
+msgstr "flickr"
+
+#: index.php:129
+msgid "Video Search"
+msgstr "Çü¡÷"
+
+#: index.php:129
+msgid "blip.tv"
+msgstr "blip.tv"
+
+#: index.php:130
+#: index.php:131
+msgid "Music Search"
+msgstr "»Ú¡÷"
+
+#: index.php:130
+msgid "jamendo"
+msgstr "jamendo"
+
+#: index.php:131
+msgid "ccMixter"
+msgstr "ccMixter"
+
+#: index.php:132
+msgid "Clip Art Search"
+msgstr "Clip Art Search"
+
+#: index.php:132
+msgid "Open Clip Art Library"
+msgstr "Open Clip Art Library"
+
+#: index.php:140
+msgid "Contact"
+msgstr "¢í"
+
+#: cc-language-ui.php:178
+msgid "Language"
+msgstr "Àì"
