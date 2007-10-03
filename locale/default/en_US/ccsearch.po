@@ -18,7 +18,7 @@ msgstr ""
 
 #: index.php:62
 msgid "Help Translate"
-msgstr ""
+msgstr "Help Translate"
 
 #: index.php:81 index.php:158
 msgid "Creative Commons"
