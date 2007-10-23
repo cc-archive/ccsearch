@@ -22,49 +22,54 @@
  *
  */
 
+// turn off i18n for now.
+$use_i18n = false;
+
 require_once('cc-defines.php');
 require_once('cc-language.php');
 require_once('cc-language-ui.php');
 
-session_start();
+if ($use_i18n) {
+  session_start();
 
-// This nastiness handles session storage 
-$cc_lang = &$_SESSION['lang'];
-if (DEBUG) {
-  echo "<pre>";
-  print_r($_SESSION);
-  echo "</pre>";
+  // This nastiness handles session storage 
+  $cc_lang = &$_SESSION['lang'];
+  if (DEBUG) {
+    echo "<pre>";
+    print_r($_SESSION);
+    echo "</pre>";
+  }
+
+  if ( ! isset($cc_lang) || isset($_REQUEST['update'] ) ) {
+    $cc_lang = new CCLanguage($_REQUEST['lang']);
+      if (DEBUG) echo "<p>created new object</p>";
+  }
+  else 
+  {
+      if (DEBUG) echo "<p>Using session language</p>";
+
+      if ( isset($_REQUEST['localepref']) ) {
+          $cc_lang->SetLocalePref($_REQUEST['localepref']);
+          if (DEBUG) echo "<p>set new locale pref</p>";
+      }
+
+      if ( isset($_REQUEST['lang']) ) {
+          $cc_lang->SetLanguage($_REQUEST['lang']);
+          if (DEBUG) echo "<p>set new language</p>";
+      }
+  }
+
+  $cc_lang->Init();
+  $cc_lang_help = 
+      new CCLanguageUIHelp(
+          "http://translate.creativecommons.org/projects/ccsearch",
+          _("Help Translate"));
+  $cc_lang_selector = 
+      new CCLanguageUISelector(&$cc_lang, 
+                               "<div id=\"language_selector\">", 
+                               $cc_lang_help->get('_text') . "</div>");
+
 }
-
-if ( ! isset($cc_lang) || isset($_REQUEST['update'] ) ) {
-  $cc_lang = new CCLanguage($_REQUEST['lang']);
-    if (DEBUG) echo "<p>created new object</p>";
-}
-else 
-{
-    if (DEBUG) echo "<p>Using session language</p>";
-
-    if ( isset($_REQUEST['localepref']) ) {
-        $cc_lang->SetLocalePref($_REQUEST['localepref']);
-        if (DEBUG) echo "<p>set new locale pref</p>";
-    }
-
-    if ( isset($_REQUEST['lang']) ) {
-        $cc_lang->SetLanguage($_REQUEST['lang']);
-        if (DEBUG) echo "<p>set new language</p>";
-    }
-}
-
-$cc_lang->Init();
-$cc_lang_help = 
-    new CCLanguageUIHelp(
-        "http://translate.creativecommons.org/projects/ccsearch",
-        _("Help Translate"));
-$cc_lang_selector = 
-    new CCLanguageUISelector(&$cc_lang, 
-                             "<div id=\"language_selector\">", 
-                             $cc_lang_help->get('_text') . "</div>");
-
 //$cc_lang->DebugLanguages();
 //echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 //echo "<pre>";
@@ -75,7 +80,11 @@ $cc_lang_selector =
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<? if ($use_i18n) { ?>
 <html lang="<?php echo $cc_lang->get('_language_xml') ?>" xml:lang="<?php echo $cc_lang->get('_language_xml') ?>" xmlns="http://www.w3.org/1999/xhtml">
+<? } else { ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<? } ?>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title><?php echo _('Creative Commons') . " " . _('Search') ?></title>
@@ -155,7 +164,7 @@ $cc_lang_selector =
     </div>
     
     <div id="footer">
-      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> |     <?php $cc_lang_selector->output(); ?>
+      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
