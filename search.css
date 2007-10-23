@@ -111,13 +111,13 @@ iframe {
 
 #left {
 	float: left;
-	margin-left: 1em;
+	margin-left: 0.5em;
 	line-height: 60px;
 }
 #right {
 	float: left;
 	font-size: 0.8em;
-	margin-left: 2ex;
+	margin-left: 5px;
 	background-color: #c8d7a0;
 	border: 1px solid #729032;
 	padding: 3px 0 3px 5px;
