@@ -144,13 +144,14 @@ if ($use_i18n) {
           <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
           <?php echo _('Remove Frame') ?></a>
         &nbsp;&nbsp;
-        <div id="campaign">
-    			<div class="progress" onclick="window.location = 'http://support.creativecommons.org';"><span>&nbsp;</span></div>
-				  <div class="results"><a href="http://support.creativecommons.org/"><?= money_format('$%.0i', file_get_contents('http://creativecommons.org/includes/total.txt')) ?> / $500,000</a></div>
-			  </div> 
-			  
+        <div id="support-box">
+          <a href="http://support.creativecommons.org/"><img src="http://creativecommons.org/images/support/2007/support-btn-1.png" border="0"/></a></span>
+          <div id="campaign">
+      			<div class="progress" onclick="window.location = 'http://support.creativecommons.org';"><span>&nbsp;</span></div>
+  				  <div class="results"><a href="http://support.creativecommons.org/"><?= money_format('$%.0i', file_get_contents('http://creativecommons.org/includes/total.txt')) ?> / $500,000</a></div>
+  			  </div> 
+          </div>
       </div>
-      <span style="float: right"><a href="http://support.creativecommons.org/"><img src="http://creativecommons.org/images/support/2007/support-btn-1.png" border="0"/></a></span>
       <div id="menu">
 	<ul class="tabs">
           <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>

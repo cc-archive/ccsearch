@@ -209,11 +209,15 @@ ul.tabs a {
 }
 
 /* PROGRESS METER */
-    #campaign {
+#support-box {
     position: absolute;
     top:85px;
     right: 10px;
     width: 150px;
+
+}
+    #campaign {
+position: relative;
 padding-top: 0px;
 margin-bottom: 10px;
 }
