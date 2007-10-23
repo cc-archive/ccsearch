@@ -150,7 +150,7 @@ if ($use_i18n) {
 			  </div> 
 			  
       </div>
-      <span style="float: right"><a href="http://creativecommons.org/support/"><img src="http://creativecommons.org/images/support/2006/spread-3.gif" border="0"/></a></span>
+      <span style="float: right"><a href="http://support.creativecommons.org/"><img src="http://creativecommons.org/images/support/2007/support-btn-1.png" border="0"/></a></span>
       <div id="menu">
 	<ul class="tabs">
           <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>
