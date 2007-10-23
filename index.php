@@ -97,6 +97,7 @@ if ($use_i18n) {
     <style type="text/css" media="screen">
       @import "search.css";
     </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
   </head>
@@ -142,6 +143,12 @@ if ($use_i18n) {
         <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
           <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
           <?php echo _('Remove Frame') ?></a>
+        &nbsp;&nbsp;
+        <div id="campaign">
+    			<div class="progress" onclick="window.location = 'http://support.creativecommons.org';"><span>&nbsp;</span></div>
+				  <div class="results"><a href="http://support.creativecommons.org/"><?= money_format('$%.0i', file_get_contents('http://creativecommons.org/includes/total.txt')) ?> / $500,000</a></div>
+			  </div> 
+			  
       </div>
       <span style="float: right"><a href="http://creativecommons.org/support/"><img src="http://creativecommons.org/images/support/2006/spread-3.gif" border="0"/></a></span>
       <div id="menu">
