@@ -143,14 +143,6 @@ if ($use_i18n) {
         <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
           <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
           <?php echo _('Remove Frame') ?></a>
-        &nbsp;&nbsp;
-        <div id="support-box">
-          <a href="http://support.creativecommons.org/"><img src="http://creativecommons.org/images/support/2007/support-btn-1.png" border="0"/></a></span>
-          <div id="campaign">
-      			<div class="progress" onclick="window.location = 'http://support.creativecommons.org';"><span>&nbsp;</span></div>
-  				  <div class="results"><a href="http://support.creativecommons.org/"><?= money_format('$%.0i', file_get_contents('http://creativecommons.org/includes/total.txt')) ?> / $500,000</a></div>
-  			  </div> 
-          </div>
       </div>
       <div id="menu">
 	<ul class="tabs">
@@ -172,7 +164,7 @@ if ($use_i18n) {
     </div>
     
     <div id="footer">
-      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
+      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/">Support CC</a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
