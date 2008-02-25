@@ -267,7 +267,7 @@ function doSearch() {
 				break;
 				
 			case "blip":
-				url = 'http://blip.tv/posts/view/?search=' + query.value + '&section=/posts/view&sort=popularity&' + rights;
+				url = 'http://blip.tv/posts/view/?q=' + query.value + '&section=/posts/view&sort=popularity&' + rights;
 				break;
 				
 			case "flickr":
