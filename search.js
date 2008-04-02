@@ -116,6 +116,12 @@ function resetQuery() {
 
 function setEngine(e) {
 	var previous = engine;
+
+    var query = id("q");
+    if ( query.className == "inactive" ) {
+        query.value = "flowers";
+        query.className = "active";
+    }
 	
 	engine = e;
 	try { id(previous).className="inactive"; } catch(err) {}
