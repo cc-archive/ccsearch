@@ -91,5 +91,5 @@ define('CC_LANG_LOCALE_DOMAIN', CC_PROJECT_SHORT_NAME);
  * @see CCLanguage::SetDomain()
  * @see CCLanguage::GetDomain()
  */
-define('CC_LANG_PO_FN', CC_LANG_LOCALE_DOMAIN . '.po');
+define('CC_LANG_PO_FN', CC_LANG_LOCALE_DOMAIN . '.mo');
 
