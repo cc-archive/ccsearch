@@ -23,7 +23,7 @@
  */
 
 // turn off i18n for now.
-$use_i18n = false;
+$use_i18n = true;
 
 require_once('cc-defines.php');
 require_once('cc-language.php');
