@@ -1,0 +1,6 @@
+# Pootle preferences for project ccsearch, language af
+
+rights:
+  default = u'view, suggest, archive, pocompile'
+  fwolff = u'view, suggest, translate, review, archive, pocompile'
+  nobody = u'view'
