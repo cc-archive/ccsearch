@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 16:14-0700\n"
+"POT-Creation-Date: 2008-04-03 16:56-0700\n"
 "PO-Revision-Date: 2006-10-17 01:40-0800\n"
 "Last-Translator: deerfang <lu@deerfang.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -15,109 +15,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:68
+#: index.php:66
 msgid "Help Translate"
 msgstr "帮忙翻译"
 
-#: index.php:92 index.php:169
+#: index.php:90 index.php:167
 msgid "Creative Commons"
 msgstr "创作共用"
 
-#: index.php:92
+#: index.php:90
 msgid "Search"
 msgstr "搜索"
 
-#: index.php:107
+#: index.php:105
 #, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "感谢您通过Firefox使用CC搜索"
 
-#: index.php:123
+#: index.php:121
 msgid "Search for works I can use for commercial purposes."
 msgstr "搜索我可用于商业用途的作品"
 
-#: index.php:127
+#: index.php:125
 msgid "Search for works I can modify, adapt, or build upon."
 msgstr "搜索我可更改或添加的作品"
 
-#: index.php:135
+#: index.php:133
 msgid "Understand your search results"
 msgstr "理解你的搜索结果"
 
-#: index.php:137 index.php:138
+#: index.php:135 index.php:136
 msgid "What is this?"
 msgstr "这是什么？"
 
-#: index.php:141
+#: index.php:139
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr "浏览有许可的图片和声音的目录 "
 
-#: index.php:142 index.php:143
+#: index.php:140 index.php:141
 msgid "Content Directories"
 msgstr "内容目录"
 
-#: index.php:145
+#: index.php:143
 msgid "Only show search results"
 msgstr "只显示搜索结果"
 
-#: index.php:146 index.php:147
+#: index.php:144 index.php:145
 msgid "Remove Frame"
 msgstr "删除框架"
 
-#: index.php:151 index.php:152
+#: index.php:149 index.php:150
 msgid "Web Search"
 msgstr "网络搜索"
 
-#: index.php:151
+#: index.php:149
 msgid "Google"
 msgstr "Google"
 
-#: index.php:152
+#: index.php:150
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:153
+#: index.php:151
 msgid "Image Search"
 msgstr "图片搜索"
 
-#: index.php:153
+#: index.php:151
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:154
+#: index.php:152
 msgid "Video Search"
 msgstr "搜索录像"
 
-#: index.php:154
+#: index.php:152
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:155 index.php:158 index.php:159
+#: index.php:153 index.php:156 index.php:157
 msgid "Music Search"
 msgstr "搜索音乐"
 
-#: index.php:156
+#: index.php:154
 #, fuzzy
 msgid "Media Search"
 msgstr "搜索音乐"
 
-#: index.php:158
+#: index.php:156
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:159
+#: index.php:157
 msgid "ccMixter"
 msgstr "统计"
 
-#: index.php:160
+#: index.php:158
 msgid "Clip Art Search"
 msgstr "搜索矢量图"
 
-#: index.php:160
+#: index.php:158
 msgid "Open Clip Art Library"
 msgstr "开放矢量图库"
 
-#: index.php:169
+#: index.php:167
 msgid "Contact"
 msgstr "联系"
 
