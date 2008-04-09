@@ -3,3 +3,9 @@
 > 2008/4/4, Mike Linksvayer <ml@creativecommons.org>: 
 >> Could the language drop down expose language names instead of language
 >>  codes to the end user?
+
+The way to do this is to look up lang.$code in cc_org, in its own language!
+
+2.
+
+"Enter search query" and "go" should be i18n'd
