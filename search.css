@@ -51,7 +51,7 @@ iframe {
 #footer {
 	clear: both;
 	text-align: center;
-	font-size: 9px;
+	font-size: 0.8em;
 	margin-top: 2px;
 }
 
@@ -125,7 +125,7 @@ iframe {
 
 #options {
 	padding: 3px 5px 5px;
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 #subNFO { margin: 5px 0 -4px 2px; }
 #subCC { margin: 5px 0 -4px 2px; }

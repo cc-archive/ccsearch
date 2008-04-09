@@ -7,11 +7,6 @@ The way to do this is to look up lang.$code in cc_org, in its own language!
 
 2. Translate "by Creative Commons"
 
-3. from Bob @ CC TW: The font size of strings like "remove frame" is
-too small for Chinese characters (see the attachment), however it is
-acceptable to English and other latin letters... about 12-14px would
-be better (for #options, in #footer we could use 11-12px). 
-
 4. Update default iframe text per ML email:
 
 Enter search terms above and click "go" to find <a
