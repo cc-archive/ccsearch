@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 16:56-0700\n"
+"POT-Creation-Date: 2008-04-09 10:53-0700\n"
 "PO-Revision-Date: 2006-10-17 01:40-0800\n"
 "Last-Translator: deerfang <lu@deerfang.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -31,6 +31,10 @@ msgstr "搜索"
 #, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "感谢您通过Firefox使用CC搜索"
+
+#: index.php:115
+msgid "go"
+msgstr ""
 
 #: index.php:121
 msgid "Search for works I can use for commercial purposes."

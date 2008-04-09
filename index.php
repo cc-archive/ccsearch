@@ -112,7 +112,7 @@ if ($use_i18n) {
         <form onsubmit="return doSearch()">
           <div id="left">
             <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
-            <input type="submit" name="some_name" value="go" id="qsubmit" />
+            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
 	    
           </div>
           <div id="right">
