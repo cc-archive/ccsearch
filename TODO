@@ -1,12 +1,3 @@
-1. from ML
-
-> 2008/4/4, Mike Linksvayer <ml@creativecommons.org>: 
->> Could the language drop down expose language names instead of language
->>  codes to the end user?
-The way to do this is to look up lang.$code in cc_org, in its own language!
-* use dgettext("cc_org", $message)
-* Have to find cc_org
-
 2. Translate "by Creative Commons"
 
 4. Update default iframe text per ML email:
