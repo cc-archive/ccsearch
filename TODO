@@ -3,9 +3,36 @@
 > 2008/4/4, Mike Linksvayer <ml@creativecommons.org>: 
 >> Could the language drop down expose language names instead of language
 >>  codes to the end user?
-
 The way to do this is to look up lang.$code in cc_org, in its own language!
 
-2.
+2. Translate default text ("enter query"), "go" button, "by Creative
+Commons", "Support CC"
 
-"Enter search query" and "go" should be i18n'd
+3. from Bob @ CC TW: The font size of strings like "remove frame" is
+too small for Chinese characters (see the attachment), however it is
+acceptable to English and other latin letters... about 12-14px would
+be better (for #options, in #footer we could use 11-12px). 
+
+4. Update default iframe text per ML email:
+
+Enter search terms above and click "go" to find <a
+href="http://creativecommons.org" target="_new">Creative
+Commons</a>-licensed media that you can legally share and reuse for
+free.
+
+(Left column)
+<h3>Learn About Creative Commons</h3>
+<a href="http://support.creativecommons.org/videos#wwt"
+target="_new">[screenshot of WWT]</a>
+<br/><small>For a quick intro to Creative Commons, check out this
+short video, entitled "Wanna Work Together?"</small>
+
+(Right column)
+<h3>Using CC Search with Firefox</h3>
+<a href="http://support.creativecommons.org/videos#ccsearch-firefox"
+target="_new">[screenshot of ccsearch-firefox screencast]</a>
+<br/><small>For a quick explanation of how to use this search with
+Firefox, including <a
+href="http://wiki.creativecommons.org/Firefox_and_CC_Search"
+target="_new">how to change your search engine</a>, watch this
+video.</a></small>
