@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-09 10:56-0700\n"
+"POT-Creation-Date: 2008-04-09 11:10-0700\n"
 "PO-Revision-Date: 2008-04-04 04:34-0500\n"
 "Last-Translator: Bob Chao <bobchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Help Translate"
 msgstr "協助翻譯"
 
-#: index.php:90 index.php:167
+#: index.php:90 index.php:172
 msgid "Creative Commons"
 msgstr "創用 CC"
 
@@ -28,104 +28,108 @@ msgstr "創用 CC"
 msgid "Search"
 msgstr "搜尋"
 
-#: index.php:105
+#: index.php:98
+msgid "Enter search query"
+msgstr ""
+
+#: index.php:110
 #, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "感謝您以 %sFirefox%s 使用創用 CC 搜尋"
 
-#: index.php:115
+#: index.php:120
 msgid "go"
 msgstr ""
 
-#: index.php:121
+#: index.php:126
 msgid "Search for works I can use for commercial purposes."
 msgstr "搜尋可以作為商業用途的素材。"
 
-#: index.php:125
+#: index.php:130
 msgid "Search for works I can modify, adapt, or build upon."
 msgstr "搜尋可以修改、創作衍生著作的素材。"
 
-#: index.php:133
+#: index.php:138
 msgid "Understand your search results"
 msgstr "深入瞭解創用 CC 搜尋"
 
-#: index.php:135 index.php:136
+#: index.php:140 index.php:141
 msgid "What is this?"
 msgstr "這是什麼東西？"
 
-#: index.php:139
+#: index.php:144
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr "瀏覽各種以創用 CC 條款授權的圖片、音效、影片等素材"
 
-#: index.php:140 index.php:141
+#: index.php:145 index.php:146
 msgid "Content Directories"
 msgstr "素材目錄"
 
-#: index.php:143
+#: index.php:148
 msgid "Only show search results"
 msgstr "只顯示搜尋結果頁面"
 
-#: index.php:144 index.php:145
+#: index.php:149 index.php:150
 msgid "Remove Frame"
 msgstr "脫離頁框"
 
-#: index.php:149 index.php:150
+#: index.php:154 index.php:155
 msgid "Web Search"
 msgstr "網路搜尋"
 
-#: index.php:149
+#: index.php:154
 msgid "Google"
 msgstr "Google"
 
-#: index.php:150
+#: index.php:155
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:151
+#: index.php:156
 msgid "Image Search"
 msgstr "圖片搜尋"
 
-#: index.php:151
+#: index.php:156
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:152
+#: index.php:157
 msgid "Video Search"
 msgstr "影片搜尋"
 
-#: index.php:152
+#: index.php:157
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:153 index.php:156 index.php:157
+#: index.php:158 index.php:161 index.php:162
 msgid "Music Search"
 msgstr "音樂搜尋"
 
-#: index.php:154
+#: index.php:159
 msgid "Media Search"
 msgstr "多媒體搜尋"
 
-#: index.php:156
+#: index.php:161
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:157
+#: index.php:162
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:158
+#: index.php:163
 msgid "Clip Art Search"
 msgstr "美工圖片搜尋"
 
-#: index.php:158
+#: index.php:163
 msgid "Open Clip Art Library"
 msgstr "開放美工圖庫"
 
-#: index.php:167
+#: index.php:172
 msgid "Contact"
 msgstr "連絡我們"
 
-#: index.php:167
+#: index.php:172
 msgid "Support CC"
 msgstr ""
 
