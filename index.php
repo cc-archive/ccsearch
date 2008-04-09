@@ -164,7 +164,7 @@ if ($use_i18n) {
     </div>
     
     <div id="footer">
-      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/">Support CC</a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
+      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
