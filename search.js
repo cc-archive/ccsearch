@@ -4,7 +4,6 @@
  * 
  */
 
-var d = "Enter search query";
 var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
 var engine = "";
 var rights = "";

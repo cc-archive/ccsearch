@@ -93,6 +93,11 @@ if ($use_i18n) {
     <meta name="description" content="A Creative Commons-based search
                                       search engine of search engines." />
     <meta name="robots" content="index, follow" />
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var d = "<?php echo _('Enter search query');?>";
+    /* ]]> */
+    </script> 
     <script type="text/javascript" src="search.js"></script>
     <style type="text/css" media="screen">
       @import "search.css";
