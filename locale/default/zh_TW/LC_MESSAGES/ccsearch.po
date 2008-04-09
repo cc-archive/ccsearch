@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-09 10:53-0700\n"
+"POT-Creation-Date: 2008-04-09 10:56-0700\n"
 "PO-Revision-Date: 2008-04-04 04:34-0500\n"
 "Last-Translator: Bob Chao <bobchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,6 +124,10 @@ msgstr "開放美工圖庫"
 #: index.php:167
 msgid "Contact"
 msgstr "連絡我們"
+
+#: index.php:167
+msgid "Support CC"
+msgstr ""
 
 #: cc-language-ui.php:178
 msgid "Language"

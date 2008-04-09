@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-09 10:53-0700\n"
+"POT-Creation-Date: 2008-04-09 10:56-0700\n"
 "PO-Revision-Date: 2006-10-17 01:40-0800\n"
 "Last-Translator: deerfang <lu@deerfang.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -124,6 +124,10 @@ msgstr "开放矢量图库"
 #: index.php:167
 msgid "Contact"
 msgstr "联系"
+
+#: index.php:167
+msgid "Support CC"
+msgstr ""
 
 #: cc-language-ui.php:178
 msgid "Language"
