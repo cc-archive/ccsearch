@@ -3,10 +3,3 @@
 > 2008/4/4, Mike Linksvayer <ml@creativecommons.org>: 
 >> Could the language drop down expose language names instead of language
 >>  codes to the end user?
-
-2. from NY
-
-Done; there seems to be a bug in the UI code.  If you go to
-http://search.creativecommons.org/?request=update&lang=zh_TW the
-drop-down shows zh_CN selected.  I'm uncertain whether the zh_TW or
-zh_CN catalog is actually being used.
