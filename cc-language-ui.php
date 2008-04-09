@@ -164,6 +164,7 @@ class CCLanguageUISelector extends CCLanguageUI
         $this->_use_autoload = $use_autoload;
         $this->_text_pre = $text_pre;
         $this->_text_post = $text_post;
+        $this->_original_language = $cc_lang->GetLanguage(); 
 
         parent::CCLanguageUI($cc_lang); // this runs the init() code polymorph
     }
@@ -183,11 +184,19 @@ class CCLanguageUISelector extends CCLanguageUI
         $this->_text .= "<select name=\"lang\" id=\"lang\"$onrelease_text>";
         foreach ( $this->_cc_lang->getPossibleLanguages() as $key => $value )
         {
+            $language_pretty_name = grab_string($this->_original_language, $key, "lang.$key", "cc_org");
+
+            if ($language_pretty_name == ("lang." . $key)) {
+                // revert to using just the language short name - but this should never happen
+                $language_pretty_name = $key;
+            }
             $selected_text = "";
             if ($this->_cc_lang->getLanguage() == $key )
                 $selected_text = " selected=\"selected\"";
             $this->_text .= 
-                "<option value=\"$value\"$selected_text>$key</option>\n";
+                "<option value=\"$key\"$selected_text>" .
+                $language_pretty_name .
+                "</option>\n";
         }
         $this->_text .= "</select>\n";
 
@@ -241,6 +250,29 @@ class CCLanguageUIHelp extends CCLanguageUI
         if ( ! empty($this->_text_post) )
             $this->_text .= $this->_text_post;
     }
+}
+
+// Lame hack to bind cc_org text domain to the directory it lives in
+// Is there a better place in this code for this?
+bindtextdomain("cc_org", "./cc_org");
+bind_textdomain_codeset("cc_org", 'UTF-8');
+
+function grab_string($old_lang,
+                     $temp_lang,
+                     $string_id,
+                     $domain) {
+    // Totally lame non-thread-safe hack:
+    // That is to say, a threading Apache MPM with PHP will enjoy race conditions with this code!
+    // But hey - that's true with any use of gettext, generally speaking.
+
+    putenv("LANGUAGE=$temp_lang");
+    putenv("LANG=$temp_lang");
+    setlocale(LC_MESSAGES, "$temp_lang.UTF-8");
+    $result = dgettext($domain, $string_id);
+    putenv("LANGUAGE=$old_lang");
+    putenv("LANG=$old_lang");
+    setlocale(LC_MESSAGES, "$old_lang.UTF-8");
+    return $result;
 }
 
 ?>

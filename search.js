@@ -359,7 +359,7 @@ function grabChosenLanguage() {
 	var select_child = select_box.childNodes[i];
 	if (select_child.nodeType == 1) { 
 	    if (select_child.selected) {
-		return select_child.text;
+		return select_child.value;
 	    }
 	}
     }
