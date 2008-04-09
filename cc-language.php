@@ -255,6 +255,7 @@ class CCLanguage
 	
 	foreach ($lang_possible as $key => $value) {
 	  $lowerkey = strtolower($key);
+	  $lang_pref = strtolower($lang_pref);
 	  if ($lowerkey == $lang_pref) {
 	    $this->_language = $key;
 	    $this->_language_xml = str_replace('_', '-', $this->_language);
