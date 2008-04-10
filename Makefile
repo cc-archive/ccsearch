@@ -27,6 +27,6 @@ update-po-files:
 check: 
 	$(MAKE) -f Makefile.language check
 
-compile-cc_org_po-files:
+compile-cc_org-po-files:
 	for k in cc_org/*; do mkdir -p "$$k/LC_MESSAGES"; done
 	for k in cc_org/*/cc_org.po; do msgfmt "$$k" -o "$${k%cc_org.po}"/LC_MESSAGES/cc_org.mo ; done

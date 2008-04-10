@@ -91,7 +91,7 @@ all: $(POTFILES) $(POTFILE) $(CATALOGS)
 # before had: all: $(POTFILE) $(POTFILES) $(POFILES) $(CATALOGS)
 
 update-po-files:
-	$(UPDATE_PO_SCRIPT)	
+	$(UPDATE_PO_SCRIPT)	locale
 
 create-pot:
 	$(XGETTEXT) $(POTFILES) -o $(POTFILE)
