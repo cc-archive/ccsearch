@@ -2,24 +2,4 @@
 
 4. Update default iframe text per ML email:
 
-Enter search terms above and click "go" to find <a
-href="http://creativecommons.org" target="_new">Creative
-Commons</a>-licensed media that you can legally share and reuse for
-free.
-
-(Left column)
-<h3>Learn About Creative Commons</h3>
-<a href="http://support.creativecommons.org/videos#wwt"
-target="_new">[screenshot of WWT]</a>
-<br/><small>For a quick intro to Creative Commons, check out this
-short video, entitled "Wanna Work Together?"</small>
-
-(Right column)
-<h3>Using CC Search with Firefox</h3>
-<a href="http://support.creativecommons.org/videos#ccsearch-firefox"
-target="_new">[screenshot of ccsearch-firefox screencast]</a>
-<br/><small>For a quick explanation of how to use this search with
-Firefox, including <a
-href="http://wiki.creativecommons.org/Firefox_and_CC_Search"
-target="_new">how to change your search engine</a>, watch this
-video.</a></small>
+(Alex did this magic - now it has to be i18n'd)
