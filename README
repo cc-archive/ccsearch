@@ -1,0 +1,6 @@
+To recompile the PO files into MO files:
+    $ make
+
+To regenerate the PO file template:
+    $ make full
+

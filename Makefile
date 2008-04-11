@@ -11,9 +11,13 @@
 #
 
 all:
+	$(MAKE) -f Makefile.language just_mo
+	$(MAKE) compile-cc_org-po-files
+
+full:
 	$(MAKE) -f Makefile.language all
 	$(MAKE) update-po-files
-	$(MAKE) compile-cc_org-po-files
+	$(MAKE) all
 
 clean:
 	$(MAKE) -f Makefile.language clean 

@@ -87,6 +87,8 @@ UPDATE_PO_SCRIPT = ./bin/update_po_files.sh
 
 # NOTE: if POTFILES directive is working, add first to make all
 all: $(POTFILES) $(POTFILE) $(CATALOGS)
+just_mo: $(CATALOGS)
+	echo "Just mo!"
 
 # before had: all: $(POTFILE) $(POTFILES) $(POFILES) $(CATALOGS)
 
