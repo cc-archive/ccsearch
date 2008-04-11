@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-09 17:09-0700\n"
+"POT-Creation-Date: 2008-04-11 11:36-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -35,6 +35,10 @@ msgstr ""
 #: index.php:110
 #, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
+msgstr ""
+
+#: index.php:115
+msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr ""
 
 #: index.php:120

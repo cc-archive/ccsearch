@@ -112,7 +112,7 @@ if ($use_i18n) {
       <div id="header">
         <div id="title">
 	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
-	  <div id="title-by">by <a href="http://creativecommons.org/">Creative Commons</a></div>
+	  <div id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></div>
 	</div>
         <form onsubmit="return doSearch()">
           <div id="left">
