@@ -87,6 +87,8 @@ UPDATE_PO_SCRIPT = ./bin/update_po_files.sh
 
 # NOTE: if POTFILES directive is working, add first to make all
 all: $(POTFILES) $(POTFILE) $(CATALOGS)
+	echo "All, okay."
+
 just_mo: $(CATALOGS)
 	echo "Just mo!"
 
@@ -95,14 +97,12 @@ just_mo: $(CATALOGS)
 update-po-files:
 	$(UPDATE_PO_SCRIPT)	locale
 
-create-pot:
+$(POTFILE): $(POTFILES)
 	$(XGETTEXT) $(POTFILES) -o $(POTFILE)
 
 clean:
 	rm -f $(CATALOGS)
 	rm -f $(POTFILE)
-	#rm -f POTFILES
-	@# do not delete POFILES (only the main POTFILE which is generated)
 
 clean-all: clean-mo
 	@#find . -depth -name "*.mo" -type f -exec rm -Rf {} \;
@@ -117,15 +117,20 @@ check:
 
 # POTFILE: update-po-files
 
-$(POTFILE): create-pot
+#$(POTFILE): create-pot
 
-$(POFILES): update-po-files
+#$(POFILES): update-po-files
 
-$(CATALOGS):
-	$(MSGFMT) `dirname $@`/`basename $@ mo`po -o $@ 
+#$(CATALOGS):
+#	$(MSGFMT) `dirname $@`/`basename $@ mo`po -o $@ 
 
-.po.mo:
-	$(MSGFMT) -o $@ $<
+%.mo: %.po
+	$(MSGFMT) -o $*.mo $*.po
+
+%.po: $(POTFILE)
+	cp $*.po $*.po.old && \
+		msgmerge $*.po.old ccsearch.pot >> $*.po.tmp && \
+		mv -f $*.po.tmp $*.po
 
 # NOTE: This is disabled currently.
 #
