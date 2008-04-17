@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-11 12:00-0700\n"
+"POT-Creation-Date: 2008-04-17 08:40-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -135,6 +135,28 @@ msgstr ""
 
 #: index.php:172
 msgid "Support CC"
+msgstr ""
+
+#: intro.php:51
+msgid "Learn About Creative Commons"
+msgstr ""
+
+#: intro.php:54
+msgid ""
+"For a quick intro to Creative Commons, check out this short video, entitled "
+"\"<a href=\"http://support.creativecommons.org/videos#wwt\" target=\"_new"
+"\">Wanna Work Together?</a>\""
+msgstr ""
+
+#: intro.php:59
+msgid "Using CC Search with Firefox"
+msgstr ""
+
+#: intro.php:62
+msgid ""
+"For a quick explanation of how to use this search with Firefox, including <a "
+"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
+"\">how to change your search engine</a>, watch this video.</a>"
 msgstr ""
 
 #: cc-language-ui.php:179
