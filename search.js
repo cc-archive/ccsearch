@@ -84,7 +84,7 @@ function setupQuery() {
 	
 	if ((query.value == "") || (query.value == "null")) {
 		query.value = d;
-		window.results.location.href = 'intro.html';
+		window.results.location.href = 'intro.php';
 	} else if (query.value != d){
 		query.className = "active";
 		
