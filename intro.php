@@ -48,18 +48,18 @@
 
   <div id="box">
     <div id="leftcol" class="cols">
-      <h3>Learn About Creative Commons</h3>
+      <h3><?php echo_('Learn About Creative Commons'); ?></h3>
       <a href="http://support.creativecommons.org/videos#wwt" target="_new"><img src="images/wwt.jpg" border="0"/></a>
       <p>
-        <small>For a quick intro to Creative Commons, check out this short video, entitled "<a href="http://support.creativecommons.org/videos#wwt" target="_new">Wanna Work Together?</a>"</small>
+        <small><?php echo_('For a quick intro to Creative Commons, check out this short video, entitled "<a href="http://support.creativecommons.org/videos#wwt" target="_new">Wanna Work Together?</a>"'); ?></small>
       </p>
     </div>
   
     <div id="rightcol" class="cols">
-      <h3>Using CC Search with Firefox</h3>
+      <h3><?php echo _('Using CC Search with Firefox'); ?></h3>
       <a href="http://support.creativecommons.org/videos#ccsearch-firefox" target="_new"><img src="images/ccsearch.jpg" border="0"/></a>
       <p>
-        <small>For a quick explanation of how to use this search with Firefox, including <a href="http://wiki.creativecommons.org/Firefox_and_CC_Search" target="_new">how to change your search engine</a>, watch this video.</a></small>
+        <small><?php echo _('For a quick explanation of how to use this search with Firefox, including <a href="http://wiki.creativecommons.org/Firefox_and_CC_Search" target="_new">how to change your search engine</a>, watch this video.</a>'); ?></small>
       </p>
     </div>
   </div>
