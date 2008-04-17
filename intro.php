@@ -48,7 +48,7 @@
 
   <div id="box">
     <div id="leftcol" class="cols">
-      <h3><?php echo_('Learn About Creative Commons'); ?></h3>
+      <h3><?php echo _('Learn About Creative Commons'); ?></h3>
       <a href="http://support.creativecommons.org/videos#wwt" target="_new"><img src="images/wwt.jpg" border="0"/></a>
       <p>
         <small><?php echo_('For a quick intro to Creative Commons, check out this short video, entitled "<a href="http://support.creativecommons.org/videos#wwt" target="_new">Wanna Work Together?</a>"'); ?></small>
