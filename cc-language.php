@@ -121,6 +121,7 @@ class CCLanguage
         $this->_domain = $domain;
         $this->LoadBrowserDefaultLanguage($override_lang);
         $this->LoadLanguages( $locale_dir );
+        $this->_locale_dir = $locale_dir;
   
         $this->SetLocalePref( $locale );
         
@@ -445,6 +446,8 @@ class CCLanguage
             //CCDebug::Log('Language is disabled, no init');
             return;
         }
+
+        $this->LoadLanguages( $this->_locale_dir );
 
         // set the LANGUAGE environmental variable
         // This one for some reason makes a difference FU@#$%^&*!CK
