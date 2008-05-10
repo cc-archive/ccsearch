@@ -447,6 +447,9 @@ class CCLanguage
             return;
         }
 
+        if (!isset($this->_locale_dir)) {
+            $this->_locale_dir = CC_LANG_LOCALE;
+        }
         $this->LoadLanguages( $this->_locale_dir );
 
         // set the LANGUAGE environmental variable
