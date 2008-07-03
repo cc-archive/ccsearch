@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-17 08:40-0700\n"
-"PO-Revision-Date: 2008-04-04 04:34-0500\n"
+"PO-Revision-Date: 2008-04-06 17:17-0500\n"
 "Last-Translator: Bob Chao <bobchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "協助翻譯"
 
 #: index.php:90 index.php:172
 msgid "Creative Commons"
-msgstr "創用 CC"
+msgstr "Creative Commons"
 
 #: index.php:90
 msgid "Search"
