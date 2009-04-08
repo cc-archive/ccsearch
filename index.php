@@ -169,7 +169,17 @@ if ($use_i18n) {
     </div>
     
     <div id="footer">
-      <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
+      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
+      <div>
+<p>search.creativecommons.org offers convenient access to search
+services provided by other independent organizations. Selecting
+different search options within the result list -- particularly Image
+search for Google and Yahoo -- may lead to the inclusion of results
+which are not Creative Commons licensed.
+You should always verify that the work you are re-using has a Creative
+Commmons license attached to it.
+   </p>   </div>
+
 
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
