@@ -1,6 +1,5 @@
-# Pootle preferences for project ccsearch, language zh_TW
-
 rights:
-  bobchaocc = u'view, suggest, translate, review, archive, pocompile'
-  default = u'view, suggest, archive, pocompile'
+  admin = u'admin,archive,assign,commit,overwrite,pocompile,review,suggest,translate,view'
+  bobchaocc = u'archive,assign,commit,pocompile,review,suggest,translate,view'
+  default = u'archive,pocompile,suggest,view'
   nobody = u'view'

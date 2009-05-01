@@ -1,6 +1,4 @@
-# Pootle preferences for project ccsearch, language en_US
-
 rights:
-  default = u'view, suggest, archive, pocompile'
-  nathan = u'view, suggest, translate, archive, pocompile, admin, commit'
+  default = u'archive,pocompile,suggest,view'
+  nathan = u'admin,archive,commit,pocompile,review,suggest,translate,view'
   nobody = u'view'
