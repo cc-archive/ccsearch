@@ -16,7 +16,7 @@
  * This is for this local code only and is more than likely supplanted by
  * a software's own codebase.
  */
-define('DEBUG', false);
+define('DEBUG', true);
 
 /**
  * This constant is for a generic PROJECT_NAME for the project. This is 
