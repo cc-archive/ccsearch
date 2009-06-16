@@ -109,6 +109,7 @@ iframe {
     font-size: 85%;
 }
 
+/*
 #left {
 	float: left;
 	margin-left: 0.5em;
@@ -122,6 +123,113 @@ iframe {
 	border: 1px solid #729032;
 	padding: 3px 0 3px 5px;
 }
+*/
+
+
+#ccSearchForm-MainFieldset{
+    padding: 0px;
+    border: 0;
+    padding: 0px;
+}
+
+#q{
+    font-size: 30px;
+    color: #262626;
+    width: 500px;
+    background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
+    border: 1px solid #ccc;
+}
+
+#qsubmit{
+    font-size: 40px;
+}
+
+#engineList{
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#searchAndGo{
+    text-align: center;
+    border: 0px;
+}
+
+#everythingButTabs{
+    border: 1px solid #ccc;
+    margin: 0px;
+    background-color: #FCFCFC;
+    /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
+}
+
+/*
+.engineLabel{
+    height: 100%;
+    border: 1px black solid;
+    padding: 0px;
+    margin: 0px;
+}
+*/
+/*
+.engineLabel img{
+    margin: 0px;
+    padding: 0px;
+}
+*/
+
+
+
+ul#tabs {
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+ul.sub {
+	border-bottom: none;
+}
+ul.sub li {
+	border-bottom: 1px solid #ccc;
+}
+
+ul#tabs li {
+	display: inline;
+	padding: 10px 0px 0px;
+	margin: 0;
+}
+ul#tabs li.inactive {
+	background-color: #f7f7f7;
+	padding-bottom: 0px;
+	background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+ul#tabs li.active {
+	padding-top: 12px;
+	/*padding-bottom: 1px;*/
+	background: #fff;
+	border-bottom: #fff;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+ul#tabs img {
+	padding-top: 7px;
+}
+
+ul#tabs label {
+	padding: 10px 20px 3px ;
+	width: 100%;
+}
+
+
+ul#tabs li input{
+    display: none;
+}
 
 #options {
 	padding: 3px 5px 5px;
@@ -131,6 +239,10 @@ iframe {
 #subCC { margin: 5px 0 -4px 2px; }
 #subBreak { margin: 5px 0 -1px 2px; }
 
+/*
+TODO: transfer these styles (mostly just spacing) to somewhere else
+and delete these tags
+*/
 #results-box {
 	margin: 5px 15px 0 15px;
 }
@@ -160,52 +272,6 @@ iframe {
 	margin-left: 6px;
 	margin-right: 6px;
 	height: 32px;
-}
-ul.tabs {
-	list-style: none;
-	display: inline;
-	padding: 0;
-	margin: 0;
-	border-bottom: 1px solid #ccc;
-}
-
-ul.sub {
-	border-bottom: none;
-}
-ul.sub li {
-	border-bottom: 1px solid #ccc;
-}
-
-ul.tabs li {
-	display: inline;
-	padding: 10px 0px 0px;
-	margin: 0;
-}
-ul.tabs li.inactive {
-	background-color: #f7f7f7;
-	padding-bottom: 0px;
-	background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-}
-ul.tabs li.active {
-	padding-top: 12px;
-	padding-bottom: 1px;
-	background: #fff;
-	border-bottom: #fff;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-top: 1px solid #ccc;
-}
-
-ul.tabs img {
-	padding-top: 7px;
-}
-
-ul.tabs a {
-	padding: 10px 20px 3px;
-	width: 100%;
 }
 
 /* PROGRESS METER */

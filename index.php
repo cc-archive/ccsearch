@@ -22,16 +22,25 @@
  *
  */
 
+//TODO: figure out if i can get rid of the <img id ="stat" thing in the footer
+
 // turn off i18n for now.
 $use_i18n = true;
 
 require_once('cc-defines.php');
 require_once('cc-language.php');
 require_once('cc-language-ui.php');
-require_once('search-tabs.php');
+require_once('search-engines.php');
+
+//note: cookie gets re-set every time the page is visited.
+//meaning, the cookie lasts forever as long as they keep coming back within the time defined below
+define(COOKIE_LIFETIME, 2592000); // 2592000 = 60*60*24*30 = 30 days (1 month)
+
+//start sessions
+session_start();
 
 if ($use_i18n) {
-  session_start();
+  //session_start();
 
   // This nastiness handles session storage 
   $cc_lang = &$_SESSION['lang'];
@@ -72,8 +81,119 @@ if ($use_i18n) {
 
 }
 
-//init the object holding the search engine tabs
-$enginetabs = new SearchTabs($cc_lang);
+//init the object holding the search engines
+$engines = new SetOfSearchEngines($cc_lang);
+
+
+//two-item associative array that holds the search info
+//maybe add language here later?
+$search['query'];
+$search['engine'];
+$search['deriv'];
+$search['comm'];
+
+
+//returns the two-item associative array described above
+//favors sessions over cookies (more reliable, and continue to work when cookies are off)
+//XXXXXre-sets both sessions and cookies (redundant, but useful--makes sure cookie matches session)
+function getSearchFromCookieAndSession(){
+    $search['query'];
+    $search['engine'];
+    if($_SESSION['search']){
+        $search= $_SESSION['search'];
+    }
+    else if($_COOKIE['QueryAndEngine']){
+        $search = unserialize($_COOKIE['QueryAndEngine']);
+    }
+    else{
+        $search = NULL;
+    }
+    
+    //setQueryAndEngineInCookieAndSession($search); //the redundant but useful part
+    return $search;
+}
+
+function getEngineFromCookieAndSession(){
+    if($_SESSION['engine']){
+        return $engine;
+    }
+    else if($_COOKIE['QueryAndEngine']){
+        $fromCookie = unserialize($_COOKIE['QueryAndEngine']);
+        return $fromCookie['engine'];
+    }
+    else{
+        return false;
+    }
+}
+
+function setQueryAndEngineInCookieAndSession($search){
+    $_SESSION['search'] = $search;
+    setCookie("QueryAndEngine", serialize($search), COOKIE_LIFETIME);
+}
+
+function sendThemOnTheirWay($search){
+    global $engines;
+    $engines->setCurrentEngine($search['engine']);
+    $queryStr = $engines->_current_engine->createQueryString($search['deriv'], $search['comm'], $search['query']);
+    header("Location: " . $queryStr);
+    exit();
+}
+
+function grabSearchFromPost(){
+    $search['engine'] = $_POST['engine'];
+    $search['query'] = $_POST['q'];
+    $search['deriv'] = $_POST['deriv'];
+    $search['comm'] = $_POST['comm'];
+    
+    return $search;
+}
+
+//if they submitted a search query
+if(isset($_POST['q'])){
+    //$engines->setCurrentEngine($_POST['engine']);
+    $search = grabSearchFromPost();
+    if(!$_POST['engine']){
+        //they must have come from the firefox search bar.
+        //first, see if they have a search engine in a cookie or session
+        //if they do, send them on their way.  if not, give them the webpage
+        //either way, save all the info we can gather to $search, so the form is auto-completed for them
+        
+        /*
+        TODO: remove
+        $search['engine'] = getEngineFromCookieAndSession();
+        $search['query'] = $_POST['q'];
+        $search['deriv'] = $_POST['deriv'];
+        $search['comm'] = $_POST['comm'];
+        */
+        $search['engine'] = getEngineFromCookieAndSession();
+        
+        setQueryAndEngineInCookieAndSession($search);
+        if($search['engine']){
+            sendThemOnTheirWay($search);
+        }
+    }
+    else if($_POST['q'] != ''){
+        //TODO: go ahead and delete all this
+        //$queryStr = $engines->createQueryString()
+        //$myJam = new JamendoSearch();
+        //$queryStr = $engines->_current_engine->createQueryString($_POST['deriv'], $_POST['comm'], $_POST['q']);
+        //header("Location: " . $queryStr);
+        //echo $queryStr . "||dude";
+        //var_dump($engines->_current_engine);
+        //exit();
+        setQueryAndEngineInCookieAndSession($search);
+        sendThemOnTheirWay($search);
+    }
+    //else: if they posted an empty string
+    //then they wanted to get the form
+    //(they may have been looking to change their default search engine)
+}
+else{
+    $search = getSearchFromCookieAndSession();
+    $engines->setCurrentEngine($search['engine']);
+    setQueryAndEngineInCookieAndSession($search);
+}
+
 
 //$cc_lang->DebugLanguages();
 //echo "<h4>" . $_REQUEST['lang'] . "</h4>";
@@ -82,6 +202,14 @@ $enginetabs = new SearchTabs($cc_lang);
 //print_r($_COOKIE);
 //print_r($_REQUEST);
 //echo "</pre>";
+
+
+function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
+    ?>
+        <li id="<?php echo $id ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel" onclick="setEngine('<?php echo $id ?>')"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($search_type) ?>" /></label></li>
+    <?php
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -112,6 +240,7 @@ $enginetabs = new SearchTabs($cc_lang);
     
   </head>
   <body onload="setupQuery()">
+  <!--<body>-->
     <div id="ff-box"><div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?></div></div>
     <div id="header-box">
       <div id="header">
@@ -119,23 +248,8 @@ $enginetabs = new SearchTabs($cc_lang);
 	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	  <div id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></div>
 	</div>
-        <form onsubmit="return doSearch()">
-          <div id="left">
-            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
-            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
-	    
-          </div>
-          <div id="right">
-	    <div>
-              <input type="checkbox" name="comm" value="" id="comm" />
-              <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
-	    </div>
-	    <div>
-              <input type="checkbox" name="deriv" value="" id="deriv" />
-              <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
-	    </div>
-	  </div>
-	</form>
+        <!--<form onsubmit="return doSearch()">-->
+        
       </div>
     </div>
     <div id="results-box">
@@ -149,42 +263,44 @@ $enginetabs = new SearchTabs($cc_lang);
         <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
           <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
           <?php echo _('Content Directories') ?></a>
-        &nbsp;&nbsp;
+        <!--&nbsp;&nbsp;
         <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
           <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
-          <?php echo _('Remove Frame') ?></a>
+          <?php echo _('Remove Frame') ?></a>-->
       </div>
-      <div id="menu">
-      <?php
-      $enginetabs->show();
       
-      ?>
-      <!--
       
-	<ul class="tabs">
-          <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>
-          <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" /></a></li>
-          <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flickr') ?>" /></a></li>
-          <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /></a></li>
-	  <li id="owlmm" class="inactive"><a href="#" onclick="setEngine('owlmm')" title="<?php echo _('Music Search') ?>"><img src="images/cc-owlmm.png" border="0" class="png" /></a></li>
-	  <li id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png" /></a></li>
-
-          <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
-                    <li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
-          <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>
+              <form id ="ccSearchForm" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+              <fieldset id="ccSearchForm-MainFieldset">
+	  <fieldset id="engineList"> 
+	  <ul id="tabs">
 	  
-	</ul>
-	
-	-->
-	
-	
-      </div>
+	  <?php $engines->showSelectRadios(); ?>
+	  
+	  </ul>
+	  </fieldset>
+	  <fieldset id="everythingButTabs">
+	  <fieldset id="searchAndGo">
+            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" value="<?php echo $search['query'] ?>"/>
+            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
+	  </fieldset>
+	    <div>
+              <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
+              <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
+	    </div>
+	    <div>
+              <input type="checkbox" name="deriv" value="1" id="deriv" <?php if($search['deriv']) echo 'checked="checked"' ?>/>
+              <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
+	    </div>
+	</fieldset>
+	</fieldset>
+	</form>
       
-      <iframe id="results" name="results" frameborder="0" border="0"></iframe>
+      <!--<iframe id="results" name="results" frameborder="0" border="0"></iframe>-->
     </div>
     
     <div id="footer">
-      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
+      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <!--<img id ="stat" src="transparent.gif?init"/>--> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
       <div>
 <p>search.creativecommons.org offers convenient access to search
 services provided by other independent organizations. Selecting

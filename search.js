@@ -116,15 +116,16 @@ function resetQuery() {
 function setEngine(e) {
 	var previous = engine;
 
-    var query = id("q");
-    if ( query.className == "inactive" ) {
-        query.value = "flowers";
-        query.className = "active";
-    }
-	
+
+//    var query = id("q");
+//    if ( query.className == "inactive" ) {
+//        query.value = "flowers";
+//        query.className = "active";
+//    }
+
 	engine = e;
-	try { id(previous).className="inactive"; } catch(err) {}
-	id(engine).className="active";
+	try { id(previous + "_li").className="inactive"; } catch(err) {}
+	id(engine + "_li").className="active";
 	
 	var d = new Date();
 	d.setFullYear(2020,0,1);
