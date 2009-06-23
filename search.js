@@ -4,12 +4,8 @@
  * 
  */
 
-var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
-var engine = "";
-var rights = "";
-var url = "";
 var lang = "";
-
+/*
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
     document.cookie = name + "=" + escape(value) +
@@ -34,6 +30,7 @@ function getCookie(name) {
     }
     return unescape(dc.substring(begin + prefix.length, end));
 }
+*/
 ////
 
 // function by Pete Freitag (pete@cfdev.com)
@@ -57,39 +54,20 @@ function setupQuery() {
 	var query = id("q");
 	var qs = getQueryStrVariable('q');
 	var moz = getQueryStrVariable('sourceid');
-	var e = getQueryStrVariable('engine');
-	var docom = getQueryStrVariable('commercial');
-	var doder = getQueryStrVariable('derivatives');
 
 	// display firefox branding 
 	if (moz == "Mozilla-search") {
 		id('ff-box').style.display = "block";
 	}
 	
-	// grab cookie and setup default engine
-	getEngine();
-	if (e) setEngine (e);
-
 	lang = getQueryStrVariable('lang');
-	
-	// keep the results iframe fully in the browser window
-	resizeResults();
-	window.onresize = function() { resizeResults(); }
-	
-	// set commercial + derivative checkboxes
-	if (docom) id('comm').checked = true;
-	if (doder) id('deriv').checked = true;
 	
 	query.value = qs;
 	
 	if ((query.value == "") || (query.value == "null")) {
 		query.value = d;
-		window.results.location.href = 'intro.php';
 	} else if (query.value != d){
 		query.className = "active";
-		
-		// since there's query data...
-		doSearch();
 	}
 }
 
@@ -113,6 +91,7 @@ function resetQuery() {
 	}
 }
 
+/*
 function setEngine(e) {
 	var previous = engine;
 
@@ -133,184 +112,11 @@ function setEngine(e) {
 	
 	doSearch();
 }
+*/
 
-function getEngine() {
-	engine = getCookie('ccsearch');
-	
-	if (engine == null)
-		setEngine(engines[Math.floor(Math.random() * engines.length)]);
-	
-	id(engine).className = "active";
-}
 
-// build advanced search query strings
-// each engine has vastly different ways to do this. :/
-function modRights() {
-	
-	switch (engine) {
-	     
-		case "google":
-			//.-(cc_noncommercial|cc_nonderived)
-			rights = ".-(";
-			
-			if (id('comm').checked) {
-				rights += "cc_noncommercial";
-			}
-			if (id('deriv').checked) {
-				(id('comm').checked) ? rights += "|" : null;
-				rights += "cc_nonderived";
-			}
-			
-			rights += ")";
-			break;
-			
-		case "yahoo":
-			rights = "&";
-			if (id('comm').checked) {
-				rights += "ccs=c&";
-			}
-			if (id('deriv').checked) {
-				rights += "ccs=e";
-			}
-			break;
-			
-		case "flickr":
-			rights = "l=";
-			if (id('comm').checked) {
-				rights += "comm";
-			}
-			if (id('deriv').checked) {
-				rights += "deriv";
-			}
-			break;
-		case "owlmm":
-			rights = "license_type=";
-			if (id('comm').checked) {
-				rights += "comm";
-			}
-			if (id('deriv').checked) {
-				rights += "deriv";
-			}
-			break;
-		case "blip":
-			rights = "license=1,6,7"; // by,by-sa,pd
-			if (!id('comm').checked && !id('deriv').checked) {
-				rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
-			} else if (id('comm').checked) {
-				rights += ",2"; // by-nd
-			} else { // deriv must be checked
-				rights += ",4,5"; // by-nc,by-nc-sa
-			}
-			break;
-		case "jamendo":
-			rights = "";
-			//note: apparently they don't check the values of these vars, they just check to see if they're defined
-			//so uncommenting the else's will cause jamendo to think you always want derivs and commercial
-			if (id('deriv').checked) {
-				rights += "license_minrights_d=on&";
-			}
-			/*else{
-				rights += "license_minrights_d=off&";
-			}*/
-			if (id('comm').checked) {
-				rights += "license_minrights_c=on";
-			}
-			/*else{
-				rights += "license_minrights_c=off";
-			}*/
-			break;
-		case "ccmixter":
-			rights = "";
-			// everything on ccmixter permits derivs
-			if (id('comm').checked) {
-				rights += "+attribution";
-			}
-			break;
-		case "spin":
-			rights = "_license=";
-			if (!id('comm').checked && !id('deriv').checked) {
-				rights += "11"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
-			} else if (id('comm').checked && !id('deriv').checked) {
-				rights += "8"; // by-nd
-			} else if (!id('comm').checked && id('deriv').checked) {
-				rights += "9";
-			} else { 
-				rights += "10"; // by-nc,by-nc-sa
-			}
-			break;
 
-			/* Add Jon's two new engines */
-        case "openclipart":
-            rights = "+publicdomain";
-            // everything on ocal is pd 
-            /* if (id('comm').checked) {
-	       rights += "+attribution";
-	       } */
-            break;
-	}
-	if (rights.length < 5) rights = "";
-	
-}
-
-// "main logic", no turning back.
-function doSearch() {
-	var query = id("q");
-	url = "";
-	
-	// search only if there is something to search with
-	if ((query.value.length > 0) && (query.className == "active")) {
-		// set up rights string, works if user hits "go" or a tab. 
-		modRights();
-		
-		switch (engine) {
-            case "openclipart":
-                url = 'http://openclipart.org/cchost/media/tags/' + 
-                      query.value + rights;
-                break;
-                
-			case "spin":
-				url = 'http://www.spinxpress.com/getmedia' + rights + '_searchwords=' + query.value
-				break;
-				
-			case "ccmixter":
-				url = 'http://ccmixter.org/media/tags/' + query.value + rights;
-				break;
-				
-			case "jamendo":
-			    url ='http://www.jamendo.com/tag/' + query.value + '?' + rights + '&location_country=all&order=rating_desc';
-				break;
-				
-			case "blip":
-				url = 'http://blip.tv/posts/view/?q=' + query.value + '&section=/posts/view&sort=popularity&' + rights;
-				break;
-				
-			case "flickr":
-				url = 'http://flickr.com/search/?' + ((rights.length > 2) ? rights : "l=cc") + '&q=' + query.value;
-				break;
-				
-			case "owlmm":
-				url = 'http://www.owlmm.com/?query_source=CC&' + ((rights.length > 13) ? rights : "license_type=cc") + '&q=' + query.value;
-				break;
-				
-			case "yahoo":
-				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
-				break;
-				
-			case "google":
-			default:
-				url = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
-						((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + 
-							rights + '&q=' + query.value; 
-				if (lang != null) url += '&hl=' + lang;
-				break;
-		}
-		//frames['results'].location.href = str;
-		window.results.location.href = url;
-		document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);
-	}
-	return false;
-}
-
+/*
 // keep results iframe as big as window
 function resizeResults() {
 	var results = id('results');
@@ -329,7 +135,7 @@ function resizeResults() {
 	
 	results.style.height = Math.round(height - heightMinus) + "px";
 }
-
+*/
 function showFox() {
 	id('thanks').style.display = "block";
 }
@@ -340,10 +146,6 @@ function hideFox() {
 
 function clickFox() {
 //	top.location = "http://spreadfirefox.com";
-}
-
-function breakOut() {
-	if (url.length > 10) window.location = url;
 }
 
 function grabOriginalLanguage() {

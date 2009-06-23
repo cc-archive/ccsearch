@@ -127,9 +127,10 @@ iframe {
 
 
 #ccSearchForm-MainFieldset{
-    padding: 0px;
-    border: 0;
-    padding: 0px;
+    border: 1px solid #ccc;
+    margin: 0px;
+    background-color: #FCFCFC;
+    /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
 }
 
 #q{
@@ -148,6 +149,7 @@ iframe {
     border-width: 0;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #searchAndGo{
@@ -156,10 +158,7 @@ iframe {
 }
 
 #everythingButTabs{
-    border: 1px solid #ccc;
-    margin: 0px;
-    background-color: #FCFCFC;
-    /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
+    border: none;
 }
 
 /*
@@ -179,26 +178,44 @@ iframe {
 
 
 
-ul#tabs {
+#comm_deriv p{
+    display: inline;
+}
+
+#comm_deriv p{
+    display: inline;
+}
+
+
+#comm_deriv{
+    border: 0;
+    text-align: center;
+}
+
+ul#engines {
 	list-style: none;
 	display: inline;
 	padding: 0;
 	margin: 0;
-	border-bottom: 1px solid #ccc;
+}
+
+legend{
+    display: none;
 }
 
 ul.sub {
-	border-bottom: none;
+	border-bottom: 0;
 }
 ul.sub li {
 	border-bottom: 1px solid #ccc;
 }
 
-ul#tabs li {
+ul#engines li {
 	display: inline;
 	padding: 10px 0px 0px;
 	margin: 0;
 }
+/*
 ul#tabs li.inactive {
 	background-color: #f7f7f7;
 	padding-bottom: 0px;
@@ -209,7 +226,6 @@ ul#tabs li.inactive {
 }
 ul#tabs li.active {
 	padding-top: 12px;
-	/*padding-bottom: 1px;*/
 	background: #fff;
 	border-bottom: #fff;
 	border-left: 1px solid #ccc;
@@ -230,7 +246,7 @@ ul#tabs label {
 ul#tabs li input{
     display: none;
 }
-
+*/
 #options {
 	padding: 3px 5px 5px;
 	font-size: 0.9em;

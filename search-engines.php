@@ -18,19 +18,13 @@
 *
 */
 
-/**
-* //TODO: fix these
-* @package cchost
-* @subpackage lang
-*/
 
-/**
- *
- 
+/*
+
  TODO: "fix" blip.tv's algorithm.  it's ported correctly, but i think it has a bug:
  case: ($comm = true, $deriv = false) returns same as case: (both true)
  they return 1,6,7,2
- --latest: i think i fixed it, but i should have someoen double-check this.
+ --latest: i think i fixed it, but i should have someone double-check this.
  original algorithm from search.js:
 		case "blip":
 			rights = "license=1,6,7"; // by,by-sa,pd
@@ -42,14 +36,19 @@
 				rights += ",4,5"; // by-nc,by-nc-sa
 			}
 			break;
- 
- 
- * TODO: fill these in
+*/
+
+/**
+* @package cchost
+* @subpackage lang
+*/
+
+/**
+ *
  * This is the short Description for the Class
  *
  * This is the long description for the Class
  *
- * TODO: update this
  * @author		Karl Heinz Marbaise <khmarbaise@gmx.de>
  * @copyright	(c) 2003 by Karl Heinz Marbaise
  * @version		$Id$
@@ -61,10 +60,12 @@
 
 
 
-//NOTE TO SELF:
+//TODO:
 //define a var here (or a const, whatever)
 //and then set $_engineList to point to a it _within the constructor_
 //okay, i tried like 3 times to do this.  no luck.  php is being annoying.
+//perhaps the best solution to this issue is to make all the search engine classes totally static,
+//never instantiating objects of them.  this would probably be better design, because i'm not using any instance variables.
 /*
     $DEFAULT_ENGINE_LIST = array(
             'google' => "GoogleSearch",
@@ -76,60 +77,45 @@
         );
 */
 
+//the search engine that will be selected when the user sees the form for the first time
+//should be the "$id" of a search engine
+//we're going to assume that this is a member of SetOfSearchEngines->_engineList, so make sure that it is
 define('DEFAULT_ENGINE', 'google');
 
 
 
+
+//class that holds a set of search engines (actually, an array of references to searchEngine objects)
+//index.php instantiates one object of this class
+//it is used to display the radio input options in the search form
+//it's also used to access searchEngine objects in order to build query strings
 class SetOfSearchEngines
 {
-    /**
-     * This is a CC Language object (or preferably a reference to one).
-     * @var		mixed
-     * @access	private
-     */
-     
-     /*
-     const DEFAULT_ENGINE_LIST = array(
-            'google' => new GoogleSearch(),
-            'yahoo' => new YahooSearch(),
-            'flickr' => new FlickrSearch(),
-            'blip' => new BlipSearch(),
-            'jamendo' => new JamendoSearch(),
-            'spin' => new SpinSearch()
-        );
-    */
-    
+    //This is a CC Language object (or preferably a reference to one).
     var $_cc_lang;
     
     var $_original_language;
-
+    
     //array of references to individual SearchEngine objects
+    //populated in the constructor
     var $_engineList;
     
-    public $_current_engine; //reference to an engine object
+    //reference to an engine object
     //used for these things:
     //*figure out which query constructing algorithm to use
-    //*figure out which radio select to put as selected in the display
+    //*figure out which radio select to put as selected in the displayed form
+    public $_current_engine;
     
+    //constructor
+    //populate all the important instance variables
     function SetOfSearchEngines($cc_lang){
         $this->_cc_lang = $cc_lang;
         $this->_original_language = $cc_lang->GetLanguage(); 
         if(DEBUG) echo "<p>Current language: " . $this->_original_language . "</p>\n";
         
-        
+        //if i could figure out how to define the default engine list in a constant, i would do that here
         //$this->_engineList = $DEFAULT_ENGINE_LIST;
-        /*
-        $this->_engineList = array(
-            new GoogleSearch(),
-            new YahooSearch(),
-            new FlickrSearch(),
-            new BlipSearch(),
-            new JamendoSearch(),
-            new SpinSearch()
-        );
-        */
-        
-        
+        //since i can't, i'll just populate it by hand
         $this->_engineList = array(
             'google' => new GoogleSearch(),
             'yahoo' => new YahooSearch(),
@@ -138,24 +124,39 @@ class SetOfSearchEngines
             'jamendo' => new JamendoSearch(),
             'spin' => new SpinSearch()
         );
-        $this->_current_engine = $this->_engineList[DEFAULT_ENGINE];
         
-        //$this->_engineList = $defaultEngineList;
+        //set the default engine
+        $this->_current_engine = $this->grabFromEngineList(DEFAULT_ENGINE);
+        
     }
     
-    function setCurrentEngine($choice_from_post){
-        //$this->_current_engine = "default"
-        //TODO: create default case
-        if(!$choice_from_post){
-        
-        }
-        foreach($this->_engineList as $engineID => $engineObj){
-            if($choice_from_post == $engineID){
-                 $this->_current_engine = $engineObj;
-            }
-        }
+    //helper function to grab a reference to an engine object from the engine list
+    //this is useful for two reasons:
+    //*allows us to handle the case where we're trying to get something from the list which isn't there
+    //**give them a default value
+    //*abstracts the data structure holding the engine list (currently an array)
+    function grabFromEngineList($engineID){
+        //if it's in the array, just return it
+        if(isset($this->_engineList[$engineID]))
+            return $this->_engineList[$engineID];
+        //if it's not, give them the default value
+        else
+            if(DEBUG) echo "grabFromEngineList: failed to grab '$engineID' from the engine list, so using a default value";
+            return $this->_engineList[DEFAULT_ENGINE];
     }
-
+        
+    //set the current engine (no matter what it was previously)
+    //input: an engine ID (string)
+    function setCurrentEngine($choice_from_post){
+        $this->_current_engine = $this->grabFromEngineList($choice_from_post);
+    }
+    
+    //show a radio input button for each search engine
+    //used in the search form
+    //through a seemingly absurd amount of modularity, this calls a function in SearchEngine,
+    //which calls a function in index.php
+    //the function in index.php (showEngineRadio()) contains the actual markup.
+    //this way, all the markup is in one file (yay)
     function showSelectRadios(){
         foreach($this->_engineList as $engineID => $engineObj){
                 $engineObj->showSelectRadio(($engineObj == $this->_current_engine));
@@ -165,12 +166,17 @@ class SetOfSearchEngines
 } //end SetOfSearchEngines
 
 
+//abstract class for a search engine
+//this acts mostly as an interface that each search engine implements
 class SearchEngine{
+    //each search engine has its own values for each of these
+    //they are more like constants than they are variables
+    //(code could probably be updated to better reflect this)
     var $_id;
     var $_human_readable_name;
     var $_image;
     var $_search_type;
-    var $_image_is_png;
+    var $_image_is_png; //boolean that's true 
     
     function SearchEngine($id, $human_readable_name, $search_type, $image, $image_is_png){
         $this->_id = $id;
@@ -180,23 +186,20 @@ class SearchEngine{
         $this->_image_is_png = $image_is_png;
     }
 
+    //implemented in each individual search engine
+    //given a query, and other form inputs, computes the url that the browser redirects to
+    //ie: http://www.google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike).-(cc_noncommercial|cc_nonderived)&q=funtime
     function createQueryString(){}
     
+    //show a radio input button for a search engine
+    //includes image, 
+    //used in the search form
     function showSelectRadio($checked){
         //moved the actual function body to be with the rest of the html output (currently index.php)
         showEngineRadio($this->_id, $checked, $this->_image, $this->_image_is_png, $this->_search_type);
-        
-    /*
-        ?>
-            
-            <input type="radio" name="engine" id="<?php echo $this->_id ?>" value="<?php echo $this->_id ?>" class="inactive" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $this->_id ?>"><img src="<?php echo $this->_image ?>" border="0" <?php if ($this->_image_is_png) echo 'class="png"' ?> alt="<?php echo _($this->_search_type) ?>" /></label>
-            
-            
-        <?php
-    */
     }
 
-}
+} //end SearchEngine
 
 
 
@@ -205,7 +208,9 @@ class SearchEngine{
 
 
 
-
+//--------------------------------------------------
+//BEGIN INDIVIDUAL SEARCH ENGINE CLASSES------------
+//--------------------------------------------------
 
 
 
@@ -391,10 +396,6 @@ class BlipSearch extends SearchEngine{
 	    return $url;
     
     }
-    /*
-http://blip.tv/posts/view/?q=flowers&section=/posts/view&sort=popularity&license=1,6,7,2
-http://blip.tv/posts/view/?q=flowers&section=/posts/view&sort=popularity&license=1,6,7,2
-    */
 
 }
 
@@ -432,19 +433,93 @@ class SpinSearch extends SearchEngine{
 }
 
 
-/*
-id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /></a></li>
+class OwlSearch extends SearchEngine{
+    var $_id = "owl";
+    var $_human_readable_name = "Owl Music Search";
+    var $_search_type = "Music Search";
+    var $_image = "images/cc-owlmm.png";
+    var $_image_is_png = true;
+    
+    function OwlSearch(){
+        // start by calling parent (aka super) constructor
+        // it's just good practice
+        parent::SearchEngine($this->_id, $this->_human_readable_name, $this->_search_type, $this->_image, $this->_image_is_png);
+    }
 
-id="owlmm" class="inactive"><a href="#" onclick="setEngine('owlmm')" title="<?php echo _('Music Search') ?>"><img src="images/cc-owlmm.png" border="0" class="png" /></a></li>
+    function createQueryString($deriv, $comm, $query){
+        if($comm || $deriv){
+	        $rights = "license_type=";
+		    if ($comm) {
+			    $rights .= "comm";
+		    }
+		    if ($deriv) {
+			    $rights .= "deriv";
+		    }
+		}
+		else{
+		    $rights = "license_type=cc";
+		}
+        $url = 'http://www.owlmm.com/?query_source=CC&' . $rights . '&q=' . $query;
+        return $url;
+    }
 
-id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png" /></a></li>
+}
 
-id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
 
-id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
 
-id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>
-*/
+class CCMixterSearch extends SearchEngine{
+    var $_id = "ccmixter";
+    var $_human_readable_name = "ccMixter";
+    var $_search_type = "Music Search";
+    var $_image = "images/cc-ccmixter.png";
+    var $_image_is_png = true;
+    
+    function CCMixterSearch(){
+        // start by calling parent (aka super) constructor
+        // it's just good practice
+        parent::SearchEngine($this->_id, $this->_human_readable_name, $this->_search_type, $this->_image, $this->_image_is_png);
+    }
 
+    function createQueryString($deriv, $comm, $query){
+	
+		$rights = "";
+		// everything on ccmixter permits derivs
+		if ($comm) {
+			$rights .= "+attribution";
+		}
+	    $url = 'http://ccmixter.org/media/tags/' . $query . $rights;
+        
+        return $url;
+    }
+
+}
+
+class OCASearch extends SearchEngine{
+    var $_id = "oca";
+    var $_human_readable_name = "Open Clip Art Library";
+    var $_search_type = "Clip Art Search";
+    var $_image = "";
+    var $_image_is_png = true;
+    
+    function OCASearch(){
+        // start by calling parent (aka super) constructor
+        // it's just good practice
+        parent::SearchEngine($this->_id, $this->_human_readable_name, $this->_search_type, $this->_image, $this->_image_is_png);
+    }
+
+    function createQueryString($deriv, $comm, $query){
+        $rights = "+publicdomain";
+        // everything on ocal is pd 
+		$url = 'http://openclipart.org/cchost/media/tags/' . $query . $rights;
+        
+        return $url;
+    }
+
+}
+
+
+//--------------------------------------------------
+////ENDINDIVIDUAL SEARCH ENGINE CLASSES------------
+//--------------------------------------------------
 
 ?>
