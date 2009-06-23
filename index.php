@@ -204,7 +204,7 @@ else{
 //called from within search-engines.php
 function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
     ?>
-        <li id="<?php echo $id ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel" onclick="setEngine('<?php echo $id ?>')"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($search_type) ?>" /></label></li>
+        <li id="<?php echo $id ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($search_type) ?>" /> (<?php echo $search_type ?>)</label></li>
     <?php
 }
 

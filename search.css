@@ -145,13 +145,6 @@ iframe {
     font-size: 40px;
 }
 
-#engineList{
-    border-width: 0;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
 #searchAndGo{
     text-align: center;
     border: 0px;
@@ -182,13 +175,20 @@ iframe {
     display: inline;
 }
 
-#comm_deriv p{
-    display: inline;
+#comm_deriv{
+    margin-top: 10px;
 }
-
 
 #comm_deriv{
     border: 0;
+    text-align: center;
+}
+
+
+#engineList{
+    border-width: 0;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -211,9 +211,14 @@ ul.sub li {
 }
 
 ul#engines li {
-	display: inline;
 	padding: 10px 0px 0px;
 	margin: 0;
+	color: #5C5C5C;
+}
+
+ul#engines li label img{
+	padding-top: 5px;
+    vertical-align: center;
 }
 /*
 ul#tabs li.inactive {
