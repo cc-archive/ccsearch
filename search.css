@@ -110,11 +110,6 @@ iframe {
 }
 
 /*
-#left {
-	float: left;
-	margin-left: 0.5em;
-	line-height: 60px;
-}
 #right {
 	float: left;
 	font-size: 0.8em;
@@ -128,15 +123,35 @@ iframe {
 
 #ccSearchForm-MainFieldset{
     border: 1px solid #ccc;
-    margin: 0px;
     background-color: #FCFCFC;
     /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
+    /*float: left;*/
+	margin: 5px 15px 0 15px;
+    padding: 15px;
+    
+    
+}
+
+#disclaimer_mini{
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+    background-color: #F2F2F2;
+    font-size: 1.3em;
+}
+
+#disclaimer_mini .readmore{
+    font-size: .8em;
+}
+
+#disclaimer_full{
 }
 
 #q{
-    font-size: 30px;
+    font-size: 4em;
     color: #262626;
-    width: 500px;
+    width: 600px;
     background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
     border: 1px solid #ccc;
 }
@@ -148,6 +163,7 @@ iframe {
 #searchAndGo{
     text-align: center;
     border: 0px;
+    padding-bottom: 10px;
 }
 
 #everythingButTabs{
@@ -171,36 +187,71 @@ iframe {
 
 
 
-#comm_deriv p{
-    display: inline;
-}
-
 #comm_deriv{
+    margin-left: 10px;
     margin-top: 10px;
-}
-
-#comm_deriv{
+    font-size: 2.2em;
+    color: #8A8A8A;
     border: 0;
-    text-align: center;
+    float: left;
 }
 
+#comm_deriv p{
+	padding: 10px 50px 0px;
+	margin: 0px;
+}
+
+
+#comm_deriv p input, #comm{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#comm_deriv p label{
+    font-size: .6em;
+    color: #000000;
+}
+
+#comm_deriv p label em{
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#comm_deriv legend{
+    padding-bottom: 15px;
+}
 
 #engineList{
+    margin-left: 10px;
     border-width: 0;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    font-size: 2.2em;
+    color: #8A8A8A;
+    float: left;
 }
+
+#engineList legend{
+    padding-bottom: 15px;
+}
+
 
 ul#engines {
 	list-style: none;
 	display: inline;
 	padding: 0;
-	margin: 0;
 }
 
-legend{
-    display: none;
+ul#engines li {
+	padding: 10px 50px 0px;
+	margin: 0;
+    font-size: .6em;
+	color: #5C5C5C;
+}
+
+ul#engines li label img{
+	padding-top: 5px;
+    vertical-align: center;
 }
 
 ul.sub {
@@ -210,51 +261,26 @@ ul.sub li {
 	border-bottom: 1px solid #ccc;
 }
 
-ul#engines li {
-	padding: 10px 0px 0px;
-	margin: 0;
-	color: #5C5C5C;
-}
-
-ul#engines li label img{
-	padding-top: 5px;
-    vertical-align: center;
-}
 /*
-ul#tabs li.inactive {
-	background-color: #f7f7f7;
-	padding-bottom: 0px;
-	background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-}
-ul#tabs li.active {
-	padding-top: 12px;
-	background: #fff;
-	border-bottom: #fff;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-top: 1px solid #ccc;
+#searchAndGo{
+    font-size: 2.2em;
+    color: #8A8A8A;
+
 }
 
-ul#tabs img {
-	padding-top: 7px;
-}
+#searchAndGo legend{
 
-ul#tabs label {
-	padding: 10px 20px 3px ;
-	width: 100%;
-}
-
-
-ul#tabs li input{
-    display: none;
 }
 */
+
+#searchAndGo legend{
+    display: none;
+}
+
 #options {
 	padding: 3px 5px 5px;
 	font-size: 0.9em;
+	text-align: right;
 }
 #subNFO { margin: 5px 0 -4px 2px; }
 #subCC { margin: 5px 0 -4px 2px; }
@@ -264,6 +290,7 @@ ul#tabs li input{
 TODO: transfer these styles (mostly just spacing) to somewhere else
 and delete these tags
 */
+/*
 #results-box {
 	margin: 5px 15px 0 15px;
 }
@@ -283,6 +310,7 @@ and delete these tags
 .active {
 	color: #333;
 }
+*/
 .google {
 /*	margin-bottom: -4px;
 	*/

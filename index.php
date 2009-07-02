@@ -250,12 +250,15 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
         <div id="title">
 	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	  <div id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></div>
+	  
+	  
 	</div>
         
       </div>
     </div>
-    <div id="results-box">
-      <div id="options">
+      
+      
+	        <div id="options">
         <a href="http://wiki.creativecommons.org/CcSearch" title="<?php echo _('Understand your search results') ?>">
           <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
           <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" alt="<?php echo _('What is this?')?>" />
@@ -265,43 +268,43 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
         <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
           <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
           <?php echo _('Content Directories') ?></a>
-      </div>
-      
-      
+      </div> 
       <form id ="ccSearchForm" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
       <fieldset id="ccSearchForm-MainFieldset">
-	  <fieldset id="everythingButTabs">
-	  <fieldset id="searchAndGo">
+      
+      <p id="disclaimer_mini">
+      Note: Do not assume that everything returned by this search portal is under a CC license. <a href="#about" class="readmore">read more...</a>
+      </p>
+      
+      	  	  <fieldset id="searchAndGo">
+	  	  <legend>I want to search for...</legend>
             <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" value="<?php echo $search['query'] ?>"/>
-            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
+            <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
 	  </fieldset>
+      
+      	  <fieldset id="comm_deriv">
+	  <legend>I want something that I can..</legend>
+       <p>
+              <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
+              <label for="comm"><?php echo _('use for <em>commercial purposes</em>.') ?></label>
+       </p>
+       <p>
+              <input type="checkbox" name="deriv" value="1" id="deriv" <?php if($search['deriv']) echo 'checked="checked"' ?>/>
+              <label for="deriv"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>.') ?></label>
+	   </p>
+	</fieldset>
+	  <fieldset id="everythingButTabs">
   	  <fieldset id="engineList"> 
 	  
-	  <legend>Search Engine</legend>
+	  <legend>I want to search with...</legend>
 	  <ul id="engines">
 	    <?php $engines->showSelectRadios(); ?>
 	  </ul>
 	  </fieldset>
-	  <fieldset id="comm_deriv">
-	  <legend>Rights</legend>
-       <p>
-              <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
-              <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label>
-       </p>
-       <p>
-              <input type="checkbox" name="deriv" value="1" id="deriv" <?php if($search['deriv']) echo 'checked="checked"' ?>/>
-              <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label>
-	   </p>
 	</fieldset>
-	</fieldset>
-	</fieldset>
-	</form>
-    </div>
-    
-    <div id="footer">
-      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <!--<img id ="stat" src="transparent.gif?init"/>--> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
-      <div>
-<p>
+	
+	<h2 id="aboutTitle">About</h2>
+<p id="about">
 search.creativecommons.org is not a search engine, but rather offers
 convenient access to search services provided by other independent
 organizations.  CC has no control over the results that are returned.
@@ -321,7 +324,24 @@ no such registry exists, CC has no way to determine what is and isn't
 under a CC license.  If you are in doubt you should contact the
 copyright holder directly, or try to contact the site where you found
 the content.
-   </p>   </div>
+   </p>      
+	
+	</fieldset>
+	
+	
+	
+	
+	</form>
+	
+	
+       
+    
+    <div id="footer">
+      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <!--<img id ="stat" src="transparent.gif?init"/>--> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
+      <div>
+      
+	  	
+  </div>
 
 
     </div>

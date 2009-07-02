@@ -446,6 +446,77 @@ function oca_search_4(){
     return ($result == $should_be);
 }
 
+
+
+
+
+
+//--------------------------------------
+//Y! Image Search--------------------------------
+//--------------------------------------
+//case: $deriv==false && $comm==false
+function oca_search_1(){
+    $should_be = "http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1";
+    $mySE = new YahooImageSearch();
+    $result = $mySE->createQueryString(false, false, "TEST");
+    return ($result == $should_be);
+}
+
+//case: $deriv==false && $comm==true
+function oca_search_2(){
+    $should_be = "http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC2";
+    $mySE = new YahooImageSearch();
+    $result = $mySE->createQueryString(false, true, "TEST");
+    return ($result == $should_be);
+}
+
+//case: $deriv==true && $comm==true
+function oca_search_3(){
+    $should_be = "http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC2&cc=CC3";
+    $mySE = new YahooImageSearch();
+    $result = $mySE->createQueryString(true, true, "TEST");
+    return ($result == $should_be);
+}
+
+//case: $deriv==true && $comm==false
+function oca_search_4(){
+    $should_be = "http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC3";
+    $mySE = new YahooImageSearch();
+    $result = $mySE->createQueryString(true, false, "TEST");
+    return ($result == $should_be);
+}
+
+
+/*
+http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1x=wrt&y=Search
+
+http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC2x=wrt&y=Search
+
+http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC2&cc=CC3x=wrt&y=Search
+
+http://images.search.yahoo.com/search/images?&p=TEST&vs=&cc=CC1&cc=CC3x=wrt&y=Search
+
+x=wrt&y=Search
+
+&cc=CC1&cc=CC2
+
+&cc=CC1&cc=CC2&cc=CC3
+
+&cc=CC1&cc=CC3
+
+
+http://images.search.yahoo.com/search/images;_ylt=A0S020vxPEFKOvgA4bqJzbkF?p=TEST&fr=&ei=utf-8&x=wrt&y=Search
+
+http://images.search.yahoo.com/search/images?_adv_prop=images&x=op&fr=&_bcrumb=LFHo8ZLN%2FWl&ei=utf-8&va=&vp=&vo=TEST&ve=&custom=600x400&vst=0&vs=&cc=CC1&cc=CC3&vm=p
+
+http://images.search.yahoo.com/search/images?_adv_prop=images&x=op&fr=&_bcrumb=LFHo8ZLN%2FWl&ei=utf-8&va=&vp=&vo=TEST&ve=&custom=600x400&vst=0&vs=&cc=CC1&cc=CC2&cc=CC3&vm=p
+
+http://images.search.yahoo.com/search/images?_adv_prop=images&x=op&fr=&_bcrumb=LFHo8ZLN%2FWl&ei=utf-8&va=&vp=&vo=TEST&ve=&custom=600x400&vst=0&vs=&cc=CC1&cc=CC2&vm=p
+
+
+*/
+
+
 //----
 //alright fools, let's do this!
 //----
@@ -491,7 +562,6 @@ runTest("ccmixter_search_1", 'CCMixter Search: $deriv==false && $comm==false', &
 runTest("ccmixter_search_2", 'CCMixter Search: $deriv==false && $comm==true', &$errCount);
 runTest("ccmixter_search_3", 'CCMixter Search: $deriv==true && $comm==true', &$errCount);
 runTest("ccmixter_search_4", 'CCMixter Search: $deriv==true && $comm==false', &$errCount);
-
 
 runTest("oca_search_1", 'Open Clip Art Search: $deriv==false && $comm==false', &$errCount);
 runTest("oca_search_2", 'Open Clip Art Search: $deriv==false && $comm==true', &$errCount);
