@@ -52,23 +52,25 @@ function id(i) { return document.getElementById(i); }
 // initialise app
 function setupQuery() {
 	var query = id("q");
-	var qs = getQueryStrVariable('q');
+	//var qs = getQueryStrVariable('q');
 	var moz = getQueryStrVariable('sourceid');
 
 	// display firefox branding 
-	if (moz == "Mozilla-search") {
+	//if (moz == "Mozilla-search") {
+	if (1) {
 		id('ff-box').style.display = "block";
 	}
 	
 	lang = getQueryStrVariable('lang');
 	
-	query.value = qs;
+	//query.value = qs;
 	
 	if ((query.value == "") || (query.value == "null")) {
 		query.value = d;
 	} else if (query.value != d){
 		query.className = "active";
 	}
+	
 }
 
 // bell

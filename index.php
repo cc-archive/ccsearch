@@ -254,36 +254,27 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
 	  
 	</div>
         
+        <div id="about">
+        <h3>Search for Creative Commons Licensed Material</h3>
+        <p>
+        It's great.  But You should learn some stuff.  <a href="">Read more »</a>
+        </p>
+        </div>
+        
       </div>
     </div>
-      
-      
-	        <div id="options">
-        <a href="http://wiki.creativecommons.org/CcSearch" title="<?php echo _('Understand your search results') ?>">
-          <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
-          <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" alt="<?php echo _('What is this?')?>" />
-          <?php echo _('What is this?') ?>
-        </a>
-        &nbsp;&nbsp;
-        <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
-          <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
-          <?php echo _('Content Directories') ?></a>
-      </div> 
       <form id ="ccSearchForm" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
       <fieldset id="ccSearchForm-MainFieldset">
       
-      <p id="disclaimer_mini">
-      Note: Do not assume that everything returned by this search portal is under a CC license. <a href="#about" class="readmore">read more...</a>
-      </p>
-      
       	  	  <fieldset id="searchAndGo">
 	  	  <legend>I want to search for...</legend>
-            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" value="<?php echo $search['query'] ?>"/>
+            <input type="text" name="q" id="q" value="<?php echo $search['query']; ?>" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
             <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
 	  </fieldset>
       
+	  <fieldset id="everythingButTabs">
       	  <fieldset id="comm_deriv">
-	  <legend>I want something that I can..</legend>
+	  <legend>I want something that I can...</legend>
        <p>
               <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
               <label for="comm"><?php echo _('use for <em>commercial purposes</em>.') ?></label>
@@ -293,7 +284,6 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
               <label for="deriv"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>.') ?></label>
 	   </p>
 	</fieldset>
-	  <fieldset id="everythingButTabs">
   	  <fieldset id="engineList"> 
 	  
 	  <legend>I want to search with...</legend>
@@ -302,8 +292,10 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
 	  </ul>
 	  </fieldset>
 	</fieldset>
-	
+	<!--
 	<h2 id="aboutTitle">About</h2>
+	
+
 <p id="about">
 search.creativecommons.org is not a search engine, but rather offers
 convenient access to search services provided by other independent
@@ -324,8 +316,8 @@ no such registry exists, CC has no way to determine what is and isn't
 under a CC license.  If you are in doubt you should contact the
 copyright holder directly, or try to contact the site where you found
 the content.
-   </p>      
-	
+   </p>      -->
+   
 	</fieldset>
 	
 	

@@ -43,9 +43,11 @@ iframe {
 	position: fixed;
 	left: 100px;
 	bottom: 4px;
-	padding-top: 43px;
+	margin-top: 43px;
+	/*padding-top: 43px;*/
 	font-size: 10px;
-	width: 300px;
+	/*width: 300px;*/
+	background-color: #F7F7F7;
 }
 
 #footer {
@@ -60,10 +62,12 @@ iframe {
 	background: url('http://creativecommons.org/images/header-main-b.png') repeat-x bottom left ;
 	height: 80px;
 	overflow:hidden;
+	margin-bottom: 0;
 }
 #header {
 	padding: 10px;
 	margin-left: 5px;
+	margin-bottom: 0;
 }
 
 #title {
@@ -109,44 +113,77 @@ iframe {
     font-size: 85%;
 }
 
-/*
-#right {
-	float: left;
-	font-size: 0.8em;
-	margin-left: 5px;
-	background-color: #c8d7a0;
-	border: 1px solid #729032;
-	padding: 3px 0 3px 5px;
-}
-*/
 
+#about {
+	float: left;
+	font-size: 1.2em;
+	margin-left: 70px;
+	/*background-color: #c8d7a0;
+	border: 1px solid #729032;*/
+	padding: 3px 5px 3px 5px;
+	color: #ffffff;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+#about h3 {
+    font-weight: bold;
+    font-style: none;
+    color: #ffffff;
+    font-size: 1.2em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+#about p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#about a {
+    color: #ffffff;
+    font-size: .8em;
+}
 
 #ccSearchForm-MainFieldset{
     border: 1px solid #ccc;
+    border-top: 0;
     background-color: #FCFCFC;
     /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
     /*float: left;*/
-	margin: 5px 15px 0 15px;
+	margin: 0 15px 10px 15px;
     padding: 15px;
     
     
 }
 
-#disclaimer_mini{
+#everythingButTabs{
+    border: none;
+    /*background-color: red;*/
+    margin: auto;
     text-align: center;
-    margin: 5px;
-    padding: 5px;
-    float: left;
-    background-color: #F2F2F2;
-    font-size: 1.3em;
+    vertical-align: top;
 }
 
-#disclaimer_mini .readmore{
-    font-size: .8em;
+#searchAndGo{
+    text-align: center;
+    border: 0px;
+    padding-bottom: 10px;
+    margin: 15px;
 }
 
-#disclaimer_full{
+#searchAndGo legend{
+    display: none;
 }
+
 
 #q{
     font-size: 4em;
@@ -154,46 +191,27 @@ iframe {
     width: 600px;
     background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
     border: 1px solid #ccc;
+    padding: 5px 10px 5px 10px;
+    vertical-align: middle;
 }
 
 #qsubmit{
-    font-size: 40px;
+    font-size: 4em;
+    vertical-align: middle;
 }
-
-#searchAndGo{
-    text-align: center;
-    border: 0px;
-    padding-bottom: 10px;
-}
-
-#everythingButTabs{
-    border: none;
-}
-
-/*
-.engineLabel{
-    height: 100%;
-    border: 1px black solid;
-    padding: 0px;
-    margin: 0px;
-}
-*/
-/*
-.engineLabel img{
-    margin: 0px;
-    padding: 0px;
-}
-*/
-
-
 
 #comm_deriv{
-    margin-left: 10px;
-    margin-top: 10px;
+    vertical-align: top;
     font-size: 2.2em;
     color: #8A8A8A;
     border: 0;
-    float: left;
+    display: inline;
+    /*margin: auto;
+    width: 450px;*/
+    text-align: left;
+    margin: 15px;
+    border:  #9C9C9C 1px dashed;
+    padding-bottom: 30px;
 }
 
 #comm_deriv p{
@@ -202,15 +220,15 @@ iframe {
 }
 
 
-#comm_deriv p input, #comm{
-    width: 100px;
-    height: 100px;
-    background-color: red;
+#comm_deriv p input, #comm, ul#engines li input{
+    width: 20px;
+    height: 20px;
+    /*background-color: red;*/
 }
 
 #comm_deriv p label{
     font-size: .6em;
-    color: #000000;
+    color: #080808;
 }
 
 #comm_deriv p label em{
@@ -224,11 +242,16 @@ iframe {
 }
 
 #engineList{
-    margin-left: 10px;
+    margin: 15px;
     border-width: 0;
     font-size: 2.2em;
     color: #8A8A8A;
-    float: left;
+    display: inline;
+    /*margin: auto;
+    width: 450px;*/
+    text-align: left;
+    border:  #9C9C9C 1px dashed;
+    padding-bottom: 30px;
 }
 
 #engineList legend{
@@ -262,26 +285,12 @@ ul.sub li {
 }
 
 /*
-#searchAndGo{
-    font-size: 2.2em;
-    color: #8A8A8A;
-
-}
-
-#searchAndGo legend{
-
-}
-*/
-
-#searchAndGo legend{
-    display: none;
-}
-
 #options {
 	padding: 3px 5px 5px;
 	font-size: 0.9em;
 	text-align: right;
 }
+*/
 #subNFO { margin: 5px 0 -4px 2px; }
 #subCC { margin: 5px 0 -4px 2px; }
 #subBreak { margin: 5px 0 -1px 2px; }
