@@ -154,8 +154,9 @@ iframe {
 }
 
 #ccSearchForm-MainFieldset{
-    border: 1px solid #ccc;
-    border-top: 0;
+    /*border: 1px solid #ccc;
+    border-top: 0;*/
+    border: none;
     background-color: #FCFCFC;
     /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
     /*float: left;*/

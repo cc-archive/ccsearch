@@ -92,7 +92,7 @@ $search['deriv'];
 $search['comm'];
 
 //the default values (what the form will look like when someone visits the page for the first time)
-$search_default['query'] = _("Enter Search query");
+$search_default['query'] = '';//_("Enter Search query");
 $search_default['engine'] = DEFAULT_ENGINE; //a default engine is define()d in search-engines.php
 $search_default['deriv'] = true;
 $search_default['comm'] = true;
