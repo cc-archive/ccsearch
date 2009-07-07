@@ -196,7 +196,7 @@ class SearchEngine{
     //used in the search form
     function showSelectRadio($checked){
         //moved the actual function body to be with the rest of the html output (currently index.php)
-        showEngineRadio($this->_id, $checked, $this->_image, $this->_image_is_png, $this->_search_type);
+        showEngineRadio($this->_id, $this->_human_readable_name, $checked, $this->_image, $this->_image_is_png, $this->_search_type);
     }
 
 } //end SearchEngine

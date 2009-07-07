@@ -159,15 +159,6 @@ function grabSearchFromGet(){
     return $search;
 }
 
-/*
-function grabSearchFromPost(){
-    $search['query'] = $_POST['q'];
-    $search['deriv'] = $_POST['deriv'];
-    $search['comm'] = $_POST['comm'];
-    $search['engine'] = $_POST['engine'];
-    return $search;
-}*/
-
 //MAIN LOGIC-------------------------------------------------------
 
 $search = grabSearchFromGet();
@@ -216,168 +207,137 @@ else{
 
 //displays the radio button and corresponding label for a single search engine
 //called from within search-engines.php
-function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
-    ?>
-        <li id="<?php echo _($id) ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($_human_readable_name) ?>" /> (<?php echo _($search_type) ?>)</label></li>
-    <?php
-}
+function showEngineRadio($id, $human_readable_name, $checked, $image, $image_is_png, $search_type){
 ?>
+                     <li id="<?php echo _($id) ?>_li" class="inactive">
+                        <input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/>
+                        <label for="<?php echo $id ?>" class="engineLabel">
+                           <img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($human_readable_name) ?>" />
+                           (<?php echo _($search_type) ?>)
+                        </label>
+                     </li>
 <?php
+}
 
 
 
 
-
+//BEGIN HTML-----------------------------------------------
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <? if ($use_i18n) { ?>
-<html lang="<?php echo $cc_lang->get('_language_xml') ?>" xml:lang="<?php echo $cc_lang->get('_language_xml') ?>" xmlns="http://www.w3.org/1999/xhtml">
+   <html lang="<?php echo $cc_lang->get('_language_xml') ?>" xml:lang="<?php echo $cc_lang->get('_language_xml') ?>" xmlns="http://www.w3.org/1999/xhtml">
 <? } else { ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+   <html xmlns="http://www.w3.org/1999/xhtml">
 <? } ?>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title><?php echo _('Creative Commons') . " " . _('Search') ?></title>
-    <meta name="keywords" content="creativecommons, ccsearch, search, 
+   <head>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <title><?php echo _('Creative Commons') . " " . _('Search') ?></title>
+      <meta name="keywords" content="creativecommons, ccsearch, search, 
                                    engine, searchengine, license, find" />
-    <meta name="description" content="A Creative Commons-based search
+      <meta name="description" content="A Creative Commons-based search
                                       search engine of search engines." />
-    <meta name="robots" content="index, follow" />
-    <script type="text/javascript">
-    /* <![CDATA[ */
-    var d = "<?php echo _('Enter search query');?>";
-    /* ]]> */
-    </script>
-    <script type="text/javascript" src="search.js"></script>
-    
-    <style type="text/css" media="screen">
+      <meta name="robots" content="index, follow" />
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var d = "<?php echo _('Enter search query');?>";
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="search.js"></script>
+
+      <style type="text/css" media="screen">
       @import "search.css";
-    </style>
-    
-    <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
-    <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
-    
-    
-    
-<![CDATA[ this is all for the help.js tooltip boxes ]]>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-<script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
-<script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
-    
-    
-  </head>
-  <body onload="setupQuery()" class="yui-skin-sam">
-    <div id="ff-box"><div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?></div></div>
-    <div id="header-box">
-      <div id="header">
-        <div id="title">
-	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
-	  <div id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></div>
-	  
-	  
-	</div>
-        
-        <div id="about">
-        <h3><?php echo _('Search for Creative Commons Licensed Material') ?></h3>
-        <p>
-        <?php echo _('It\'s great.  But You should learn some stuff.  <a href="#" id="aboutsearch" class="helpLink">Read more »</a>') ?>
-        </p>
-        </div>
-        
-        <div id="help_aboutsearch" class="help_panel">
-            <div class="hd">Should I trust the results that I get back?</div>
-            <div class="bd">
-              <p>No.  In fact, you should run while you still can.</p>
+      </style>
 
-              <p><a href="">Learn more</a>.</p>
-            </div>
-          </div>
+      <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
+      <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
 
-        
+      <![CDATA[ this is all for the help.js tooltip boxes ]]>
+      <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+      <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
+      <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
+      <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
+      <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
+
+
+   </head>
+   <body onload="setupQuery()" class="yui-skin-sam">
+
+      <div id="ff-box">
+         <div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?>
+         </div>
       </div>
-    </div>
+
+
+      <div id="header-box">
+         <div id="header">
+            <div id="title">
+               <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+               <div id="title-by">
+                  <?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?>
+               </div>
+            </div>
+         <div id="about">
+            <h3><?php echo _('Search for Creative Commons Licensed Material') ?></h3>
+            <p>
+               <?php echo _('It\'s great.  But You should learn some stuff.  <a href="#" id="aboutsearch" class="helpLink">Read more »</a>') ?>
+            </p>
+         </div>
+         <div id="help_aboutsearch" class="help_panel">
+            <div class="hd">Should I trust the results that I get back?</div>
+               <div class="bd">
+                  <p>No.  In fact, you should run while you still can.</p>
+                  <p><a href="">Learn more</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
       <form id ="ccSearchForm" method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-      <fieldset id="ccSearchForm-MainFieldset">
-      
-      	  	  <fieldset id="searchAndGo">
-	  	  <legend><?php echo _('I want to search for...') ?></legend>
-            <input type="text" name="q" id="q" value="<?php echo $search['query']; ?>" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
-            <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
-	  </fieldset>
-      
-	  <fieldset id="everythingButTabs">
-      	  <fieldset id="comm_deriv">
-	  <legend><?php echo _('I want something that I can...') ?></legend>
-       <p>
-              <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
-              <label for="comm"><?php echo _('use for <em>commercial purposes</em>.') ?></label>
-       </p>
-       <p>
-              <input type="checkbox" name="deriv" value="1" id="deriv" <?php if($search['deriv']) echo 'checked="checked"' ?>/>
-              <label for="deriv"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>.') ?></label>
-	   </p>
-	</fieldset>
-  	  <fieldset id="engineList"> 
-	  
-	  <legend><?php echo _('I want to search with...') ?></legend>
-	  <ul id="engines">
-	    <?php $engines->showSelectRadios(); ?>
-	  </ul>
-	  <p><?php echo('If you use the firefox search bar, we\'ll remember your choice and redirect you automatically in the future.  Enter a blank search to return to this form at any time.') ?></p>
-	  </fieldset>
-	</fieldset>
-	<!--
-	<h2 id="aboutTitle">About</h2>
-	
+         <fieldset id="ccSearchForm-MainFieldset">
+            <fieldset id="searchAndGo">
+               <legend><?php echo _('I want to search for...') ?></legend>
+               <input type="text" name="q" id="q" value="<?php echo $search['query']; ?>" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
+               <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
+            </fieldset>
+            <fieldset id="everythingButTabs">
+	            <fieldset id="comm_deriv">
+                  <legend><?php echo _('I want something that I can...') ?></legend>
+                  <p>
+                  <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
+                  <label for="comm"><?php echo _('use for <em>commercial purposes</em>.') ?></label>
+                  </p>
+                  <p>
+                  <input type="checkbox" name="deriv" value="1" id="deriv" <?php if($search['deriv']) echo 'checked="checked"' ?>/>
+                  <label for="deriv"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>.') ?></label>
+                  </p>
+               </fieldset>
+               <fieldset id="engineList"> 
+                  <legend><?php echo _('I want to search with...') ?></legend>
+                  <ul id="engines">
+<?php $engines->showSelectRadios(); ?>
+                  </ul>
+                  <p>
+                     <?php echo('If you use the firefox search bar, we\'ll remember your choice and redirect you automatically in the future.  Enter a blank search to return to this form at any time.'); ?>
+                  </p>
+               </fieldset>
+            </fieldset>
+         </fieldset>
+      </form>
 
-<p id="about">
-search.creativecommons.org is not a search engine, but rather offers
-convenient access to search services provided by other independent
-organizations.  CC has no control over the results that are returned.
-Certain sites, such as Flickr, should reliably return only CC-licensed
-results.  This is because the licensing of every item at Flickr is
-stored in a database and can be reliably determined.  However, for
-others, Google, for example, non-CC-licensed works may be returned.
-Presently, searching the web at large for CC-licensed works is not a
-perfect science.   Just as regular web searches are not guaranteed to
-return the things you want or expect, neither will a search for
-CC-licensed works always return CC licensed material.   Do not assume
-that everything returned by this search portal is under a CC license.
-You should always follow the link(s) to the works you are interested
-in and verify that they do indeed appear to be marked as being under a
-CC license.  Since there is no registration to use a CC license, and
-no such registry exists, CC has no way to determine what is and isn't
-under a CC license.  If you are in doubt you should contact the
-copyright holder directly, or try to contact the site where you found
-the content.
-   </p>      -->
-   
-	</fieldset>
-	
-	
-	
-	
-	</form>
-	
-	
+
        
-    
-    <div id="footer">
-      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <!--<img id ="stat" src="transparent.gif?init"/>--> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
-      <div>
+
+      <div id="footer">
+         <div>
+            <a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <!--<img id ="stat" src="transparent.gif?init"/>--> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?>
+         </div>
+      </div>
       
-	  	
-  </div>
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+      <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
 
-
-    </div>
-    <!--<?php /*-->
-    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-    <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
-    <!--*/ ?>-->
-
-  </body>
+   </body>
 </html>
