@@ -34,7 +34,7 @@ require_once('search-engines.php');
 
 //note: cookie gets re-set every time the page is visited.
 //meaning, the cookie lasts forever as long as they keep coming back within the time defined below
-define(COOKIE_LIFETIME, 2592000); // 2592000 = 60*60*24*30 = 30 days (~1 month)
+define(COOKIE_LIFETIME, 2592000); // 2592000 = 60*60*24*7 = 7 days
 
 //start sessions
 session_start();
@@ -90,6 +90,7 @@ $search['query'];
 $search['engine']; //an engine 'id'.  so it's a string, not a reference to an object
 $search['deriv'];
 $search['comm'];
+$search['sourceid']; //where they came from.  'Mozilla-search' if they're using the ffx search bar
 
 //the default values (what the form will look like when someone visits the page for the first time)
 $search_default['query'] = '';//_("Enter Search query");
@@ -149,19 +150,32 @@ function sendThemOnTheirWay($search){
 }
 
 //simple helper function that grabs the useful search info from post and saves it in a nice array
+function grabSearchFromGet(){
+    $search['query'] = $_GET['q'];
+    $search['deriv'] = $_GET['deriv'];
+    $search['comm'] = $_GET['comm'];
+    $search['engine'] = $_GET['engine'];
+    $search['sourceid'] = $_GET['sourceid'];
+    return $search;
+}
+
+/*
 function grabSearchFromPost(){
     $search['query'] = $_POST['q'];
     $search['deriv'] = $_POST['deriv'];
     $search['comm'] = $_POST['comm'];
     $search['engine'] = $_POST['engine'];
     return $search;
-}
+}*/
 
 //MAIN LOGIC-------------------------------------------------------
+
+$search = grabSearchFromGet();
 //if they submitted a search query
-if(isset($_POST['q'])){
-    $search = grabSearchFromPost($engines);
-    if(!$_POST['engine']){
+//var_dump($search);
+if(isset($search['query'])){
+    if($search['sourceid'] == "Mozilla-search"){
+        $fromFFxSearch = TRUE;
         //they must have come from the firefox search bar.
         //first, see if they have a search engine in a cookie or session
         //if they do, send them on their way.  if not, give them the webpage
@@ -173,7 +187,7 @@ if(isset($_POST['q'])){
             sendThemOnTheirWay($search);
         }
     }
-    else if($_POST['q'] != ''){
+    else if($search['query'] != ''){
         //if they did submit a query, then we should probably be sending them on their way
         setQueryAndEngineInCookieAndSession($search);
         sendThemOnTheirWay($search);
@@ -204,11 +218,11 @@ else{
 //called from within search-engines.php
 function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
     ?>
-        <li id="<?php echo $id ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($search_type) ?>" /> (<?php echo $search_type ?>)</label></li>
+        <li id="<?php echo _($id) ?>_li" class="inactive"><input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/><label for="<?php echo $id ?>" class="engineLabel"><img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($_human_readable_name) ?>" /> (<?php echo _($search_type) ?>)</label></li>
     <?php
 }
-
-
+?>
+<?php
 
 
 
@@ -236,14 +250,26 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
     /* ]]> */
     </script>
     <script type="text/javascript" src="search.js"></script>
+    
     <style type="text/css" media="screen">
       @import "search.css";
     </style>
+    
     <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
+    
+    
+<![CDATA[ this is all for the help.js tooltip boxes ]]>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
+<script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
+    
+    
   </head>
-  <body onload="setupQuery()">
+  <body onload="setupQuery()" class="yui-skin-sam">
     <div id="ff-box"><div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?></div></div>
     <div id="header-box">
       <div id="header">
@@ -255,26 +281,36 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
 	</div>
         
         <div id="about">
-        <h3>Search for Creative Commons Licensed Material</h3>
+        <h3><?php echo _('Search for Creative Commons Licensed Material') ?></h3>
         <p>
-        It's great.  But You should learn some stuff.  <a href="">Read more »</a>
+        <?php echo _('It\'s great.  But You should learn some stuff.  <a href="#" id="aboutsearch" class="helpLink">Read more »</a>') ?>
         </p>
         </div>
         
+        <div id="help_aboutsearch" class="help_panel">
+            <div class="hd">Should I trust the results that I get back?</div>
+            <div class="bd">
+              <p>No.  In fact, you should run while you still can.</p>
+
+              <p><a href="">Learn more</a>.</p>
+            </div>
+          </div>
+
+        
       </div>
     </div>
-      <form id ="ccSearchForm" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+      <form id ="ccSearchForm" method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
       <fieldset id="ccSearchForm-MainFieldset">
       
       	  	  <fieldset id="searchAndGo">
-	  	  <legend>I want to search for...</legend>
+	  	  <legend><?php echo _('I want to search for...') ?></legend>
             <input type="text" name="q" id="q" value="<?php echo $search['query']; ?>" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
             <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
 	  </fieldset>
       
 	  <fieldset id="everythingButTabs">
       	  <fieldset id="comm_deriv">
-	  <legend>I want something that I can...</legend>
+	  <legend><?php echo _('I want something that I can...') ?></legend>
        <p>
               <input type="checkbox" name="comm" value="1" id="comm" <?php if($search['comm']) echo 'checked="checked"' ?>/>
               <label for="comm"><?php echo _('use for <em>commercial purposes</em>.') ?></label>
@@ -286,10 +322,11 @@ function showEngineRadio($id, $checked, $image, $image_is_png, $search_type){
 	</fieldset>
   	  <fieldset id="engineList"> 
 	  
-	  <legend>I want to search with...</legend>
+	  <legend><?php echo _('I want to search with...') ?></legend>
 	  <ul id="engines">
 	    <?php $engines->showSelectRadios(); ?>
 	  </ul>
+	  <p><?php echo('If you use the firefox search bar, we\'ll remember your choice and redirect you automatically in the future.  Enter a blank search to return to this form at any time.') ?></p>
 	  </fieldset>
 	</fieldset>
 	<!--

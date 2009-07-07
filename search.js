@@ -5,6 +5,9 @@
  */
 
 var lang = "";
+
+//var d is declared in the html header, found in index.php
+//it's the default text to go in the search bar.
 /*
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -65,11 +68,16 @@ function setupQuery() {
 	
 	//query.value = qs;
 	
+    //focus on the query input field
+    query.focus();
+	
 	if ((query.value == "") || (query.value == "null")) {
-		query.value = d;
+	    //case: there is no query in the query input field
 	} else if (query.value != d){
+	    //case: there is a query, and it's not just the default text
 		query.className = "active";
 	}
+	
 	
 }
 
