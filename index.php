@@ -264,12 +264,6 @@ function showEngineRadio($id, $human_readable_name, $checked, $image, $image_is_
    </head>
    <body onload="setupQuery()" class="yui-skin-sam">
 
-      <div id="ff-box">
-         <div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?>
-         </div>
-      </div>
-
-
       <div id="header-box">
          <div id="header">
             <div id="title">
@@ -281,8 +275,11 @@ function showEngineRadio($id, $human_readable_name, $checked, $image, $image_is_
          <div id="about">
             <h3><?php echo _('Search for Creative Commons Licensed Material') ?></h3>
             <p>
-               <?php echo _('It\'s great.  But You should learn some stuff.  <a href="#" id="aboutsearch" class="helpLink">Read more »</a>') ?>
+               <?php echo _('It\'s great.  But you should learn some stuff.  <a href="#" id="aboutsearch" class="helpLink">Read more &raquo;</a>') ?>
             </p>
+            <?php if($fromFFxSearch) { ?><p id="ffx-search-bar-info">
+               <a href="http://wiki.creativecommons.org/Firefox"><?php echo _('Learn about setting your Firefox search engine') ?> &raquo;</a>
+            </p> <?php } ?>
          </div>
          <div id="help_aboutsearch" class="help_panel">
             <div class="hd">Should I trust the results that I get back?</div>

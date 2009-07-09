@@ -6,70 +6,21 @@
 
 var lang = "";
 
-//var d is declared in the html header, found in index.php
-//it's the default text to go in the search bar.
-/*
-// mmm, cookies...
-function setCookie(name, value, expires, path, domain, secure) {
-    document.cookie = name + "=" + escape(value) +
-        ((expires) ? "; expires=" + expires.toGMTString() : "") +
-        ((path) ? "; path=" + path : "") +
-        ((domain) ? "; domain=" + domain : "") +
-        ((secure) ? "; secure" : "");
-}
-function getCookie(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-        begin = dc.indexOf(prefix);
-        if (begin != 0) return null;
-    } else {
-        begin += 2;
-    }
-    var end = document.cookie.indexOf(";", begin);
-    if (end == -1) {
-        end = dc.length;
-    }
-    return unescape(dc.substring(begin + prefix.length, end));
-}
-*/
-////
-
-// function by Pete Freitag (pete@cfdev.com)
-function getQueryStrVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] == variable) {
-      return pair[1];
-    }
-  }
-	return null;
-}
-
 // don't need an entire framework just for this
 function id(i) { return document.getElementById(i); }
+
+/* these 3 functions just handle the clever auto-clear stuff*/
+// note: var d, the default input text, is defined in the head of index.php
+// this way, we can use php to translate it (clever, eh?)
 
 // initialise app
 function setupQuery() {
 	var query = id("q");
-	//var qs = getQueryStrVariable('q');
-	var moz = getQueryStrVariable('sourceid');
-
-	// display firefox branding 
-	//if (moz == "Mozilla-search") {
-	if (1) {
-		id('ff-box').style.display = "block";
-	}
 	
 	lang = getQueryStrVariable('lang');
 	
-	//query.value = qs;
-	
-    //focus on the query input field
-    query.focus();
+   //focus on the query input field
+   query.focus();
 	
 	if ((query.value == "") || (query.value == "null")) {
 	    //case: there is no query in the query input field
@@ -77,8 +28,6 @@ function setupQuery() {
 	    //case: there is a query, and it's not just the default text
 		query.className = "active";
 	}
-	
-	
 }
 
 // bell
@@ -101,62 +50,7 @@ function resetQuery() {
 	}
 }
 
-/*
-function setEngine(e) {
-	var previous = engine;
-
-
-//    var query = id("q");
-//    if ( query.className == "inactive" ) {
-//        query.value = "flowers";
-//        query.className = "active";
-//    }
-
-	engine = e;
-	try { id(previous + "_li").className="inactive"; } catch(err) {}
-	id(engine + "_li").className="active";
-	
-	var d = new Date();
-	d.setFullYear(2020,0,1);
-	setCookie('ccsearch', engine, d, '/', '.creativecommons.org');
-	
-	doSearch();
-}
-*/
-
-
-
-/*
-// keep results iframe as big as window
-function resizeResults() {
-	var results = id('results');
-	var height = 0;
-	var heightMinus = 200;
-	
-	// get height of window
-	if (window.innerHeight) {
-		height = window.innerHeight - 18;
-	} else if (document.documentElement && document.documentElement.clientHeight) {
-		height = document.documentElement.clientHeight;
-		heightMinus = 165;
-	} else if (document.body && document.body.clientHeight) {
-		height = document.body.clientHeight;
-	}
-	
-	results.style.height = Math.round(height - heightMinus) + "px";
-}
-*/
-function showFox() {
-	id('thanks').style.display = "block";
-}
-
-function hideFox() {
-	id('thanks').style.display = "none";
-}
-
-function clickFox() {
-//	top.location = "http://spreadfirefox.com";
-}
+/*language stuff*/
 
 function grabOriginalLanguage() {
     return document.getElementsByTagName('html')[0].lang.replace('-', '_');
@@ -187,4 +81,20 @@ function grabChosenLanguage() {
     }
     return null;
 }
-	
+
+
+/* we don't use this anymore, because all query processing is done in php
+** this is probably for the better
+// function by Pete Freitag (pete@cfdev.com)
+function getQueryStrVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+	return null;
+}
+*/

@@ -113,7 +113,7 @@ class SetOfSearchEngines
         $this->_original_language = $cc_lang->GetLanguage(); 
         if(DEBUG) echo "<p>Current language: " . $this->_original_language . "</p>\n";
         
-        //if i could figure out how to define the default engine list in a constant, i would do that here
+        //if i could figure out how to define the default engine list in a constant, i would do this here:
         //$this->_engineList = $DEFAULT_ENGINE_LIST;
         //since i can't, i'll just populate it by hand
         $this->_engineList = array(
@@ -172,6 +172,7 @@ class SearchEngine{
     //each search engine has its own values for each of these
     //they are more like constants than they are variables
     //(code could probably be updated to better reflect this)
+    //(the individual search engine classes could perhaps be static)
     var $_id;
     var $_human_readable_name;
     var $_image;

@@ -6,11 +6,18 @@
 
 body {
 	background-color: #fafafa;
-	color: #333;
-	font: 0.8em/150% "Lucidia Grande", verdana, arial, sans-serif;
-	padding: 0;
-	/*margin: 15px 14px 0 14px;*/
-	margin: 0;
+   -x-system-font:none;
+   color:#333333;
+   font-family:Arial,sans-serif;
+   font-size:62.5%;
+   font-size-adjust:none;
+   font-stretch:normal;
+   font-style:normal;
+   font-variant:normal;
+   font-weight:normal;
+   line-height:1.5em;
+   margin:0;
+   padding:0;
 }
 
 a, a:link {
@@ -24,36 +31,10 @@ a, a:link, a:visited {
   color: #13339a;
 }
 
-iframe {
-    border: none;
-}
-
-#ff-box {
-	width: 110px;
-	height: 45px;
-	background-image: url("images/ff-logo.png");
-	position: fixed;
-	background-repeat: no-repeat;
-	bottom: 0px;
-	left: -10px;
-	display: none;
-}
-
-#thanks {
-	position: fixed;
-	left: 100px;
-	bottom: 4px;
-	margin-top: 43px;
-	/*padding-top: 43px;*/
-	font-size: 10px;
-	/*width: 300px;*/
-	background-color: #F7F7F7;
-}
-
 #footer {
 	clear: both;
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 1.1em;
 	margin-top: 2px;
 }
 
@@ -63,6 +44,7 @@ iframe {
 	height: 80px;
 	overflow:hidden;
 	margin-bottom: 0;
+	font-size: 1.3em;
 }
 #header {
 	padding: 10px;
@@ -91,9 +73,9 @@ iframe {
 
 #title-by {
 	position:absolute;
-	font-size: 0.8em;
-	top: 44px;
-	left: 65px;
+	font-size: 0.85em;
+	top: 47px;
+	left: 73px;
 	color: #fff;
 }
 
@@ -135,7 +117,9 @@ iframe {
     color: #ffffff;
     font-size: 1.2em;
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding-let: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
@@ -149,20 +133,30 @@ iframe {
 }
 
 #about a {
-    color: #ffffff;
-    font-size: .8em;
+   color: #ffffff;
+   font-size: .8em;
+}
+
+#ffx-search-bar-info{
+   padding-left: 110px;
+	background-image: url("images/ff-logo.png");
+	background-repeat: no-repeat;
+   padding-top: 50px;
+   padding-bottom: 60px;
+   height: 40px;
+   display: inline-block;
 }
 
 #ccSearchForm-MainFieldset{
-    /*border: 1px solid #ccc;
-    border-top: 0;*/
-    border: none;
-    background-color: #FCFCFC;
-    /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
-    /*float: left;*/
-	margin: 0 15px 10px 15px;
-    padding: 15px;
-    
+   /*border: 1px solid #ccc;
+   border-top: 0;*/
+   border: none;
+   background-color: #FCFCFC;
+   /*background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;*/
+   /*float: left;*/
+   margin: 0 15px 10px 15px;
+   padding: 15px;
+   font-size: 1.1em;
     
 }
 
@@ -189,15 +183,17 @@ iframe {
 #q{
     font-size: 4em;
     color: #262626;
-    width: 600px;
+    width: 550px;
     background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
     border: 1px solid #ccc;
     padding: 5px 10px 5px 10px;
+    margin-right: 10px;
     vertical-align: middle;
 }
 
 #qsubmit{
     font-size: 4em;
+    padding: 5px 10px 5px 10px;
     vertical-align: middle;
 }
 
@@ -213,7 +209,6 @@ iframe {
     margin: 15px;
     border:  #9C9C9C 1px dashed;
     padding-bottom: 30px;
-    width: 12em;
 }
 
 #comm_deriv p{
@@ -253,17 +248,20 @@ iframe {
     width: 450px;*/
     text-align: left;
     border:  #9C9C9C 1px dashed;
-    padding-bottom: 30px;
-    width: 10em;
 }
 
 #engineList legend{
-    padding-bottom: 15px;
 }
 
 #engineList p{
     font-size: .5em;
     color: #808080;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    position: relative;
+    padding: 3px;
     
 }
 
@@ -276,15 +274,17 @@ ul#engines {
 }
 
 ul#engines li {
-	padding: 10px 50px 0px;
+	padding: 10px 10px 0px;
 	margin: 0;
-    font-size: .6em;
+   font-size: .5em;
 	color: #5C5C5C;
+	vertical-align: middle;
 }
 
 ul#engines li label img{
-	padding-top: 5px;
-    vertical-align: center;
+	margin-top: 5px;
+   vertical-align: middle;
+   margin-right: 5px;
 }
 
 ul.sub {
@@ -294,46 +294,9 @@ ul.sub li {
 	border-bottom: 1px solid #ccc;
 }
 
-/*
-#options {
-	padding: 3px 5px 5px;
-	font-size: 0.9em;
-	text-align: right;
-}
-*/
 #subNFO { margin: 5px 0 -4px 2px; }
 #subCC { margin: 5px 0 -4px 2px; }
 #subBreak { margin: 5px 0 -1px 2px; }
-
-/*
-TODO: transfer these styles (mostly just spacing) to somewhere else
-and delete these tags
-*/
-/*
-#results-box {
-	margin: 5px 15px 0 15px;
-}
-#results {
-	clear: both;
-	width: 100%;
-	border: 1px solid #ccc;
-	overflow: auto;
-	margin-top: 0px;
-	background-color: #fff;
-	height:500px;
-}
-
-.inactive {
-	color: #bbb;
-}
-.active {
-	color: #333;
-}
-*/
-.google {
-/*	margin-bottom: -4px;
-	*/
-}
 
 #menu {
 	margin-top: 5px;
