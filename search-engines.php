@@ -118,6 +118,7 @@ class SetOfSearchEngines
         //since i can't, i'll just populate it by hand
         $this->_engineList = array(
             'google' => new GoogleSearch(),
+            'google_img' => new GoogleImgSearch(),
             'yahoo' => new YahooSearch(),
             'flickr' => new FlickrSearch(),
             'blip' => new BlipSearch(),
@@ -251,6 +252,51 @@ class GoogleSearch extends SearchEngine{
             $rights .= ")";
         }
         $url = 'http://google.com/search?' . $rights . '&q=' . $query;
+        
+        return $url;
+    
+    }
+
+}
+
+
+
+class GoogleImgSearch extends SearchEngine{
+    var $_id = "google_img";
+    var $_human_readable_name = "Google Image";
+    var $_search_type = "Image Search";
+    var $_image = "images/cc-google.gif";
+    var $_image_is_png = false;
+    
+    function GoogleImgSearch(){
+        // start by calling parent (aka super) constructor
+        // it's just good practice
+        parent::SearchEngine($this->_id, $this->_human_readable_name, $this->_search_type, $this->_image, $this->_image_is_png);
+    }
+
+    function createQueryString($deriv, $comm, $query){
+        //.-(cc_noncommercial|cc_nonderived)
+        $rights = "as_rights=(cc_publicdomain|cc_attribute|cc_sharealike";
+        if(!$comm){
+            $rights .= "|cc_noncommercial";
+        }
+        if(!$deriv){
+            $rights .= "|cc_nonderived";
+        }
+        $rights .= ")";
+        
+        if($comm || $deriv){
+            $rights .= ".-(";
+		    if ($comm) {
+			    $rights .= "cc_noncommercial";
+		    }
+		    if ($deriv) {
+			    if($comm) $rights .= "|";
+			    $rights .= "cc_nonderived";
+		    }
+            $rights .= ")";
+        }
+        $url = 'http://images.google.com/images?' . 'as_q=' . $query . '&' . $rights;
         
         return $url;
     

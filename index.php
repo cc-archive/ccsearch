@@ -145,6 +145,7 @@ function sendThemOnTheirWay($search){
     global $engines;
     $engines->setCurrentEngine($search['engine']);
     $queryStr = $engines->_current_engine->createQueryString($search['deriv'], $search['comm'], $search['query']);
+    if(DEBUG) { echo $queryStr; exit(); }
     header("Location: " . $queryStr);
     exit();
 }
@@ -213,7 +214,7 @@ function showEngineRadio($id, $human_readable_name, $checked, $image, $image_is_
                         <input type="radio" name="engine" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php if($checked) echo 'checked="checked"' ?>/>
                         <label for="<?php echo $id ?>" class="engineLabel">
                            <img src="<?php echo $image ?>" border="0" <?php if ($image_is_png) echo 'class="png"' ?> alt="<?php echo _($human_readable_name) ?>" />
-                           (<?php echo _($search_type) ?>)
+                           <?php echo _($search_type) ?>
                         </label>
                      </li>
 <?php
@@ -317,7 +318,7 @@ function showEngineRadio($id, $human_readable_name, $checked, $image, $image_is_
 <?php $engines->showSelectRadios(); ?>
                   </ul>
                   <p>
-                     <?php echo('If you use the firefox search bar, we\'ll remember your choice and redirect you automatically in the future.  Enter a blank search to return to this form at any time.'); ?>
+                     <?php echo('If you use the Firefox search bar, we\'ll remember your choice and redirect you automatically in the future.  Enter a blank search to return to this form at any time.'); ?>
                   </p>
                </fieldset>
             </fieldset>

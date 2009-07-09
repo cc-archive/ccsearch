@@ -36,6 +36,7 @@ a, a:link, a:visited {
 	text-align: center;
 	font-size: 1.1em;
 	margin-top: 2px;
+	padding-bottom: 0.5em;
 }
 
 
@@ -97,6 +98,7 @@ a, a:link, a:visited {
 
 
 #about {
+   margin: 1em;
 	float: left;
 	font-size: 1.2em;
 	margin-left: 70px;
@@ -138,13 +140,12 @@ a, a:link, a:visited {
 }
 
 #ffx-search-bar-info{
-   padding-left: 110px;
-	background-image: url("images/ff-logo.png");
 	background-repeat: no-repeat;
-   padding-top: 50px;
-   padding-bottom: 60px;
-   height: 40px;
-   display: inline-block;
+   position: absolute;
+   right: 0px;
+   top: 0px;
+   padding-right: 10px;
+   margin-left: 800px;
 }
 
 #ccSearchForm-MainFieldset{
@@ -181,7 +182,7 @@ a, a:link, a:visited {
 
 
 #q{
-    font-size: 4em;
+    font-size: 2.5em;
     color: #262626;
     width: 550px;
     background: url("images/tab-bg.png") repeat-x bottom left #f7f7f7;
@@ -192,7 +193,7 @@ a, a:link, a:visited {
 }
 
 #qsubmit{
-    font-size: 4em;
+    font-size: 2.5em;
     padding: 5px 10px 5px 10px;
     vertical-align: middle;
 }
