@@ -6,8 +6,23 @@
 
 var lang = "";
 
+/*couple helper functions*/
+
 // don't need an entire framework just for this
 function id(i) { return document.getElementById(i); }
+
+// function by Pete Freitag (pete@cfdev.com)
+function getQueryStrVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+	return null;
+}
 
 /* these 3 functions just handle the clever auto-clear stuff*/
 // note: var d, the default input text, is defined in the head of index.php
@@ -82,19 +97,3 @@ function grabChosenLanguage() {
     return null;
 }
 
-
-/* we don't use this anymore, because all query processing is done in php
-** this is probably for the better
-// function by Pete Freitag (pete@cfdev.com)
-function getQueryStrVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] == variable) {
-      return pair[1];
-    }
-  }
-	return null;
-}
-*/
