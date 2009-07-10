@@ -28,6 +28,7 @@ $use_i18n = true;
 require_once('cc-defines.php');
 require_once('cc-language.php');
 require_once('cc-language-ui.php');
+require_once('search-tabs.php');
 
 if ($use_i18n) {
   session_start();
@@ -70,6 +71,10 @@ if ($use_i18n) {
                                $cc_lang_help->get('_text') . "</div>");
 
 }
+
+//init the object holding the search engine tabs
+$enginetabs = new SearchTabs($cc_lang);
+
 //$cc_lang->DebugLanguages();
 //echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 //echo "<pre>";
@@ -150,19 +155,26 @@ if ($use_i18n) {
           <?php echo _('Remove Frame') ?></a>
       </div>
       <div id="menu">
+      <?php
+      //$enginetabs->show();
+      
+      ?>
+      
+      
 	<ul class="tabs">
           <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>
           <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" /></a></li>
           <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flickr') ?>" /></a></li>
           <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /></a></li>
-	  <li id="owlmm" class="inactive"><a href="#" onclick="setEngine('owlmm')" title="<?php echo _('Music Search') ?>"><img src="images/cc-owlmm.png" border="0" class="png" /></a></li>
+<li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
 	  <li id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png" /></a></li>
-	  <!--
-          <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
-          <li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
+<!--
+	<li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
           <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>
-	  -->
+	  <li id="owlmm" class="inactive"><a href="#" onclick="setEngine('owlmm')" title="<?php echo _('Music Search') ?>"><img src="images/cc-owlmm.png" border="0" class="png" /></a></li>  
+-->
 	</ul>
+	
       </div>
       
       <iframe id="results" name="results" frameborder="0" border="0"></iframe>
