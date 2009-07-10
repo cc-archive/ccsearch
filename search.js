@@ -202,13 +202,21 @@ function modRights() {
 			}
 			break;
 		case "jamendo":
-			rights = "cani=";
+			rights = "";
+			//note: apparently they don't check the values of these vars, they just check to see if they're defined
+			//so uncommenting the else's will cause jamendo to think you always want derivs and commercial
 			if (id('deriv').checked) {
-				rights += "d";
+				rights += "license_minrights_d=on&";
 			}
+			/*else{
+				rights += "license_minrights_d=off&";
+			}*/
 			if (id('comm').checked) {
-				rights += "c";
+				rights += "license_minrights_c=on";
 			}
+			/*else{
+				rights += "license_minrights_c=off";
+			}*/
 			break;
 		case "ccmixter":
 			rights = "";
@@ -268,7 +276,7 @@ function doSearch() {
 				break;
 				
 			case "jamendo":
-				url = 'http://www.jamendo.com/us/?p=music&tag=' + query.value + '&l=all&o=rating_desc&' + rights + '&aclass=2+3';
+			    url ='http://www.jamendo.com/tag/' + query.value + '?' + rights + '&location_country=all&order=rating_desc';
 				break;
 				
 			case "blip":
