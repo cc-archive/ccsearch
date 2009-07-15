@@ -121,18 +121,18 @@ $enginetabs = new SearchTabs($cc_lang);
 	</div>
         <form onsubmit="return doSearch()">
           <div id="left">
-            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()"/>
+            <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
             <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
 	    
           </div>
           <div id="right">
 	    <div>
-              <input type="checkbox" name="comm" value="" id="comm" />
-              <label for="comm"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
+              <input type="checkbox" name="comm" value="" id="comm" checked="checked" onclick="setCommDeriv()" />
+              <label for="comm"  onclick="setCommDeriv()"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
 	    </div>
 	    <div>
-              <input type="checkbox" name="deriv" value="" id="deriv" />
-              <label for="deriv"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
+              <input type="checkbox" name="deriv" value="" id="deriv" checked="checked"  onclick="setCommDeriv()" />
+              <label for="deriv" onclick="setCommDeriv()"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
 	    </div>
 	  </div>
 	</form>
@@ -162,12 +162,13 @@ $enginetabs = new SearchTabs($cc_lang);
       
       
 	<ul class="tabs">
-          <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /></a></li>
-          <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" /></a></li>
-          <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flickr') ?>" /></a></li>
-          <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /></a></li>
-<li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /></a></li>
-	  <li id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png" /></a></li>
+          <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Google Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" />(<?php echo _('Web') ?>)</a></li>
+          <li id="googleimg" class="inactive"><a href="#" onclick="setEngine('googleimg')" title="<?php echo _('Google Image Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" />(<?php echo _('Image') ?>)</a></li>
+          <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" />(<?php echo _('Web') ?>)</a></li>
+          <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Flickr Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flickr') ?>" />(<?php echo _('Image') ?>)</a></li>
+          <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Blip.tv Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" />(<?php echo _('Video') ?>)</a></li>
+<li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Jamendo Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" />(<?php echo _('Music') ?>)</a></li>
+	  <li id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Spin Xpress Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png"/>(<?php echo _('Media') ?>)</a></li>
 <!--
 	<li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
           <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>
