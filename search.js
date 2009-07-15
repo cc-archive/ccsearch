@@ -71,8 +71,10 @@ function getSettings(){
       comm = cookieCrumbs[1];
       deriv = cookieCrumbs[2];
    }
+   else{
+   }
    
-	if (engine == null){
+	if (engine == null || !engine || engine == ""){
 	   engine = default_engine;
 	}
    
@@ -111,10 +113,10 @@ function setupQuery() {
 	// grab cookie and setup default engine
 	getSettings();
 	if (e){
-	   setEngine (e);
+	   setEngine(e);
 	}
 	else{
-	   setEngine (engine);
+	   setEngine(engine);
 	}
 	
 	updateCommDerivCheckboxes();
@@ -131,7 +133,7 @@ function setupQuery() {
 	
 	query.value = qs;
 	
-	if ((query.value == "") || (query.value == "null")) {
+	if ((query.value == "") || (query.value == "null") || !(query.value)) {
 		query.value = d;
 		window.results.location.href = 'intro.php';
 	} else if (query.value != d){
