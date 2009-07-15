@@ -277,15 +277,17 @@ function modRights() {
 			}
 			break;
 		case "blip":
-			rights = "license=1,6,7"; // by,by-sa,pd
-			if (!id('comm').checked && !id('deriv').checked) {
-				rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
-			} else if (id('comm').checked) {
-				rights += ",2"; // by-nd
-			} else { // deriv must be checked
-				rights += ",4,5"; // by-nc,by-nc-sa
-			}
-			break;
+		   rights = "license=1,6,7"; // by,by-sa,pd
+		   if (!id('comm').checked && !id('deriv').checked) {
+			   rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
+		   } else if (id('comm').checked && !id('deriv').checked) {
+			   rights += ",2"; // by-nd
+		   } else if(!id('comm').checked && id('deriv').checked){ // deriv must be checked
+			   rights += ",4,5"; // by-nc,by-nc-sa
+		   }
+		   //else: case: both true
+		   //we just leave it at by, by-sa, pd
+		   break;
 		case "jamendo":
 			rights = "";
 			//note: apparently they don't check the values of these vars, they just check to see if they're defined
