@@ -17,7 +17,14 @@ var default_engine = "google";
 //var default_comm = 1;
 //var default_deriv = 1;
 
-
+/*
+// DEBUG!!!!!
+var d = new Date();
+d.setFullYear(2020,0,1);
+setCookie("ccsearch", "jamendo", d, '/') 
+alert("cookie planted!  mwahahahaha");
+// \DEBUG!!!!!
+*/
 
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -62,10 +69,9 @@ function saveSettings(){
 function getSettings(){
    cookieText = getCookie(cookie_name);
    
-   if(cookieText && cookieText != ''){
+   if(cookieText && cookieText != '' && cookieText.indexOf(cookie_break_text) != (-1)){
       //break it into pieces
       cookieCrumbs = cookieText.split(cookie_break_text);
-      
       
       engine = cookieCrumbs[0];
       comm = cookieCrumbs[1];
