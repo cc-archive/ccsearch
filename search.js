@@ -54,8 +54,8 @@ function getCookie(name) {
 
 var cookie_name = 'ccsearch';
 var cookie_break_text = "[-]";
-//var cookie_domain = '.creativecommons.org';
-var cookie_domain = '';
+var cookie_domain = '.creativecommons.org';
+//var cookie_domain = '';
 
 function saveSettings(){
 	var cookieDate = new Date();

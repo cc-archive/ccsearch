@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-09 16:35-0700\n"
+"POT-Creation-Date: 2009-07-17 15:53-0700\n"
 "PO-Revision-Date: 2009-03-17 07:35+0000\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Help Translate"
 msgstr "Help om te vertaal"
 
-#: index.php:95 index.php:187
+#: index.php:95 index.php:185
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
@@ -78,45 +78,83 @@ msgstr "Wys net soekresultate"
 msgid "Remove Frame"
 msgstr "Verwyder raam"
 
-#: index.php:165 index.php:166
-msgid "Web Search"
+#: index.php:165
+#, fuzzy
+msgid "Google Web Search"
 msgstr "Websoektog"
 
-#: index.php:165
+#: index.php:165 index.php:166
 msgid "Google"
 msgstr "Google"
 
+#: index.php:165 index.php:167
+msgid "Web"
+msgstr ""
+
 #: index.php:166
+#, fuzzy
+msgid "Google Image Search"
+msgstr "Beeldsoektog"
+
+#: index.php:166 index.php:168
+msgid "Image"
+msgstr ""
+
+#: index.php:167
+msgid "Web Search"
+msgstr "Websoektog"
+
+#: index.php:167
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:167
-msgid "Image Search"
+#: index.php:168
+#, fuzzy
+msgid "Flickr Image Search"
 msgstr "Beeldsoektog"
 
-#: index.php:167
+#: index.php:168
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:168
-msgid "Video Search"
+#: index.php:169
+#, fuzzy
+msgid "Blip.tv Video Search"
 msgstr "Videosoektog"
 
-#: index.php:168
+#: index.php:169
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:169 index.php:172 index.php:173
-msgid "Music Search"
+#: index.php:169
+msgid "Video"
+msgstr ""
+
+#: index.php:170
+#, fuzzy
+msgid "Jamendo Music Search"
 msgstr "Musieksoektog"
 
 #: index.php:170
-msgid "Media Search"
-msgstr "Mediasoektog"
-
-#: index.php:172
 msgid "jamendo"
 msgstr "jamendo"
+
+#: index.php:170
+msgid "Music"
+msgstr ""
+
+#: index.php:171
+#, fuzzy
+msgid "Spin Xpress Media Search"
+msgstr "Mediasoektog"
+
+#: index.php:171
+msgid "Media"
+msgstr ""
+
+#: index.php:173 index.php:175
+msgid "Music Search"
+msgstr "Musieksoektog"
 
 #: index.php:173
 msgid "ccMixter"
@@ -130,11 +168,11 @@ msgstr "Knipselkuns-soektog"
 msgid "Open Clip Art Library"
 msgstr "Oop Knipselkuns-biblioteek"
 
-#: index.php:187
+#: index.php:185
 msgid "Contact"
 msgstr "Kontak"
 
-#: index.php:187
+#: index.php:185
 msgid "Support CC"
 msgstr "Ondersteun CC"
 
