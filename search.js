@@ -69,13 +69,17 @@ function saveSettings(){
 function getSettings(){
    cookieText = getCookie(cookie_name);
    
-   if(cookieText && cookieText != '' && cookieText.indexOf(cookie_break_text) != (-1)){
+   if(cookieText && cookieText != ''){
       //break it into pieces
       cookieCrumbs = cookieText.split(cookie_break_text);
       
-      engine = cookieCrumbs[0];
-      comm = cookieCrumbs[1];
-      deriv = cookieCrumbs[2];
+	engine = cookieCrumbs[0];
+	if(1 in cookieCrumbs){
+	      comm = cookieCrumbs[1];
+	}
+	if(2 in cookieCrumbs){
+	      deriv = cookieCrumbs[2];
+	}
    }
    else{
    }
