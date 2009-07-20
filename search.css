@@ -199,13 +199,25 @@ ul.tabs li.active {
 	border-top: 1px solid #ccc;
 }
 
+ul.tabs li span{
+   vertical-align: top;
+   padding-top: 3px;
+}
+
 ul.tabs img {
 	padding-top: 7px;
 }
 
 ul.tabs a {
-	padding: 10px 20px 3px;
+	padding: 10px 10px 3px;
 	width: 100%;
+	text-decoration: none;
+	color: #787878;
+	font-size: .8em;
+}
+
+ul.tabs a:hover {
+	text-decoration: none;
 }
 
 /* PROGRESS METER */

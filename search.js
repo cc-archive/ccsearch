@@ -4,11 +4,27 @@
  * 
  */
 
-var engines = ["google", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
+var engines = ["google", "googleimg", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
 var engine = "";
+var comm = 1;
+var deriv = 1;
 var rights = "";
 var url = "";
 var lang = "";
+
+var default_query = "flowers";
+var default_engine = "google";
+//var default_comm = 1;
+//var default_deriv = 1;
+
+/*
+// DEBUG!!!!!
+var d = new Date();
+d.setFullYear(2020,0,1);
+setCookie("ccsearch", "jamendo", d, '/') 
+alert("cookie planted!  mwahahahaha");
+// \DEBUG!!!!!
+*/
 
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
@@ -35,6 +51,44 @@ function getCookie(name) {
     return unescape(dc.substring(begin + prefix.length, end));
 }
 ////
+
+var cookie_name = 'ccsearch';
+var cookie_break_text = "[-]";
+var cookie_domain = '.creativecommons.org';
+//var cookie_domain = '';
+
+function saveSettings(){
+	var cookieDate = new Date();
+	cookieDate.setFullYear(2020,0,1);
+	
+	cookieText = engine + cookie_break_text + comm + cookie_break_text + deriv;
+	
+	setCookie(cookie_name, cookieText, cookieDate, '/', cookie_domain);
+}
+
+function getSettings(){
+   cookieText = getCookie(cookie_name);
+   
+   if(cookieText && cookieText != ''){
+      //break it into pieces
+      cookieCrumbs = cookieText.split(cookie_break_text);
+      
+	engine = cookieCrumbs[0];
+	if(1 in cookieCrumbs){
+	      comm = cookieCrumbs[1];
+	}
+	if(2 in cookieCrumbs){
+	      deriv = cookieCrumbs[2];
+	}
+   }
+   else{
+   }
+   
+	if (engine == null || !engine || engine == ""){
+	   engine = default_engine;
+	}
+   
+}
 
 // function by Pete Freitag (pete@cfdev.com)
 function getQueryStrVariable(variable) {
@@ -67,8 +121,15 @@ function setupQuery() {
 	}
 	
 	// grab cookie and setup default engine
-	getEngine();
-	if (e) setEngine (e);
+	getSettings();
+	if (e){
+	   setEngine(e);
+	}
+	else{
+	   setEngine(engine);
+	}
+	
+	updateCommDerivCheckboxes();
 
 	lang = getQueryStrVariable('lang');
 	
@@ -82,7 +143,7 @@ function setupQuery() {
 	
 	query.value = qs;
 	
-	if ((query.value == "") || (query.value == "null")) {
+	if ((query.value == "") || (query.value == "null") || !(query.value)) {
 		query.value = d;
 		window.results.location.href = 'intro.php';
 	} else if (query.value != d){
@@ -118,7 +179,7 @@ function setEngine(e) {
 
     var query = id("q");
     if ( query.className == "inactive" ) {
-        query.value = "flowers";
+        query.value = default_query;
         query.className = "active";
     }
 	
@@ -126,20 +187,39 @@ function setEngine(e) {
 	try { id(previous).className="inactive"; } catch(err) {}
 	id(engine).className="active";
 	
+	
+	saveSettings();
+	/*
 	var d = new Date();
 	d.setFullYear(2020,0,1);
 	setCookie('ccsearch', engine, d, '/', '.creativecommons.org');
+	*/
 	
 	doSearch();
 }
 
-function getEngine() {
-	engine = getCookie('ccsearch');
-	
-	if (engine == null)
-		setEngine(engines[Math.floor(Math.random() * engines.length)]);
-	
-	id(engine).className = "active";
+function setCommDeriv() {
+   if(id('comm').checked)
+      comm = 1;
+   else
+      comm = 0;
+   if(id('deriv').checked)
+      deriv = 1;
+   else
+      deriv = 0;
+      
+   saveSettings();
+}
+
+function updateCommDerivCheckboxes(){
+   if(comm == 1)
+      id('comm').checked = "checked";
+   else
+      id('comm').checked = "";
+   if(deriv == 1)
+      id('deriv').checked = "checked";
+   else
+      id('deriv').checked = "";
 }
 
 // build advanced search query strings
@@ -162,6 +242,23 @@ function modRights() {
 			
 			rights += ")";
 			break;
+			
+			
+		case "googleimg":
+			//.-(cc_noncommercial|cc_nonderived)
+			rights = ".-(";
+			
+			if (id('comm').checked) {
+				rights += "cc_noncommercial";
+			}
+			if (id('deriv').checked) {
+				(id('comm').checked) ? rights += "|" : null;
+				rights += "cc_nonderived";
+			}
+			
+			rights += ")";
+		   break;
+			
 			
 		case "yahoo":
 			rights = "&";
@@ -192,15 +289,17 @@ function modRights() {
 			}
 			break;
 		case "blip":
-			rights = "license=1,6,7"; // by,by-sa,pd
-			if (!id('comm').checked && !id('deriv').checked) {
-				rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
-			} else if (id('comm').checked) {
-				rights += ",2"; // by-nd
-			} else { // deriv must be checked
-				rights += ",4,5"; // by-nc,by-nc-sa
-			}
-			break;
+		   rights = "license=1,6,7"; // by,by-sa,pd
+		   if (!id('comm').checked && !id('deriv').checked) {
+			   rights += ",2,3,4,5"; // by-nd,by-nc-nd,by-nc-,by-nc-sa
+		   } else if (id('comm').checked && !id('deriv').checked) {
+			   rights += ",2"; // by-nd
+		   } else if(!id('comm').checked && id('deriv').checked){ // deriv must be checked
+			   rights += ",4,5"; // by-nc,by-nc-sa
+		   }
+		   //else: case: both true
+		   //we just leave it at by, by-sa, pd
+		   break;
 		case "jamendo":
 			rights = "";
 			//note: apparently they don't check the values of these vars, they just check to see if they're defined
@@ -294,6 +393,14 @@ function doSearch() {
 			case "yahoo":
 				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
 				break;
+				
+		   
+		   
+			case "googleimg":
+			   url = 'http://images.google.com/images?as_q=' + query.value + '&as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + ((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + rights;
+			   break;
+			
+			
 				
 			case "google":
 			default:
