@@ -106,6 +106,10 @@ function getQueryStrVariable(variable) {
 // don't need an entire framework just for this
 function id(i) { return document.getElementById(i); }
 
+function show_ffx_msg(){
+	id('ffx-search-bar-info').style.display = "block";
+}
+
 // initialise app
 function setupQuery() {
 	var query = id("q");
@@ -117,7 +121,7 @@ function setupQuery() {
 
 	// display firefox branding 
 	if (moz == "Mozilla-search") {
-		id('ff-box').style.display = "block";
+		show_ffx_msg();
 	}
 	
 	// grab cookie and setup default engine
@@ -435,7 +439,7 @@ function resizeResults() {
 	
 	results.style.height = Math.round(height - heightMinus) + "px";
 }
-
+/*
 function showFox() {
 	id('thanks').style.display = "block";
 }
@@ -447,7 +451,7 @@ function hideFox() {
 function clickFox() {
 //	top.location = "http://spreadfirefox.com";
 }
-
+*/
 function breakOut() {
 	if (url.length > 10) window.location = url;
 }
