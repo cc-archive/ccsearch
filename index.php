@@ -112,7 +112,6 @@ $enginetabs = new SearchTabs($cc_lang);
     
   </head>
   <body onload="setupQuery()">
-    <div id="ff-box"><div id="thanks"><?php echo sprintf(_('Thanks for using CC Search via %sFirefox%s.'), '<a href="http://spreadfirefox.com/">', '</a>') ?></div></div>
     <div id="header-box">
       <div id="header">
         <div id="title">
@@ -125,18 +124,22 @@ $enginetabs = new SearchTabs($cc_lang);
             <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
 	    
           </div>
-          <div id="right">
+          <fieldset id="right">
+            <legend>I want something that I can...</legend>
 	    <div>
               <input type="checkbox" name="comm" value="" id="comm" checked="checked" onclick="setCommDeriv()" />
-              <label for="comm"  onclick="setCommDeriv()"><?php echo _('Search for works I can use for commercial purposes.') ?></label><br/>
+              <label for="comm"  onclick="setCommDeriv()"><?php echo _('use for <em>commercial purposes</em>') ?></label><br/>
 	    </div>
 	    <div>
               <input type="checkbox" name="deriv" value="" id="deriv" checked="checked"  onclick="setCommDeriv()" />
-              <label for="deriv" onclick="setCommDeriv()"><?php echo _('Search for works I can modify, adapt, or build upon.') ?></label><br/>
+              <label for="deriv" onclick="setCommDeriv()"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>') ?></label><br/>
 	    </div>
-	  </div>
+	  </fieldset>
 	</form>
       </div>
+            <p id="ffx-search-bar-info">
+               <a href="http://wiki.creativecommons.org/Firefox">Learn about setting your Firefox search engine &raquo;</a>
+            </p>
     </div>
     <div id="results-box">
       <div id="options">
