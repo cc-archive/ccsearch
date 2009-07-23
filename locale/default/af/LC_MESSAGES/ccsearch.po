@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 11:36-0700\n"
+"POT-Creation-Date: 2009-07-17 15:58-0700\n"
 "PO-Revision-Date: 2009-03-17 07:35+0000\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,124 +17,71 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 1.3-svn\n"
 
-#: index.php:67
+#: index.php:76
 msgid "Help Translate"
 msgstr "Help om te vertaal"
 
-#: index.php:95 index.php:187
+#: index.php:237 index.php:333
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
-#: index.php:95
+#: index.php:237
 msgid "Search"
 msgstr "Soek"
 
-#: index.php:103
+#: index.php:245
 msgid "Enter search query"
 msgstr "Tik soeknavraag"
 
-#: index.php:115
-#, php-format
-msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr "Dankie dat u CC-Soek deur %sFirefox%s gebruik."
-
-#: index.php:120
+#: index.php:273
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr "deur <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 
-#: index.php:125
-msgid "go"
-msgstr "soek"
+#: index.php:277
+#, fuzzy
+msgid "Search for Creative Commons Licensed Material"
+msgstr "Leer aangaande Creative Commons"
 
-#: index.php:131
-msgid "Search for works I can use for commercial purposes."
+#: index.php:279
+msgid ""
+"It's great.  But you should learn some stuff.  <a href=\"#\" id=\"aboutsearch"
+"\" class=\"helpLink\">Read more &raquo;</a>"
+msgstr ""
+
+#: index.php:282
+msgid "Learn about setting your Firefox search engine"
+msgstr ""
+
+#: index.php:299
+msgid "I want to search for..."
+msgstr ""
+
+#: index.php:301
+msgid "Go"
+msgstr ""
+
+#: index.php:305
+msgid "I want something that I can..."
+msgstr ""
+
+#: index.php:308
+#, fuzzy
+msgid "use for <em>commercial purposes</em>."
 msgstr "Soek vir werke wat ek vir kommersiële doeleindes kan gebruik."
 
-#: index.php:135
-msgid "Search for works I can modify, adapt, or build upon."
-msgstr "Soek vir werke wat ek kan verander, aanpas of op kan voortbou."
+#: index.php:312
+msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>."
+msgstr ""
 
-#: index.php:143
-msgid "Understand your search results"
-msgstr "Verstaan die soekresultate"
+#: index.php:316
+msgid "I want to search with..."
+msgstr ""
 
-#: index.php:145 index.php:146
-msgid "What is this?"
-msgstr "Wat is dié?"
-
-#: index.php:149
-msgid "Browse directories of licensed images, sounds, videos and more"
-msgstr "Blaai deur gidse van gelisensieerde beelde, klanke, video's en nogwat"
-
-#: index.php:150 index.php:151
-msgid "Content Directories"
-msgstr "Media-soekgidse"
-
-#: index.php:153
-msgid "Only show search results"
-msgstr "Wys net soekresultate"
-
-#: index.php:154 index.php:155
-msgid "Remove Frame"
-msgstr "Verwyder raam"
-
-#: index.php:165 index.php:166
-msgid "Web Search"
-msgstr "Websoektog"
-
-#: index.php:165
-msgid "Google"
-msgstr "Google"
-
-#: index.php:166
-msgid "Yahoo"
-msgstr "Yahoo"
-
-#: index.php:167
-msgid "Image Search"
-msgstr "Beeldsoektog"
-
-#: index.php:167
-msgid "flickr"
-msgstr "flickr"
-
-#: index.php:168
-msgid "Video Search"
-msgstr "Videosoektog"
-
-#: index.php:168
-msgid "blip.tv"
-msgstr "blip.tv"
-
-#: index.php:169 index.php:172 index.php:173
-msgid "Music Search"
-msgstr "Musieksoektog"
-
-#: index.php:170
-msgid "Media Search"
-msgstr "Mediasoektog"
-
-#: index.php:172
-msgid "jamendo"
-msgstr "jamendo"
-
-#: index.php:173
-msgid "ccMixter"
-msgstr "ccMixter"
-
-#: index.php:174
-msgid "Clip Art Search"
-msgstr "Knipselkuns-soektog"
-
-#: index.php:174
-msgid "Open Clip Art Library"
-msgstr "Oop Knipselkuns-biblioteek"
-
-#: index.php:187
+#: index.php:333
 msgid "Contact"
 msgstr "Kontak"
 
-#: index.php:187
+#: index.php:333
 msgid "Support CC"
 msgstr "Ondersteun CC"
 
@@ -170,3 +117,70 @@ msgstr ""
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "Taal"
+
+#~ msgid "Thanks for using CC Search via %sFirefox%s."
+#~ msgstr "Dankie dat u CC-Soek deur %sFirefox%s gebruik."
+
+#~ msgid "go"
+#~ msgstr "soek"
+
+#~ msgid "Search for works I can modify, adapt, or build upon."
+#~ msgstr "Soek vir werke wat ek kan verander, aanpas of op kan voortbou."
+
+#~ msgid "Understand your search results"
+#~ msgstr "Verstaan die soekresultate"
+
+#~ msgid "What is this?"
+#~ msgstr "Wat is dié?"
+
+#~ msgid "Browse directories of licensed images, sounds, videos and more"
+#~ msgstr ""
+#~ "Blaai deur gidse van gelisensieerde beelde, klanke, video's en nogwat"
+
+#~ msgid "Content Directories"
+#~ msgstr "Media-soekgidse"
+
+#~ msgid "Only show search results"
+#~ msgstr "Wys net soekresultate"
+
+#~ msgid "Remove Frame"
+#~ msgstr "Verwyder raam"
+
+#~ msgid "Web Search"
+#~ msgstr "Websoektog"
+
+#~ msgid "Google"
+#~ msgstr "Google"
+
+#~ msgid "Yahoo"
+#~ msgstr "Yahoo"
+
+#~ msgid "Image Search"
+#~ msgstr "Beeldsoektog"
+
+#~ msgid "flickr"
+#~ msgstr "flickr"
+
+#~ msgid "Video Search"
+#~ msgstr "Videosoektog"
+
+#~ msgid "blip.tv"
+#~ msgstr "blip.tv"
+
+#~ msgid "Music Search"
+#~ msgstr "Musieksoektog"
+
+#~ msgid "Media Search"
+#~ msgstr "Mediasoektog"
+
+#~ msgid "jamendo"
+#~ msgstr "jamendo"
+
+#~ msgid "ccMixter"
+#~ msgstr "ccMixter"
+
+#~ msgid "Clip Art Search"
+#~ msgstr "Knipselkuns-soektog"
+
+#~ msgid "Open Clip Art Library"
+#~ msgstr "Oop Knipselkuns-biblioteek"

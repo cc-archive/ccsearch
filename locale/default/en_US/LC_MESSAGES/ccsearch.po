@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 11:36-0700\n"
+"POT-Creation-Date: 2009-07-17 15:58-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -16,124 +16,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:67
+#: index.php:76
 msgid "Help Translate"
 msgstr "Help Translate"
 
-#: index.php:95 index.php:187
+#: index.php:237 index.php:333
 msgid "Creative Commons"
 msgstr ""
 
-#: index.php:95
+#: index.php:237
 msgid "Search"
 msgstr ""
 
-#: index.php:103
+#: index.php:245
 msgid "Enter search query"
 msgstr ""
 
-#: index.php:115
-#, php-format
-msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr ""
-
-#: index.php:120
+#: index.php:273
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr ""
 
-#: index.php:125
-msgid "go"
+#: index.php:277
+msgid "Search for Creative Commons Licensed Material"
 msgstr ""
 
-#: index.php:131
-msgid "Search for works I can use for commercial purposes."
+#: index.php:279
+msgid ""
+"It's great.  But you should learn some stuff.  <a href=\"#\" id=\"aboutsearch"
+"\" class=\"helpLink\">Read more &raquo;</a>"
 msgstr ""
 
-#: index.php:135
-msgid "Search for works I can modify, adapt, or build upon."
+#: index.php:282
+msgid "Learn about setting your Firefox search engine"
 msgstr ""
 
-#: index.php:143
-msgid "Understand your search results"
+#: index.php:299
+msgid "I want to search for..."
 msgstr ""
 
-#: index.php:145 index.php:146
-msgid "What is this?"
+#: index.php:301
+msgid "Go"
 msgstr ""
 
-#: index.php:149
-msgid "Browse directories of licensed images, sounds, videos and more"
+#: index.php:305
+msgid "I want something that I can..."
 msgstr ""
 
-#: index.php:150 index.php:151
-msgid "Content Directories"
+#: index.php:308
+msgid "use for <em>commercial purposes</em>."
 msgstr ""
 
-#: index.php:153
-msgid "Only show search results"
+#: index.php:312
+msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>."
 msgstr ""
 
-#: index.php:154 index.php:155
-msgid "Remove Frame"
+#: index.php:316
+msgid "I want to search with..."
 msgstr ""
 
-#: index.php:165 index.php:166
-msgid "Web Search"
-msgstr ""
-
-#: index.php:165
-msgid "Google"
-msgstr ""
-
-#: index.php:166
-msgid "Yahoo"
-msgstr ""
-
-#: index.php:167
-msgid "Image Search"
-msgstr ""
-
-#: index.php:167
-msgid "flickr"
-msgstr ""
-
-#: index.php:168
-msgid "Video Search"
-msgstr ""
-
-#: index.php:168
-msgid "blip.tv"
-msgstr ""
-
-#: index.php:169 index.php:172 index.php:173
-msgid "Music Search"
-msgstr ""
-
-#: index.php:170
-msgid "Media Search"
-msgstr ""
-
-#: index.php:172
-msgid "jamendo"
-msgstr ""
-
-#: index.php:173
-msgid "ccMixter"
-msgstr ""
-
-#: index.php:174
-msgid "Clip Art Search"
-msgstr ""
-
-#: index.php:174
-msgid "Open Clip Art Library"
-msgstr ""
-
-#: index.php:187
+#: index.php:333
 msgid "Contact"
 msgstr ""
 
-#: index.php:187
+#: index.php:333
 msgid "Support CC"
 msgstr ""
 
