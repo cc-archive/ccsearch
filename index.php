@@ -127,11 +127,8 @@ $enginetabs = new SearchTabs($cc_lang);
       <div id="header">
         <div id="title">
             <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
-	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
-            <span id="contact-support">
-               <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a>
-            </span>
 	      </div>
+	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
 
         <form onsubmit="return doSearch()">
          <fieldset id="search_form">
@@ -150,7 +147,7 @@ $enginetabs = new SearchTabs($cc_lang);
           </fieldset>
 
           <fieldset id="right">
-            <legend>I want something that I can...</legend>
+            <legend><?php echo _('I want something that I can...') ?></legend>
 	    <div>
               <input type="checkbox" name="comm" value="" id="comm" checked="checked" onclick="setCommDeriv()" />
               <label for="comm"  onclick="setCommDeriv()"><?php echo _('use for <em>commercial purposes</em>') ?></label><br/>
@@ -166,18 +163,17 @@ $enginetabs = new SearchTabs($cc_lang);
 
 <!--(this is hidden by default)-->
 <div id="help_aboutsearch" class="help_panel">
-   <div class="hd">Should I trust the results that I get back?</div>
+   <div class="hd"><?php echo _('Understand Your Search Results') ?></div>
       <div class="bd">
-         <p>Search.creativecommons.org offers convenient access to search
-services provided by other independent organizations. Selecting
+         <p><?php echo _('Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
 different search options within the result list -- particularly Image
 search for Google and Yahoo -- may lead to the inclusion of results
 which are not Creative Commons licensed.
 You should always verify that the work you are re-using has a Creative
-Commmons license attached to it. <a href="http://wiki.creativecommons.org/CcSearch"><?php echo _('Learn more') ?>  &raquo</a>.
+Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/CcSearch"><?php echo _('Learn more') ?>  &raquo</a>.
          <p>
          <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
-          <?php echo _('Other') ?> <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
+          <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
           <?php echo _('Content Directories') ?> &raquo</a>
          </p>
       </div>
@@ -187,9 +183,14 @@ Commmons license attached to it. <a href="http://wiki.creativecommons.org/CcSear
 <div id="subheader">
 
             <p id="ffx-search-bar-info">
-               <a href="http://wiki.creativecommons.org/Firefox">Learn about setting your Firefox search engine &raquo;</a>
+               <a href="http://wiki.creativecommons.org/Firefox"><?php echo _('Learn about setting your Firefox search engine') ?> &raquo;</a>
             </p>
 <?php if ($use_i18n) $cc_lang_selector->output(); ?>
+
+            <span id="contact-support">| 
+               <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a>
+            </span>
+
 </div>
 
 <p id="remove-frame-button">
