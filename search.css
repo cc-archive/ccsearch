@@ -4,13 +4,26 @@
  * 
  */
 
+html{
+   height: 100%;
+}
+
 body {
 	background-color: #fafafa;
 	color: #333;
 	font: 0.8em/150% "Lucidia Grande", verdana, arial, sans-serif;
-	padding: 0;
+	padding: 0px;
 	/*margin: 15px 14px 0 14px;*/
-	margin: 0;
+	margin: 0px;
+   height: 100%;
+}
+
+#search_form{
+   display: inline-block;
+   text-align: center;
+   border: 0px;
+   padding: 0px;
+   margin: 3px 0px 0px 0px;
 }
 
 a, a:link {
@@ -22,10 +35,6 @@ a:hover {
 
 a, a:link, a:visited {
   color: #13339a;
-}
-
-iframe {
-    border: none;
 }
 /*
 #ff-box {
@@ -49,15 +58,13 @@ iframe {
 }
 */
 
+/*
 #ffx-search-bar-info{
-   position: absolute;
-   right: 0px;
-   top: 0px;
-   padding-right: 10px;
-   margin-left: 800px;
+   text-align: right;
    display: none;
+   display: inline-block;
 }
-
+*/
 
 #footer {
 	clear: both;
@@ -66,46 +73,48 @@ iframe {
 	margin-top: 2px;
 }
 
-
-#header-box {
-   /*http://creativecommons.org/wp-content/themes/cc5/images/header-bar-thin.png*/
-	background: url('http://creativecommons.org/images/header-main-b.png') repeat-x bottom left ;
-	height: 80px;
-	overflow:hidden;
-}
 #header {
-	padding: 10px;
-	margin-left: 5px;
+   background: #5aa322;
+	padding: 0px;
+   text-align: center;
 }
 
-#header-box a {
+#header a {
    color: #ffffff;
 }
 
 #title {
 	position: relative;
-	float: left;
-	width: 190px;
-	height: 60px;
-	/*border-right: 1px solid #b0b0b0;*/
+   float: left;
 	margin-right: 0px;
-	margin-bottom: 15px;
 	padding: 7px 0 0 5px;
-	overflow: hidden;
 }
 
+/*
 #title span {
 	display: none;
 }
+*/
+
 #title img {
 /*	padding: 7px 5px;*/
 }
 
+
+#contact-support {
+	position:absolute;
+	font-size: 0.7em;
+	top: 60px;
+	left: 65px;
+	color: #fff;
+}
+
+
 #title-by {
 	position:absolute;
-	font-size: 0.8em;
+	font-size: 0.85em;
 	top: 44px;
-	left: 65px;
+	left: 60px;
 	color: #fff;
 }
 
@@ -113,8 +122,107 @@ iframe {
 	color: #13332a;
 }
 
+
+
+
+
+#ffx-search-bar-info{
+   position: absolute;
+   left: 20px;
+   display: none;
+   margin: 0px;
+   padding: 0px;
+}
+
+
+.help_panel{
+   display: none;
+}
+
+.help_panel a{
+   color: black;
+}
+
+.bd p{
+   text-align: left;
+}
+
+.bd p a{
+   color: black;
+}
+
+#help_aboutsearch a{
+   color: black;
+}
+
+.hd{
+   text-align: left;
+}
+
+#info{
+   margin: 15px 0px 0px 0px;
+   padding: 0px;
+   text-align: left;
+   font-size: 1.2em;
+   vertical-align: top;
+   /*background: #456724;*/
+   width: 100%;
+   display: block;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+#subheader{
+
+   background: #456724;
+   width: 100%;
+   text-align: right;
+}
+
+a#aboutsearch{
+   margin: 0px;
+   padding: 0px;
+   vertical-align: top;
+   text-decoration:none;
+}
+
+a#aboutsearch:hover{
+   text-decoration:none;
+
+}
+
+#remove-frame-button{
+   vertical-align: middle;
+   text-align: center;
+   line-height: 1em;
+   font-size: 1.2em;
+   width: 1em;
+   height: 1em;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   margin: 0px;
+   padding: 0px;
+   border: 1px solid white;
+   color: white;
+}
+
+a#remove-frame-button:hover {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   margin: 0px;
+   padding: 0px;
+   border: 1px solid white;
+   color: white;
+   background: gray;
+   text-decoration: none;
+}
+
+
 #language_selector {
-		 display: inline;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
 }
 
 #language_selector select {
@@ -126,19 +234,30 @@ iframe {
 }
 
 #left {
-	float: left;
-	margin-left: 0.5em;
-	line-height: 60px;
+	display: inline-block;
+   margin: 0px;
+   padding: 10px 0px 0px 0px;
+   vertical-align: top;
+   border: none;
 }
+
+#left input{
+   font-size: 1.2em;
+}
+
+#left input#q{
+   width: 300px;
+}
+
 #right {
-	float: left;
+   display: inline-block;
 	font-size: 0.8em;
-	margin-left: 5px;
+	margin: none;
    border: none;
 	/*border-right: 1px solid #C0C0C0;*/
 	border-left: 1px dashed #EDEDED;
 	/*border-bottom: 1px solid #C0C0C0;
-	/*border: 1px solid #C0C0C0;*/
+	border: 1px solid #C0C0C0;*/
 	padding: 3px 5px 3px 5px;
    color: white;
 }
@@ -154,24 +273,32 @@ iframe {
 }
 
 #options {
+   text-align: right;
+   display: inline-block;
 	padding: 3px 5px 5px;
 	font-size: 0.9em;
 }
+
+
+
 #subNFO { margin: 5px 0 -4px 2px; }
 #subCC { margin: 5px 0 -4px 2px; }
 #subBreak { margin: 5px 0 -1px 2px; }
 
 #results-box {
-	margin: 5px 15px 0 15px;
+	margin: none;
+   height: 100%;
+   
 }
 #results {
 	clear: both;
 	width: 100%;
-	border: 1px solid #ccc;
+	border: solid #ccc;
+   border-width: 1px 0px 0px 0px;
 	overflow: auto;
 	margin-top: 0px;
 	background-color: #fff;
-	height:500px;
+   min-height: 100%;
 }
 
 .inactive {
