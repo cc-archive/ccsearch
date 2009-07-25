@@ -11,7 +11,7 @@ html{
 body {
 	background-color: #fafafa;
 	color: #333;
-	font: 0.8em/150% "Lucidia Grande", verdana, arial, sans-serif;
+	font: 0.8em/150% arial, sans-serif;
 	padding: 0px;
 	/*margin: 15px 14px 0 14px;*/
 	margin: 0px;
@@ -20,10 +20,9 @@ body {
 
 #search_form{
    display: inline-block;
-   text-align: center;
    border: 0px;
    padding: 0px;
-   margin: 3px 0px 0px 0px;
+   margin: 0px 0px 0px 32px;
 }
 
 a, a:link {
@@ -75,8 +74,8 @@ a, a:link, a:visited {
 
 #header {
    background: #5aa322;
-	padding: 0px;
-   text-align: center;
+   padding: 0px;
+   text-align: left;
 }
 
 #header a {
@@ -85,9 +84,9 @@ a, a:link, a:visited {
 
 #title {
 	position: relative;
-   float: left;
+    float: left;
 	margin-right: 0px;
-	padding: 7px 0 0 5px;
+	padding: 9px 0 0 7px;
 }
 
 /*
@@ -118,8 +117,8 @@ a, a:link, a:visited {
 #title-by {
 	position:absolute;
 	font-size: 0.85em;
-	top: 44px;
-	left: 60px;
+	top: 46px;
+	left: 67px;
 	color: #fff;
 }
 
@@ -135,10 +134,16 @@ a, a:link, a:visited {
    position: absolute;
    left: 20px;
    display: none;
-   margin: 0px;
-   padding: 0px;
+   margin: -2px;
+   padding: 0.42em;
+   background-color: #8aba24;
+   -moz-border-radius-bottomleft: 3px;
+   -moz-border-radius-bottomright: 3px;
+   border-top: 1px solid #3d5210;
 }
-
+#ffx-search-bar-info a {
+   color: #2f3f0c;
+}
 
 .help_panel{
    display: none;
@@ -165,7 +170,7 @@ a, a:link, a:visited {
 }
 
 #info{
-   margin: 15px 0px 0px 0px;
+   margin: 5px 0px 0px 0px;
    padding: 0px;
    text-align: left;
    font-size: 1.2em;
@@ -173,7 +178,7 @@ a, a:link, a:visited {
    /*background: #456724;*/
    width: 100%;
    display: block;
-   text-align: center;
+   text-align: left;
    margin-bottom: 10px;
 }
 
@@ -182,6 +187,7 @@ a, a:link, a:visited {
    background: #456724;
    width: 100%;
    text-align: right;
+   padding: 3px 0;
 }
 
 a#aboutsearch{
@@ -191,7 +197,7 @@ a#aboutsearch{
    text-decoration:none;
 }
 
-a#aboutsearch:hover{
+a#aboutsearch:hoveri {
    text-decoration:none;
 
 }
@@ -204,12 +210,15 @@ a#aboutsearch:hover{
    width: 1em;
    height: 1em;
    position: absolute;
-   top: 0px;
-   right: 0px;
+   top: 5px;
+   right: 5px;
    margin: 0px;
-   padding: 0px;
+   padding: 0px 3px;
    border: 1px solid white;
    color: white;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
 }
 
 a#remove-frame-button:hover {
@@ -261,10 +270,10 @@ a#remove-frame-button:hover {
 	margin: none;
    border: none;
 	/*border-right: 1px solid #C0C0C0;*/
-	border-left: 1px dashed #EDEDED;
+	/*border-left: 1px dashed #EDEDED;*/
 	/*border-bottom: 1px solid #C0C0C0;
 	border: 1px solid #C0C0C0;*/
-	padding: 3px 5px 3px 5px;
+	padding: 0px 5px 0px 15px;
    color: white;
 }
 
@@ -276,6 +285,8 @@ a#remove-frame-button:hover {
 
 #right legend{
    font-size: 1.15em;
+   padding-left: 5px;
+   padding-top: 5px;
 }
 
 #options {
@@ -292,9 +303,8 @@ a#remove-frame-button:hover {
 #subBreak { margin: 5px 0 -1px 2px; }
 
 #results-box {
-	margin: none;
    height: 100%;
-   
+   margin: 20px 0 0 0;
 }
 #results {
 	clear: both;

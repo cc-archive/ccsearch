@@ -126,7 +126,7 @@ $enginetabs = new SearchTabs($cc_lang);
   <body onload="setupQuery()" class="yui-skin-sam">
       <div id="header">
         <div id="title">
-            <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+            <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	      </div>
 	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
 
