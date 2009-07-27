@@ -125,7 +125,11 @@ $enginetabs = new SearchTabs($cc_lang);
     <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="search-ie8.css" /><![endif]-->
   </head>
   <body onload="setupQuery()" class="yui-skin-sam">
-      <div id="header">
+<table id="everything">
+<tbody>
+<tr>
+      <td id="header">
+	
         <div id="title">
             <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	      </div>
@@ -199,8 +203,12 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
           X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
           <?php echo _('Remove Frame') ?>--></a>
 </p>
-    </div>
-    <div id="results-box">
+    </td>
+	</tr>
+
+
+<tr>
+<td>
       <div id="menu">
       
 	<ul class="tabs">
@@ -219,10 +227,16 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
 	</ul>
 	
       </div>
-      
+
+</td>
+    </tr>  
+<tr>
+    <td id="results-box">
       <iframe id="results" name="results" frameborder="0" border="0"></iframe>
-    </div>
-    
+    </td>
+	</tr>
+</tbody>
+   </table> 
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
 

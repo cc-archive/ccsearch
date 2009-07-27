@@ -6,17 +6,43 @@
 
 html{
    height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
 }
-
-body {
+body{
 	background-color: #fafafa;
 	color: #333;
 	font: 0.8em/150% arial, sans-serif;
 	padding: 0px;
-	/*margin: 15px 14px 0 14px;*/
 	margin: 0px;
    height: 100%;
+   width: 100%;
+   overflow: hidden;
 }
+
+#everything{
+height: 100%;
+margin: 0px;
+padding: 0px;
+width: 100%;
+   border-spacing: 0;
+}
+#everything tbody{
+	padding: 0px;
+margin: 0px;
+}
+
+#everything tr{
+	margin: 0px;
+	padding: 0px;
+}
+
+#everything td{
+	margin: 0px;
+	padding: 0px;
+}
+
 
 #search_form{
    display: inline-block;
@@ -313,7 +339,8 @@ a#remove-frame-button:hover {
 
 #results-box {
    height: 100%;
-   margin: 20px 0 0 0;
+	margin: 0;
+	padding: 0;
 }
 #results {
 	clear: both;
@@ -321,7 +348,8 @@ a#remove-frame-button:hover {
 	border: solid #ccc;
    border-width: 1px 0px 0px 0px;
 	overflow: auto;
-	margin-top: 0px;
+margin: 0;
+padding: 0;
 	background-color: #fff;
    height: 100%;
 }
@@ -338,7 +366,7 @@ a#remove-frame-button:hover {
 }
 
 #menu {
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-left: 6px;
 	margin-right: 6px;
 	height: 32px;
