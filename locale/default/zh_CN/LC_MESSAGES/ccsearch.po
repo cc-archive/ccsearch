@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 15:53-0700\n"
+"POT-Creation-Date: 2009-07-24 22:05+0000\n"
 "PO-Revision-Date: 2008-06-24 12:56-0500\n"
 "Last-Translator: zhengyi   <zhengyi@cn.creativecommons.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Help Translate"
 msgstr "帮助翻译"
 
-#: index.php:95 index.php:185
+#: index.php:95
 msgid "Creative Commons"
 msgstr "知识共享"
 
@@ -28,152 +28,161 @@ msgstr "知识共享"
 msgid "Search"
 msgstr "搜索"
 
-#: index.php:103
+#: index.php:112
 msgid "Enter search query"
 msgstr ""
 
-#: index.php:115
-#, php-format
-msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr "感谢您通过Firefox使用CC搜索"
-
-#: index.php:120
+#: index.php:130
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr ""
 
-#: index.php:125
-msgid "go"
+#: index.php:132
+msgid "Contact"
+msgstr "联系我们"
+
+#: index.php:132
+msgid "Support CC"
 msgstr ""
 
-#: index.php:131
-msgid "Search for works I can use for commercial purposes."
-msgstr "搜索可以出于商业目的使用的作品"
-
-#: index.php:135
-msgid "Search for works I can modify, adapt, or build upon."
-msgstr "搜索可以修改、改编或演绎的作品"
+#: index.php:140
+msgid "go"
+msgstr ""
 
 #: index.php:143
 msgid "Understand your search results"
 msgstr "理解搜索结果"
 
-#: index.php:145 index.php:146
-msgid "What is this?"
-msgstr "这是什么？"
+#: index.php:145
+msgid "(info)"
+msgstr ""
 
-#: index.php:149
+#: index.php:146
+#, fuzzy
+msgid "Understand Your Search Results"
+msgstr "理解搜索结果"
+
+#: index.php:156
+#, fuzzy
+msgid "use for <em>commercial purposes</em>"
+msgstr "搜索可以出于商业目的使用的作品"
+
+#: index.php:160
+msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>"
+msgstr ""
+
+#: index.php:177
+msgid "Learn more"
+msgstr ""
+
+#: index.php:179
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr "浏览采用知识共享许可协议的图片、声音、视频以及更多作品的目录 "
 
-#: index.php:150 index.php:151
+#: index.php:180
+msgid "Other"
+msgstr ""
+
+#: index.php:180 index.php:181
 msgid "Content Directories"
 msgstr "内容目录"
 
-#: index.php:153
+#: index.php:196
 msgid "Only show search results"
 msgstr "只显示搜索结果"
 
-#: index.php:154 index.php:155
+#: index.php:197 index.php:198
 msgid "Remove Frame"
 msgstr "移除框架"
 
-#: index.php:165
+#: index.php:205
 #, fuzzy
 msgid "Google Web Search"
 msgstr "Web搜索"
 
-#: index.php:165 index.php:166
+#: index.php:205 index.php:206
 msgid "Google"
 msgstr "Google"
 
-#: index.php:165 index.php:167
+#: index.php:205 index.php:207
 msgid "Web"
 msgstr ""
 
-#: index.php:166
+#: index.php:206
 #, fuzzy
 msgid "Google Image Search"
 msgstr "在Flickr上搜索图片"
 
-#: index.php:166 index.php:168
+#: index.php:206 index.php:208
 msgid "Image"
 msgstr ""
 
-#: index.php:167
+#: index.php:207
 msgid "Web Search"
 msgstr "Web搜索"
 
-#: index.php:167
+#: index.php:207
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:168
+#: index.php:208
 #, fuzzy
 msgid "Flickr Image Search"
 msgstr "在Flickr上搜索图片"
 
-#: index.php:168
+#: index.php:208
 msgid "flickr"
 msgstr "Flickr"
 
-#: index.php:169
+#: index.php:209
 #, fuzzy
 msgid "Blip.tv Video Search"
 msgstr "在blip.tv上搜索视频"
 
-#: index.php:169
+#: index.php:209
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:169
+#: index.php:209
 msgid "Video"
 msgstr ""
 
-#: index.php:170
+#: index.php:210
 #, fuzzy
 msgid "Jamendo Music Search"
 msgstr "搜索音乐作品"
 
-#: index.php:170
+#: index.php:210
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:170
+#: index.php:210
 msgid "Music"
 msgstr ""
 
-#: index.php:171
+#: index.php:211
 #, fuzzy
 msgid "Spin Xpress Media Search"
 msgstr "搜索多媒体作品"
 
-#: index.php:171
+#: index.php:211
 msgid "Media"
 msgstr ""
 
-#: index.php:173 index.php:175
+#: index.php:213 index.php:215
 msgid "Music Search"
 msgstr "搜索音乐作品"
 
-#: index.php:173
+#: index.php:213
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:174
+#: index.php:214
 msgid "Clip Art Search"
 msgstr "搜索Clip Art"
 
-#: index.php:174
+#: index.php:214
 msgid "Open Clip Art Library"
 msgstr "Open Clip Art Library"
-
-#: index.php:185
-msgid "Contact"
-msgstr "联系我们"
-
-#: index.php:185
-msgid "Support CC"
-msgstr ""
 
 #: intro.php:51
 #, fuzzy
@@ -202,6 +211,15 @@ msgstr ""
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "语言"
+
+#~ msgid "Thanks for using CC Search via %sFirefox%s."
+#~ msgstr "感谢您通过Firefox使用CC搜索"
+
+#~ msgid "Search for works I can modify, adapt, or build upon."
+#~ msgstr "搜索可以修改、改编或演绎的作品"
+
+#~ msgid "What is this?"
+#~ msgstr "这是什么？"
 
 #~ msgid "stat"
 #~ msgstr "统计"

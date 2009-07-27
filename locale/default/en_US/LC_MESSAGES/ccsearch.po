@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 15:53-0700\n"
+"POT-Creation-Date: 2009-07-24 22:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Help Translate"
 msgstr "Help Translate"
 
-#: index.php:95 index.php:185
+#: index.php:95
 msgid "Creative Commons"
 msgstr ""
 
@@ -28,145 +28,152 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: index.php:103
+#: index.php:112
 msgid "Enter search query"
 msgstr ""
 
-#: index.php:115
-#, php-format
-msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr ""
-
-#: index.php:120
+#: index.php:130
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr ""
 
-#: index.php:125
+#: index.php:132
+msgid "Contact"
+msgstr ""
+
+#: index.php:132
+msgid "Support CC"
+msgstr ""
+
+#: index.php:140
 msgid "go"
-msgstr ""
-
-#: index.php:131
-msgid "Search for works I can use for commercial purposes."
-msgstr ""
-
-#: index.php:135
-msgid "Search for works I can modify, adapt, or build upon."
 msgstr ""
 
 #: index.php:143
 msgid "Understand your search results"
 msgstr ""
 
-#: index.php:145 index.php:146
-msgid "What is this?"
+#: index.php:145
+msgid "(info)"
 msgstr ""
 
-#: index.php:149
+#: index.php:146
+msgid "Understand Your Search Results"
+msgstr ""
+
+#: index.php:156
+msgid "use for <em>commercial purposes</em>"
+msgstr ""
+
+#: index.php:160
+msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>"
+msgstr ""
+
+#: index.php:177
+msgid "Learn more"
+msgstr ""
+
+#: index.php:179
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr ""
 
-#: index.php:150 index.php:151
+#: index.php:180
+msgid "Other"
+msgstr ""
+
+#: index.php:180 index.php:181
 msgid "Content Directories"
 msgstr ""
 
-#: index.php:153
+#: index.php:196
 msgid "Only show search results"
 msgstr ""
 
-#: index.php:154 index.php:155
+#: index.php:197 index.php:198
 msgid "Remove Frame"
 msgstr ""
 
-#: index.php:165
+#: index.php:205
 msgid "Google Web Search"
 msgstr ""
 
-#: index.php:165 index.php:166
+#: index.php:205 index.php:206
 msgid "Google"
 msgstr ""
 
-#: index.php:165 index.php:167
+#: index.php:205 index.php:207
 msgid "Web"
 msgstr ""
 
-#: index.php:166
+#: index.php:206
 msgid "Google Image Search"
 msgstr ""
 
-#: index.php:166 index.php:168
+#: index.php:206 index.php:208
 msgid "Image"
 msgstr ""
 
-#: index.php:167
+#: index.php:207
 msgid "Web Search"
 msgstr ""
 
-#: index.php:167
+#: index.php:207
 msgid "Yahoo"
 msgstr ""
 
-#: index.php:168
+#: index.php:208
 msgid "Flickr Image Search"
 msgstr ""
 
-#: index.php:168
+#: index.php:208
 msgid "flickr"
 msgstr ""
 
-#: index.php:169
+#: index.php:209
 msgid "Blip.tv Video Search"
 msgstr ""
 
-#: index.php:169
+#: index.php:209
 msgid "blip.tv"
 msgstr ""
 
-#: index.php:169
+#: index.php:209
 msgid "Video"
 msgstr ""
 
-#: index.php:170
+#: index.php:210
 msgid "Jamendo Music Search"
 msgstr ""
 
-#: index.php:170
+#: index.php:210
 msgid "jamendo"
 msgstr ""
 
-#: index.php:170
+#: index.php:210
 msgid "Music"
 msgstr ""
 
-#: index.php:171
+#: index.php:211
 msgid "Spin Xpress Media Search"
 msgstr ""
 
-#: index.php:171
+#: index.php:211
 msgid "Media"
 msgstr ""
 
-#: index.php:173 index.php:175
+#: index.php:213 index.php:215
 msgid "Music Search"
 msgstr ""
 
-#: index.php:173
+#: index.php:213
 msgid "ccMixter"
 msgstr ""
 
-#: index.php:174
+#: index.php:214
 msgid "Clip Art Search"
 msgstr ""
 
-#: index.php:174
+#: index.php:214
 msgid "Open Clip Art Library"
-msgstr ""
-
-#: index.php:185
-msgid "Contact"
-msgstr ""
-
-#: index.php:185
-msgid "Support CC"
 msgstr ""
 
 #: intro.php:51

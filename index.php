@@ -99,7 +99,7 @@ $enginetabs = new SearchTabs($cc_lang);
                                       search engine of search engines." />
     <meta name="robots" content="index, follow" />
 
-      <![CDATA[ <!--this is all for the help.js tooltip boxes--> ]]>
+      <!--this is all for the help.js tooltip boxes-->
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
 
@@ -122,6 +122,7 @@ $enginetabs = new SearchTabs($cc_lang);
 
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="search-ie8.css" /><![endif]-->
   </head>
   <body onload="setupQuery()" class="yui-skin-sam">
       <div id="header">
