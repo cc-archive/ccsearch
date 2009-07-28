@@ -136,10 +136,7 @@ if(preg_match('/^Opera\//i', $_SERVER['HTTP_USER_AGENT'])){
 
   </head>
   <body onload="setupQuery()" class="yui-skin-sam">
-<table id="everything">
-<tbody>
-<tr>
-      <td id="header">
+      <div id="header">
 	
         <div id="title">
             <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
@@ -214,12 +211,9 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
           X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
           <?php echo _('Remove Frame') ?>--></a>
 </p>
-    </td>
-	</tr>
 
+</div>
 
-<tr>
-<td>
       <div id="menu">
       
 	<ul class="tabs">
@@ -239,15 +233,9 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
 	
       </div>
 
-</td>
-    </tr>  
-<tr>
-    <td id="results-box">
+    <div id="results-box">
       <iframe id="results" name="results" frameborder="0" border="0"></iframe>
-    </td>
-	</tr>
-</tbody>
-   </table> 
+    </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
 

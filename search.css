@@ -221,7 +221,7 @@ a, a:link, a:visited {
    padding: 3px 0px;
    margin-bottom: 0px;
 	vertical-align: bottom;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 a#aboutsearch{
@@ -347,6 +347,7 @@ a#remove-frame-button:hover {
    height: 100%;
 	margin: 0;
 	padding: 0;
+   background: #456724;
 }
 #results {
 	clear: both;

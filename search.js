@@ -432,7 +432,7 @@ function resizeResults() {
 		height = window.innerHeight - 18;
 	} else if (document.documentElement && document.documentElement.clientHeight) {
 		height = document.documentElement.clientHeight;
-		heightMinus = 165;
+		heightMinus = 97;
 	} else if (document.body && document.body.clientHeight) {
 		height = document.body.clientHeight;
 	}
