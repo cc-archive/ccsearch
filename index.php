@@ -123,6 +123,17 @@ $enginetabs = new SearchTabs($cc_lang);
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
     <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="search-ie8.css" /><![endif]-->
+
+<?php
+if(preg_match('/^Opera\//i', $_SERVER['HTTP_USER_AGENT'])){
+?>
+   <style type="text/css" media="screen">
+      @import "search-opera.css";
+   </style>
+<?php
+}
+?>
+
   </head>
   <body onload="setupQuery()" class="yui-skin-sam">
 <table id="everything">

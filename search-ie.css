@@ -6,6 +6,19 @@
  *
  */
 
+body{
+   overflow: visible;
+}
+
+#results-box{
+   background-color: #456724;
+   vertical-align: top;
+}
+
+#results{
+   height: 400px;
+   vertical-align: top;
+}
 
 #left{
   width: 350px;
