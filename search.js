@@ -423,10 +423,9 @@ function doSearch() {
 
 // keep results iframe as big as window
 function resizeResults() {
-/*
 	var results = id('results');
 	var height = 0;
-	var heightMinus = 200;
+	var heightMinus = 132;
 	
 	// get height of window
 	if (window.innerHeight) {
@@ -439,7 +438,6 @@ function resizeResults() {
 	}
 	
 	results.style.height = Math.round(height - heightMinus) + "px";
-*/
 }
 
 /*

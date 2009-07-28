@@ -8,6 +8,7 @@
 
 body{
    overflow: visible;
+   background-color: #456724;
 }
 
 #results-box{
@@ -18,6 +19,10 @@ body{
 #results{
    height: 400px;
    vertical-align: top;
+}
+
+#everything{
+	height: auto;
 }
 
 #left{
