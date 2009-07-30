@@ -21,6 +21,7 @@
  * Creative Commons Search Interface
  *
  */
+header("X-UA-Compatible: IE=EmulateIE7");
 
 // turn off i18n for now.
 $use_i18n = true;
@@ -222,7 +223,7 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
       </div>
 
     <div id="results-box">
-      <iframe id="results" name="results" frameborder="0" border="0"></iframe>
+      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p>CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.</p></iframe>
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
