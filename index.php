@@ -122,22 +122,16 @@ $enginetabs = new SearchTabs($cc_lang);
 
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
-    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="search-ie8.css" /><![endif]-->
-
-<?php
-if(preg_match('/^Opera\//i', $_SERVER['HTTP_USER_AGENT'])){
-?>
-   <style type="text/css" media="screen">
-      @import "search-opera.css";
-   </style>
-<?php
-}
-?>
-
   </head>
   <body onload="setupQuery()" class="yui-skin-sam">
       <div id="header">
 	
+<p id="remove-frame-button">
+<a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
+          X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
+          <?php echo _('Remove Frame') ?>--></a>
+</p>
+
         <div id="title">
             <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
 	      </div>
@@ -205,12 +199,6 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
             </span>
 
 </div>
-
-<p id="remove-frame-button">
-<a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
-          X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
-          <?php echo _('Remove Frame') ?>--></a>
-</p>
 
 </div>
 

@@ -6,23 +6,13 @@
  *
  */
 
-body{
-   overflow: visible;
-   background-color: #456724;
-}
-
-#results-box{
-   background-color: #456724;
-   vertical-align: top;
+#header{
+	margin-bottom: 20px;
 }
 
 #results{
    height: 400px;
    vertical-align: top;
-}
-
-#everything{
-	height: auto;
 }
 
 #left{
@@ -41,7 +31,9 @@ img.png {
 #subNFO { margin: 0; }
 
 #menu {
-	margin-top: 5px;
+margin-top: 0px;
+
+padding-top: 15px;
 	margin-bottom: 2px;
 	height: auto;
 }

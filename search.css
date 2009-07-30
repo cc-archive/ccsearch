@@ -21,37 +21,12 @@ body{
 overflow: hidden;
 }
 
-#everything{
-height: 100%;
-margin: 0px;
-padding: 0px;
-width: 100%;
-   border-spacing: 0px;
-border-collapse: collapse;
-	table-layout: fixed;
-border: 0px;
-}
-#everything tbody{
-	padding: 0px;
-margin: 0px;
-}
-
-#everything tr{
-	margin: 0px;
-	padding: 0px;
-}
-
-#everything td{
-	margin: 0px;
-	padding: 0px;
-}
-
-
 #search_form{
    display: inline-block;
    border: 0px;
    padding: 0px;
    margin: 0px 0px 0px 32px;
+	height: 75px;
 }
 
 a, a:link {
@@ -221,7 +196,6 @@ a, a:link, a:visited {
    padding: 3px 0px;
    margin-bottom: 0px;
 	vertical-align: bottom;
-	margin-top: 10px;
 }
 
 a#aboutsearch{
@@ -373,7 +347,7 @@ padding: 0;
 }
 
 #menu {
-	margin-top: 10px;
+	margin-top: 17px;
 	margin-left: 6px;
 	margin-right: 6px;
 	height: 32px;
