@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-24 22:05+0000\n"
+"POT-Creation-Date: 2009-08-03 14:43-0700\n"
 "PO-Revision-Date: 2009-03-17 07:35+0000\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,171 +17,186 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 1.3-svn\n"
 
-#: index.php:67
+#: index.php:68
 msgid "Help Translate"
 msgstr "Help om te vertaal"
 
-#: index.php:95
+#: index.php:96
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
-#: index.php:95
+#: index.php:96
 msgid "Search"
 msgstr "Soek"
 
-#: index.php:112
+#: index.php:113
 msgid "Enter search query"
 msgstr "Tik soeknavraag"
 
-#: index.php:130
+#: index.php:131
+msgid "Only show search results"
+msgstr "Wys net soekresultate"
+
+#: index.php:132 index.php:133
+msgid "Remove Frame"
+msgstr "Verwyder raam"
+
+#: index.php:139
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr "deur <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 
-#: index.php:132
-msgid "Contact"
-msgstr "Kontak"
-
-#: index.php:132
-msgid "Support CC"
-msgstr "Ondersteun CC"
-
-#: index.php:140
+#: index.php:145
 msgid "go"
 msgstr "soek"
 
-#: index.php:143
+#: index.php:148
 msgid "Understand your search results"
 msgstr "Verstaan die soekresultate"
 
-#: index.php:145
+#: index.php:150
 msgid "(info)"
 msgstr ""
 
-#: index.php:146
+#: index.php:151 index.php:174
 #, fuzzy
 msgid "Understand Your Search Results"
 msgstr "Verstaan die soekresultate"
 
-#: index.php:156
+#: index.php:158
+msgid "I want something that I can..."
+msgstr ""
+
+#: index.php:161
 #, fuzzy
 msgid "use for <em>commercial purposes</em>"
 msgstr "Soek vir werke wat ek vir kommersiële doeleindes kan gebruik."
 
-#: index.php:160
+#: index.php:165
 msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>"
 msgstr ""
 
-#: index.php:177
+#: index.php:176
+msgid ""
+"Search.creativecommons.org offers convenient access to search services "
+"provided by other independent organizations. Selecting\n"
+"different search options within the result list -- particularly Image\n"
+"search for Google and Yahoo -- may lead to the inclusion of results\n"
+"which are not Creative Commons licensed.\n"
+"You should always verify that the work you are re-using has a Creative\n"
+"Commmons license attached to it."
+msgstr ""
+
+#: index.php:181
 msgid "Learn more"
 msgstr ""
 
-#: index.php:179
+#: index.php:183
 msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr "Blaai deur gidse van gelisensieerde beelde, klanke, video's en nogwat"
 
-#: index.php:180
-msgid "Other"
-msgstr ""
-
-#: index.php:180 index.php:181
+#: index.php:184 index.php:185
 msgid "Content Directories"
 msgstr "Media-soekgidse"
 
-#: index.php:196
-msgid "Only show search results"
-msgstr "Wys net soekresultate"
+#: index.php:194
+msgid "Learn about setting your Firefox search engine"
+msgstr ""
 
-#: index.php:197 index.php:198
-msgid "Remove Frame"
-msgstr "Verwyder raam"
+#: index.php:199
+msgid "Contact"
+msgstr "Kontak"
 
-#: index.php:205
+#: index.php:199
+msgid "Support CC"
+msgstr "Ondersteun CC"
+
+#: index.php:209
 #, fuzzy
 msgid "Google Web Search"
 msgstr "Websoektog"
 
-#: index.php:205 index.php:206
+#: index.php:209 index.php:210
 msgid "Google"
 msgstr "Google"
 
-#: index.php:205 index.php:207
+#: index.php:209 index.php:211
 msgid "Web"
 msgstr ""
 
-#: index.php:206
+#: index.php:210
 #, fuzzy
 msgid "Google Image Search"
 msgstr "Beeldsoektog"
 
-#: index.php:206 index.php:208
+#: index.php:210 index.php:212
 msgid "Image"
 msgstr ""
 
-#: index.php:207
+#: index.php:211
 msgid "Web Search"
 msgstr "Websoektog"
 
-#: index.php:207
+#: index.php:211
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:208
+#: index.php:212
 #, fuzzy
 msgid "Flickr Image Search"
 msgstr "Beeldsoektog"
 
-#: index.php:208
+#: index.php:212
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:209
+#: index.php:213
 #, fuzzy
 msgid "Blip.tv Video Search"
 msgstr "Videosoektog"
 
-#: index.php:209
+#: index.php:213
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:209
+#: index.php:213
 msgid "Video"
 msgstr ""
 
-#: index.php:210
+#: index.php:214
 #, fuzzy
 msgid "Jamendo Music Search"
 msgstr "Musieksoektog"
 
-#: index.php:210
+#: index.php:214
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:210
+#: index.php:214
 msgid "Music"
 msgstr ""
 
-#: index.php:211
+#: index.php:215
 #, fuzzy
 msgid "Spin Xpress Media Search"
 msgstr "Mediasoektog"
 
-#: index.php:211
+#: index.php:215
 msgid "Media"
 msgstr ""
 
-#: index.php:213 index.php:215
+#: index.php:217 index.php:219
 msgid "Music Search"
 msgstr "Musieksoektog"
 
-#: index.php:213
+#: index.php:217
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:214
+#: index.php:218
 msgid "Clip Art Search"
 msgstr "Knipselkuns-soektog"
 
-#: index.php:214
+#: index.php:218
 msgid "Open Clip Art Library"
 msgstr "Oop Knipselkuns-biblioteek"
 
@@ -190,10 +205,11 @@ msgid "Learn About Creative Commons"
 msgstr "Leer aangaande Creative Commons"
 
 #: intro.php:54
+#, fuzzy
 msgid ""
 "For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://support.creativecommons.org/videos#wwt\" target=\"_new"
-"\">Wanna Work Together?</a>\""
+"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
+"\"_new\">Wanna Work Together?</a>\""
 msgstr ""
 "Vir 'n kort inleiding tot Creative Commons, kyk na hierdie kort video "
 "genaamd \"<a href=\"http://support.creativecommons.org/videos#wwt\" target="
