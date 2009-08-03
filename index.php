@@ -21,6 +21,7 @@
  * Creative Commons Search Interface
  *
  */
+header("X-UA-Compatible: IE=EmulateIE7");
 
 // turn off i18n for now.
 $use_i18n = true;
@@ -68,7 +69,7 @@ if ($use_i18n) {
   $cc_lang_selector = 
       new CCLanguageUISelector(&$cc_lang, 
                                "<div id=\"language_selector\">", 
-                               $cc_lang_help->get('_text') . "</div>");
+                               $cc_lang_help->get('_text') . "</div>", true, false);
 
 }
 
@@ -98,6 +99,15 @@ $enginetabs = new SearchTabs($cc_lang);
     <meta name="description" content="A Creative Commons-based search
                                       search engine of search engines." />
     <meta name="robots" content="index, follow" />
+
+      <!--this is all for the help.js tooltip boxes-->
+      <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+      <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
+
+      <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
+      <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
+      <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
+
     <script type="text/javascript">
     /* <![CDATA[ */
     var d = "<?php echo _('Enter search query');?>";
@@ -107,25 +117,45 @@ $enginetabs = new SearchTabs($cc_lang);
     <style type="text/css" media="screen">
       @import "search.css";
     </style>
+
+
     <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
+
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
   </head>
-  <body onload="setupQuery()">
-    <div id="header-box">
+  <body onload="setupQuery()" class="yui-skin-sam">
       <div id="header">
+	
+<p id="remove-frame-button">
+<a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
+          X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
+          <?php echo _('Remove Frame') ?>--></a>
+</p>
+
         <div id="title">
-	  <a href="./"><img src="images/cc-search.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
-	  <div id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></div>
-	</div>
+            <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+	      </div>
+	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
+
         <form onsubmit="return doSearch()">
-          <div id="left">
+         <fieldset id="search_form">
+          <fieldset id="left">
             <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
             <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
-	    
-          </div>
+
+<span id="info">
+<a href="#" title="<?php echo _('Understand your search results') ?>" id="aboutsearch" class="helpLink">
+          <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
+          <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" alt="<?php echo _('(info)')?>" />
+          <?php echo _('Understand Your Search Results') ?>
+        </a>
+</span> 
+
+          </fieldset>
+
           <fieldset id="right">
-            <legend>I want something that I can...</legend>
+            <legend><?php echo _('I want something that I can...') ?></legend>
 	    <div>
               <input type="checkbox" name="comm" value="" id="comm" checked="checked" onclick="setCommDeriv()" />
               <label for="comm"  onclick="setCommDeriv()"><?php echo _('use for <em>commercial purposes</em>') ?></label><br/>
@@ -135,34 +165,45 @@ $enginetabs = new SearchTabs($cc_lang);
               <label for="deriv" onclick="setCommDeriv()"><?php echo _('<em>modify</em>, <em>adapt</em>, or <em>build upon</em>') ?></label><br/>
 	    </div>
 	  </fieldset>
+   </fieldset>
 	</form>
-      </div>
-            <p id="ffx-search-bar-info">
-               <a href="http://wiki.creativecommons.org/Firefox">Learn about setting your Firefox search engine &raquo;</a>
-            </p>
-    </div>
-    <div id="results-box">
-      <div id="options">
-        <a href="http://wiki.creativecommons.org/CcSearch" title="<?php echo _('Understand your search results') ?>">
-          <!-- info icon from: http://www.famfamfam.com/lab/icons/silk/ (cc-by 2.5)  -->
-          <img src="images/information.png" id="subNFO" border="0" class="png" width="16" height="16" alt="<?php echo _('What is this?')?>" />
-          <?php echo _('What is this?') ?>
-        </a>
-        &nbsp;&nbsp;
-        <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
+
+
+<!--(this is hidden by default)-->
+<div id="help_aboutsearch" class="help_panel">
+   <div class="hd"><?php echo _('Understand Your Search Results') ?></div>
+      <div class="bd">
+         <p><?php echo _('Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
+different search options within the result list -- particularly Image
+search for Google and Yahoo -- may lead to the inclusion of results
+which are not Creative Commons licensed.
+You should always verify that the work you are re-using has a Creative
+Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/CcSearch"><?php echo _('Learn more') ?>  &raquo</a>.
+         <p>
+         <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
           <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
-          <?php echo _('Content Directories') ?></a>
-        &nbsp;&nbsp;
-        <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
-          <img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
-          <?php echo _('Remove Frame') ?></a>
+          <?php echo _('Content Directories') ?> &raquo</a>
+         </p>
       </div>
+   </div>
+</p>
+
+<div id="subheader">
+
+            <p id="ffx-search-bar-info">
+               <a href="http://wiki.creativecommons.org/Firefox"><?php echo _('Learn about setting your Firefox search engine') ?> &raquo;</a>
+            </p>
+<?php if ($use_i18n) $cc_lang_selector->output(); ?>
+
+            <span id="contact-support">| 
+               <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a>
+            </span>
+
+</div>
+
+</div>
+
       <div id="menu">
-      <?php
-      //$enginetabs->show();
-      
-      ?>
-      
       
 	<ul class="tabs">
           <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Google Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /><span>(<?php echo _('Web') ?>)</span></a></li>
@@ -180,23 +221,9 @@ $enginetabs = new SearchTabs($cc_lang);
 	</ul>
 	
       </div>
-      
-      <iframe id="results" name="results" frameborder="0" border="0"></iframe>
-    </div>
-    
-    <div id="footer">
-      <div><a href="http://creativecommons.org/"><?php echo _('Creative Commons') ?></a> | <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a> |     <?php if ($use_i18n) $cc_lang_selector->output(); ?></div>
-      <div>
-<p>search.creativecommons.org offers convenient access to search
-services provided by other independent organizations. Selecting
-different search options within the result list -- particularly Image
-search for Google and Yahoo -- may lead to the inclusion of results
-which are not Creative Commons licensed.
-You should always verify that the work you are re-using has a Creative
-Commmons license attached to it.
-   </p>   </div>
 
-
+    <div id="results-box">
+      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p>CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.</p></iframe>
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>

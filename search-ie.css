@@ -6,34 +6,45 @@
  *
  */
 
+#header{
+	margin-bottom: 20px;
+}
 
+#results{
+   height: 400px;
+   vertical-align: top;
+}
+
+#left{
+  width: 350px;
+	margin-left: 15px;
+}
+
+#right{
+
+}
 /* Transparent png's */
 img.png {
 	behavior: url("pngie.htc");
 }
 
-#header {
-	padding-bottom: 20px;
-}
-
 #subNFO { margin: 0; }
-#subCC { margin: 0; }
-#subBreak { margin: 0; }
 
 #menu {
-	margin-top: 5px;
+margin-top: 0px;
+
+padding-top: 15px;
 	margin-bottom: 2px;
 	height: auto;
 }
 
-#results {
-	width: 99%;
-}
 
 .google { margin-bottom: 0px; }
 
 ul.tabs {
 	margin-bottom: 0px;
+	height: 20px;
+	overflow: hidden;
 }
 
 ul.tabs li {
@@ -54,13 +65,13 @@ ul.tabs li.active {
 	border-bottom: none;
 }
 
-
+/*
 #flickr { padding-top: 5px; margin: 0;}
 #yahoo  { padding-top: 8px; }
 #google { padding-top: 3px;}
 
 li.active#yahoo { padding-top: 12px !important;	}
-
+*/
 ul.tabs img {
 	padding-top: 0;
 	padding-bottom: 0px;

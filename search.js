@@ -425,20 +425,21 @@ function doSearch() {
 function resizeResults() {
 	var results = id('results');
 	var height = 0;
-	var heightMinus = 200;
+	var heightMinus = 132;
 	
 	// get height of window
 	if (window.innerHeight) {
 		height = window.innerHeight - 18;
 	} else if (document.documentElement && document.documentElement.clientHeight) {
 		height = document.documentElement.clientHeight;
-		heightMinus = 165;
+		heightMinus = 187;
 	} else if (document.body && document.body.clientHeight) {
 		height = document.body.clientHeight;
 	}
 	
 	results.style.height = Math.round(height - heightMinus) + "px";
 }
+
 /*
 function showFox() {
 	id('thanks').style.display = "block";
