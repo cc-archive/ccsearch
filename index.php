@@ -173,16 +173,14 @@ $enginetabs = new SearchTabs($cc_lang);
 <div id="help_aboutsearch" class="help_panel">
    <div class="hd"><?php echo _('Understand Your Search Results') ?></div>
       <div class="bd">
-         <p><?php echo _('Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
-different search options within the result list -- particularly Image
-search for Google and Yahoo -- may lead to the inclusion of results
+         <p><?php echo _('<em>Search.creativecommons.org</em> offers convenient access to search services provided by other independent organizations. Selecting
+different search options within the result list&mdash;particularly Image
+search for Google and Yahoo&mdash;may lead to the inclusion of results
 which are not Creative Commons licensed.
-You should always verify that the work you are re-using has a Creative
-Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/CcSearch"><?php echo _('Learn more') ?>  &raquo</a>.
+<em>You should always verify that the work you are re-using has a Creative
+Commmons license attached to it</em>.  <a href="http://wiki.creativecommons.org/CcSearch">Learn more &raquo</a>.') ?>
          <p>
-         <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
-          <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
-          <?php echo _('Content Directories') ?> &raquo</a>
+         <?php echo _('<em>Can\'t find what you\'re looking for?</em>  This search tool is not exhaustive&mdash;there are plenty more <em><a href="http://wiki.creativecommons.org/Content_Curators">Creative Commons Content Directories &raquo</a></em>') ?>
          </p>
       </div>
    </div>

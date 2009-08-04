@@ -163,6 +163,12 @@ a, a:link, a:visited {
    text-align: left;
 }
 
+.bd p em{
+   text-decoration: none;
+   font-style: normal;
+   font-weight: bold;
+}
+
 .bd p a{
    color: black;
 }

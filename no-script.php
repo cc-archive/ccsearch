@@ -1,3 +1,6 @@
+<?php
+require_once('cc-language.php');
+?>
 <html>
 <head>
 <title></title>
