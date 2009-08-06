@@ -22,6 +22,6 @@ html, body{
 </style>
 </head>
 <body>
-<noscript><p id="main">ERROR: ccSearch requires Javascript.</p></noscript>
+<noscript><p id="main"><?php echo _("ERROR: ccSearch requires Javascript.") ?></p></noscript>
 </body>
 </html>

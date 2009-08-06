@@ -29,8 +29,8 @@ $use_i18n = true;
 require_once('cc-defines.php');
 require_once('cc-language.php');
 require_once('cc-language-ui.php');
-require_once('search-tabs.php');
 
+//language stuff--------------
 if ($use_i18n) {
   session_start();
 
@@ -73,9 +73,6 @@ if ($use_i18n) {
 
 }
 
-//init the object holding the search engine tabs
-$enginetabs = new SearchTabs($cc_lang);
-
 //$cc_lang->DebugLanguages();
 //echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 //echo "<pre>";
@@ -103,7 +100,6 @@ $enginetabs = new SearchTabs($cc_lang);
       <!--this is all for the help.js tooltip boxes-->
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
-
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
       <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
@@ -129,12 +125,12 @@ $enginetabs = new SearchTabs($cc_lang);
 	
 <p id="remove-frame-button">
 <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
-          X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
-          <?php echo _('Remove Frame') ?>--></a>
+          X
+</a>
 </p>
 
         <div id="title">
-            <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+            <a href="./"><img src="images/cc-search-2.png" alt="<?php echo _('ccSearch') ?>" width="183" height="52" border="0" class="png" /></a>
 	      </div>
 	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
 
@@ -142,7 +138,7 @@ $enginetabs = new SearchTabs($cc_lang);
          <fieldset id="search_form">
           <fieldset id="left">
             <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
-            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
+            <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
 
 <span id="info">
 <a href="#" title="<?php echo _('Understand your search results') ?>" id="aboutsearch" class="helpLink">
@@ -221,7 +217,7 @@ Commmons license attached to it</em>.  <a href="http://wiki.creativecommons.org/
       </div>
 
     <div id="results-box">
-      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p>CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.</p></iframe>
+      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p><?php echo _('CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.') ?></p></iframe>
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>
