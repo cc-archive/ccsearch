@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-03 16:56-0700\n"
+"POT-Creation-Date: 2009-08-07 09:59-0700\n"
 "PO-Revision-Date: 2008-04-15 09:17-0500\n"
 "Last-Translator: Maki Higashikubo <maki-h@wb3.so-net.ne.jp>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -21,184 +21,186 @@ msgstr ""
 msgid "Help Translate"
 msgstr "翻訳"
 
-#: index.php:96
+#: index.php:93
 msgid "Creative Commons"
 msgstr "クリエイティブ・コモンズ"
 
-#: index.php:96
+#: index.php:93
 msgid "Search"
 msgstr "検索"
 
-#: index.php:113
+#: index.php:109
 msgid "Enter search query"
 msgstr ""
 
-#: index.php:131
+#: index.php:127
 msgid "Only show search results"
 msgstr "検索結果のみ表示"
 
-#: index.php:132 index.php:133
-msgid "Remove Frame"
-msgstr "フレーム削除"
+#: index.php:133
+#, fuzzy
+msgid "ccSearch"
+msgstr "検索"
 
-#: index.php:139
+#: index.php:135
 msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
 msgstr ""
 
-#: index.php:145
-msgid "go"
+#: index.php:141
+msgid "Go"
 msgstr ""
 
-#: index.php:148
+#: index.php:144
 msgid "Understand your search results"
 msgstr "検索結果を理解する。"
 
-#: index.php:150
+#: index.php:146
 msgid "(info)"
 msgstr ""
 
-#: index.php:151 index.php:174
+#: index.php:147 index.php:170
 #, fuzzy
 msgid "Understand Your Search Results"
 msgstr "検索結果を理解する。"
 
-#: index.php:158
+#: index.php:154
 msgid "I want something that I can..."
 msgstr ""
 
-#: index.php:161
+#: index.php:157
 #, fuzzy
 msgid "use for <em>commercial purposes</em>"
 msgstr "営利目的利用の可能な作品の検索"
 
-#: index.php:165
+#: index.php:161
 msgid "<em>modify</em>, <em>adapt</em>, or <em>build upon</em>"
 msgstr ""
 
-#: index.php:176
+#: index.php:172
 msgid ""
-"Search.creativecommons.org offers convenient access to search services "
-"provided by other independent organizations. Selecting\n"
-"different search options within the result list -- particularly Image\n"
-"search for Google and Yahoo -- may lead to the inclusion of results\n"
+"<em>Search.creativecommons.org</em> offers convenient access to search "
+"services provided by other independent organizations. Selecting\n"
+"different search options within the result list&mdash;particularly Image\n"
+"search for Google and Yahoo&mdash;may lead to the inclusion of results\n"
 "which are not Creative Commons licensed.\n"
-"You should always verify that the work you are re-using has a Creative\n"
-"Commmons license attached to it."
+"<em>You should always verify that the work you are re-using has a Creative\n"
+"Commmons license attached to it</em>.  <a href=\"http://wiki.creativecommons."
+"org/CcSearch\">Learn more &raquo</a>."
 msgstr ""
 
-#: index.php:181
-msgid "Learn more"
+#: index.php:179
+msgid ""
+"<em>Can't find what you're looking for?</em>  This search tool is not "
+"exhaustive&mdash;there are plenty more <em><a href=\"http://wiki."
+"creativecommons.org/Content_Curators\">Creative Commons Content Directories "
+"&raquo</a></em>"
 msgstr ""
 
-#: index.php:183
-msgid "Browse directories of licensed images, sounds, videos and more"
-msgstr "ライセンス付きの画像・音源・映像その他のディレクトリ閲覧"
-
-#: index.php:184 index.php:185
-msgid "Content Directories"
-msgstr "コンテンツ・ディレクトリ"
-
-#: index.php:194
+#: index.php:188
 msgid "Learn about setting your Firefox search engine"
 msgstr ""
 
-#: index.php:199
+#: index.php:193
 msgid "Contact"
 msgstr "問い合わせ"
 
-#: index.php:199
+#: index.php:193
 msgid "Support CC"
 msgstr ""
 
-#: index.php:209
+#: index.php:203
 #, fuzzy
 msgid "Google Web Search"
 msgstr "ウェブ検索"
 
-#: index.php:209 index.php:210
+#: index.php:203 index.php:204
 msgid "Google"
 msgstr "Google"
 
-#: index.php:209 index.php:211
+#: index.php:203 index.php:205
 msgid "Web"
 msgstr ""
 
-#: index.php:210
+#: index.php:204
 #, fuzzy
 msgid "Google Image Search"
 msgstr "画像検索"
 
-#: index.php:210 index.php:212
+#: index.php:204 index.php:206
 msgid "Image"
 msgstr ""
 
-#: index.php:211
+#: index.php:205
 msgid "Web Search"
 msgstr "ウェブ検索"
 
-#: index.php:211
+#: index.php:205
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:212
+#: index.php:206
 #, fuzzy
 msgid "Flickr Image Search"
 msgstr "画像検索"
 
-#: index.php:212
+#: index.php:206
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:213
+#: index.php:207
 #, fuzzy
 msgid "Blip.tv Video Search"
 msgstr "映像検索"
 
-#: index.php:213
+#: index.php:207
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:213
+#: index.php:207
 msgid "Video"
 msgstr ""
 
-#: index.php:214
+#: index.php:208
 #, fuzzy
 msgid "Jamendo Music Search"
 msgstr "音楽検索"
 
-#: index.php:214
+#: index.php:208
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:214
+#: index.php:208
 msgid "Music"
 msgstr ""
 
-#: index.php:215
+#: index.php:209
 #, fuzzy
 msgid "Spin Xpress Media Search"
 msgstr "メディア検索"
 
-#: index.php:215
+#: index.php:209
 msgid "Media"
 msgstr ""
 
-#: index.php:217 index.php:219
+#: index.php:211 index.php:213
 msgid "Music Search"
 msgstr "音楽検索"
 
-#: index.php:217
+#: index.php:211
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:218
+#: index.php:212
 msgid "Clip Art Search"
 msgstr "クリップ・アート検索"
 
-#: index.php:218
+#: index.php:212
 msgid "Open Clip Art Library"
 msgstr "オープン・クリップ・アート・ライブラリ"
+
+#: index.php:220
+msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
+msgstr ""
 
 #: intro.php:51
 #, fuzzy
@@ -227,6 +229,15 @@ msgstr ""
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "言語"
+
+#~ msgid "Remove Frame"
+#~ msgstr "フレーム削除"
+
+#~ msgid "Browse directories of licensed images, sounds, videos and more"
+#~ msgstr "ライセンス付きの画像・音源・映像その他のディレクトリ閲覧"
+
+#~ msgid "Content Directories"
+#~ msgstr "コンテンツ・ディレクトリ"
 
 #~ msgid "Thanks for using CC Search via %sFirefox%s."
 #~ msgstr "Firefox経由でのCCサーチのご利用ありがとうございます。"

@@ -443,7 +443,8 @@ function clickFox() {
 }
 */
 function breakOut() {
-	if (url.length > 10) window.location = url;
+	//alert(window.results.location);
+	if (url.length > 10) window.location = window.results.location.href;
 }
 
 function grabOriginalLanguage() {

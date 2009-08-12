@@ -169,14 +169,12 @@ if ($use_i18n) {
 <div id="help_aboutsearch" class="help_panel">
    <div class="hd"><?php echo _('Understand Your Search Results') ?></div>
       <div class="bd">
-         <p><?php echo _('<em>Search.creativecommons.org</em> offers convenient access to search services provided by other independent organizations. Selecting
+         <p><?php echo _('<em>You should always verify that the work you are re-using has a Creative Commmons license attached to it</em>.  Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
 different search options within the result list&mdash;particularly Image
 search for Google and Yahoo&mdash;may lead to the inclusion of results
-which are not Creative Commons licensed.
-<em>You should always verify that the work you are re-using has a Creative
-Commmons license attached to it</em>.  <a href="http://wiki.creativecommons.org/CcSearch">Learn more &raquo</a>.') ?>
+which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.org/CcSearch">Learn more &raquo</a>.') ?>
          <p>
-         <?php echo _('<em>Can\'t find what you\'re looking for?</em>  This search tool is not exhaustive&mdash;there are plenty more <em><a href="http://wiki.creativecommons.org/Content_Curators">Creative Commons Content Directories &raquo</a></em>') ?>
+         <?php echo _('<em>Can\'t find what you\'re looking for?</em>  This search tool is not exhaustive&mdash;there are plenty more <a href="http://wiki.creativecommons.org/Content_Curators">Creative Commons Content Directories &raquo</a>') ?>
          </p>
       </div>
    </div>
@@ -190,7 +188,26 @@ Commmons license attached to it</em>.  <a href="http://wiki.creativecommons.org/
 <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
             <span id="contact-support">| 
-               <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a>
+               <a href="http://creativecommons.org/contact">
+                  <?php echo _('Contact') ?>
+               </a>
+               |
+               <a href="http://support.creativecommons.org/">
+                  <?php echo _('Support CC'); ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/policies">
+                  <?php echo _('Policies') ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/privacy">
+                  <?php echo _('Privacy') ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/terms">
+                  <?php echo _('Terms of Use') ?>
+               </a>
+               <img id ="stat" src="transparent.gif?init"/>
             </span>
 
 </div>
