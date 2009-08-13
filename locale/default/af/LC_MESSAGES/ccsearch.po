@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-07 09:59-0700\n"
+"POT-Creation-Date: 2009-08-13 17:29+0000\n"
 "PO-Revision-Date: 2009-03-17 07:35+0000\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,127 +78,138 @@ msgstr ""
 
 #: index.php:172
 msgid ""
-"<em>Search.creativecommons.org</em> offers convenient access to search "
-"services provided by other independent organizations. Selecting\n"
+"<em>You should always verify that the work you are re-using has a Creative "
+"Commmons license attached to it</em>.  Search.creativecommons.org offers "
+"convenient access to search services provided by other independent "
+"organizations. Selecting\n"
 "different search options within the result list&mdash;particularly Image\n"
 "search for Google and Yahoo&mdash;may lead to the inclusion of results\n"
-"which are not Creative Commons licensed.\n"
-"<em>You should always verify that the work you are re-using has a Creative\n"
-"Commmons license attached to it</em>.  <a href=\"http://wiki.creativecommons."
-"org/CcSearch\">Learn more &raquo</a>."
+"which are not Creative Commons licensed.  <a href=\"http://wiki."
+"creativecommons.org/CcSearch\">Learn more &raquo</a>."
 msgstr ""
 
-#: index.php:179
+#: index.php:177
 msgid ""
 "<em>Can't find what you're looking for?</em>  This search tool is not "
-"exhaustive&mdash;there are plenty more <em><a href=\"http://wiki."
-"creativecommons.org/Content_Curators\">Creative Commons Content Directories "
-"&raquo</a></em>"
+"exhaustive&mdash;there are plenty more <a href=\"http://wiki.creativecommons."
+"org/Content_Curators\">Creative Commons Content Directories &raquo</a>"
 msgstr ""
 
-#: index.php:188
+#: index.php:186
 msgid "Learn about setting your Firefox search engine"
 msgstr ""
 
-#: index.php:193
+#: index.php:192
 msgid "Contact"
 msgstr "Kontak"
 
-#: index.php:193
+#: index.php:196
 msgid "Support CC"
 msgstr "Ondersteun CC"
 
-#: index.php:203
+#: index.php:200
+msgid "Policies"
+msgstr ""
+
+#: index.php:204
+msgid "Privacy"
+msgstr ""
+
+#: index.php:208
+msgid "Terms of Use"
+msgstr ""
+
+#: index.php:220
 #, fuzzy
 msgid "Google Web Search"
 msgstr "Websoektog"
 
-#: index.php:203 index.php:204
+#: index.php:220 index.php:221
 msgid "Google"
 msgstr "Google"
 
-#: index.php:203 index.php:205
+#: index.php:220 index.php:222
 msgid "Web"
 msgstr ""
 
-#: index.php:204
+#: index.php:221
 #, fuzzy
 msgid "Google Image Search"
 msgstr "Beeldsoektog"
 
-#: index.php:204 index.php:206
+#: index.php:221 index.php:223
 msgid "Image"
 msgstr ""
 
-#: index.php:205
+#: index.php:222
 msgid "Web Search"
 msgstr "Websoektog"
 
-#: index.php:205
+#: index.php:222
 msgid "Yahoo"
 msgstr "Yahoo"
 
-#: index.php:206
+#: index.php:223
 #, fuzzy
 msgid "Flickr Image Search"
 msgstr "Beeldsoektog"
 
-#: index.php:206
+#: index.php:223
 msgid "flickr"
 msgstr "flickr"
 
-#: index.php:207
+#: index.php:224
 #, fuzzy
 msgid "Blip.tv Video Search"
 msgstr "Videosoektog"
 
-#: index.php:207
+#: index.php:224
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:207
+#: index.php:224
 msgid "Video"
 msgstr ""
 
-#: index.php:208
+#: index.php:225
 #, fuzzy
 msgid "Jamendo Music Search"
 msgstr "Musieksoektog"
 
-#: index.php:208
+#: index.php:225
 msgid "jamendo"
 msgstr "jamendo"
 
-#: index.php:208
+#: index.php:225
 msgid "Music"
 msgstr ""
 
-#: index.php:209
+#: index.php:226
 #, fuzzy
 msgid "Spin Xpress Media Search"
 msgstr "Mediasoektog"
 
-#: index.php:209
+#: index.php:226
 msgid "Media"
 msgstr ""
 
-#: index.php:211 index.php:213
+#: index.php:228 index.php:230
 msgid "Music Search"
 msgstr "Musieksoektog"
 
-#: index.php:211
+#: index.php:228
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:212
+#: index.php:229
 msgid "Clip Art Search"
 msgstr "Knipselkuns-soektog"
 
-#: index.php:212
+#: index.php:229
 msgid "Open Clip Art Library"
 msgstr "Oop Knipselkuns-biblioteek"
 
-#: index.php:220
+#: index.php:237
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
