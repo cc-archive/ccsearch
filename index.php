@@ -29,8 +29,8 @@ $use_i18n = true;
 require_once('cc-defines.php');
 require_once('cc-language.php');
 require_once('cc-language-ui.php');
-require_once('search-tabs.php');
 
+//language stuff--------------
 if ($use_i18n) {
   session_start();
 
@@ -73,9 +73,6 @@ if ($use_i18n) {
 
 }
 
-//init the object holding the search engine tabs
-$enginetabs = new SearchTabs($cc_lang);
-
 //$cc_lang->DebugLanguages();
 //echo "<h4>" . $_REQUEST['lang'] . "</h4>";
 //echo "<pre>";
@@ -103,7 +100,6 @@ $enginetabs = new SearchTabs($cc_lang);
       <!--this is all for the help.js tooltip boxes-->
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
-
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
       <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
@@ -129,12 +125,12 @@ $enginetabs = new SearchTabs($cc_lang);
 	
 <p id="remove-frame-button">
 <a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
-          X<!--<img src="images/break.png" id="subBreak" border="0" class="png" width="12" height="12" alt="<?php echo _('Remove Frame') ?>" />
-          <?php echo _('Remove Frame') ?>--></a>
+          X
+</a>
 </p>
 
         <div id="title">
-            <a href="./"><img src="images/cc-search-2.png" alt="ccSearch" width="183" height="52" border="0" class="png" /></a>
+            <a href="./"><img src="images/cc-search-2.png" alt="<?php echo _('ccSearch') ?>" width="183" height="52" border="0" class="png" /></a>
 	      </div>
 	         <span id="title-by"><?php echo _('by <a href="http://creativecommons.org/">Creative Commons</a>'); ?></span>
 
@@ -142,7 +138,7 @@ $enginetabs = new SearchTabs($cc_lang);
          <fieldset id="search_form">
           <fieldset id="left">
             <input type="text" name="q" id="q" class="inactive" size="35" onclick="wakeQuery()" onblur="resetQuery()" />
-            <input type="submit" name="some_name" value="<?php echo _('go'); ?>" id="qsubmit" />
+            <input type="submit" name="some_name" value="<?php echo _('Go'); ?>" id="qsubmit" />
 
 <span id="info">
 <a href="#" title="<?php echo _('Understand your search results') ?>" id="aboutsearch" class="helpLink">
@@ -173,16 +169,12 @@ $enginetabs = new SearchTabs($cc_lang);
 <div id="help_aboutsearch" class="help_panel">
    <div class="hd"><?php echo _('Understand Your Search Results') ?></div>
       <div class="bd">
-         <p><?php echo _('Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
-different search options within the result list -- particularly Image
-search for Google and Yahoo -- may lead to the inclusion of results
-which are not Creative Commons licensed.
-You should always verify that the work you are re-using has a Creative
-Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/CcSearch"><?php echo _('Learn more') ?>  &raquo</a>.
+         <p><?php echo _('<em>You should always verify that the work you are re-using has a Creative Commmons license attached to it</em>.  Search.creativecommons.org offers convenient access to search services provided by other independent organizations. Selecting
+different search options within the result list&mdash;particularly Image
+search for Google and Yahoo&mdash;may lead to the inclusion of results
+which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.org/CcSearch">Learn more &raquo</a>.') ?>
          <p>
-         <a href="http://wiki.creativecommons.org/Content_Curators" title="<?php echo _('Browse directories of licensed images, sounds, videos and more') ?>">
-          <img src="images/cc.png" id="subCC" border="0" class="png" width="16" height="16" alt="<?php echo _('Content Directories') ?>" />
-          <?php echo _('Content Directories') ?> &raquo</a>
+         <?php echo _('<em>Can\'t find what you\'re looking for?</em>  This search tool is not exhaustive&mdash;there are plenty more <a href="http://wiki.creativecommons.org/Content_Curators">Creative Commons Content Directories &raquo</a>') ?>
          </p>
       </div>
    </div>
@@ -196,7 +188,26 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
 <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
             <span id="contact-support">| 
-               <a href="http://creativecommons.org/contact"><?php echo _('Contact') ?></a> <img id ="stat" src="transparent.gif?init"/> | <a href="http://support.creativecommons.org/"><?php echo _('Support CC'); ?></a>
+               <a href="http://creativecommons.org/contact">
+                  <?php echo _('Contact') ?>
+               </a>
+               |
+               <a href="http://support.creativecommons.org/">
+                  <?php echo _('Support CC'); ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/policies">
+                  <?php echo _('Policies') ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/privacy">
+                  <?php echo _('Privacy') ?>
+               </a>
+               |
+               <a href="http://creativecommons.org/terms">
+                  <?php echo _('Terms of Use') ?>
+               </a>
+               <img id ="stat" src="transparent.gif?init"/>
             </span>
 
 </div>
@@ -223,7 +234,7 @@ Commmons license attached to it.') ?> <a href="http://wiki.creativecommons.org/C
       </div>
 
     <div id="results-box">
-      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p>CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.</p></iframe>
+      <iframe src="no-script.php" id="results" name="results" frameborder="0" border="0"><p><?php echo _('CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES.') ?></p></iframe>
     </div>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
     <script type="text/javascript">_uacct = "UA-2010376-3";  urchinTracker(); </script>

@@ -39,35 +39,6 @@ a:hover {
 a, a:link, a:visited {
   color: #13339a;
 }
-/*
-#ff-box {
-	width: 110px;
-	height: 45px;
-	background-image: url("images/ff-logo.png");
-	position: fixed;
-	background-repeat: no-repeat;
-	bottom: 0px;
-	left: -10px;
-	display: none;
-}
-
-#thanks {
-	position: fixed;
-	left: 100px;
-	bottom: 4px;
-	padding-top: 43px;
-	font-size: 10px;
-	width: 300px;
-}
-*/
-
-/*
-#ffx-search-bar-info{
-   text-align: right;
-   display: none;
-   display: inline-block;
-}
-*/
 
 #footer {
 	clear: both;
@@ -95,14 +66,7 @@ a, a:link, a:visited {
 	padding: 9px 0 0 7px;
 }
 
-/*
-#title span {
-	display: none;
-}
-*/
-
 #title img {
-/*	padding: 7px 5px;*/
 }
 
 
@@ -110,13 +74,6 @@ a, a:link, a:visited {
    display: inline;
    font-size: 85%;
    padding-right: 10px;
-/*
-	position:absolute;
-	font-size: 0.7em;
-	top: 60px;
-	left: 65px;
-	color: #fff;
-*/
 }
 
 
@@ -161,6 +118,12 @@ a, a:link, a:visited {
 
 .bd p{
    text-align: left;
+}
+
+.bd p em{
+   text-decoration: none;
+   font-style: normal;
+   font-weight: bold;
 }
 
 .bd p a{

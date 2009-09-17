@@ -5,6 +5,7 @@
  */
 
 var engines = ["google", "googleimg", "yahoo", "flickr", "blip", "jamendo", "spin", "openclipart"];
+//defaults:
 var engine = "";
 var comm = 1;
 var deriv = 1;
@@ -72,14 +73,14 @@ function getSettings(){
    if(cookieText && cookieText != ''){
       //break it into pieces
       cookieCrumbs = cookieText.split(cookie_break_text);
-      
-	engine = cookieCrumbs[0];
-	if(1 in cookieCrumbs){
-	      comm = cookieCrumbs[1];
-	}
-	if(2 in cookieCrumbs){
-	      deriv = cookieCrumbs[2];
-	}
+         
+	   engine = cookieCrumbs[0];
+	   if(1 in cookieCrumbs){
+	         comm = cookieCrumbs[1];
+	   }
+	   if(2 in cookieCrumbs){
+	         deriv = cookieCrumbs[2];
+	   }
    }
    else{
    }
@@ -191,13 +192,7 @@ function setEngine(e) {
 	try { id(previous).className="inactive"; } catch(err) {}
 	id(engine).className="active";
 	
-	
 	saveSettings();
-	/*
-	var d = new Date();
-	d.setFullYear(2020,0,1);
-	setCookie('ccsearch', engine, d, '/', '.creativecommons.org');
-	*/
 	
 	doSearch();
 }
@@ -365,10 +360,9 @@ function doSearch() {
 		modRights();
 		
 		switch (engine) {
-            case "openclipart":
-                url = 'http://openclipart.org/cchost/media/tags/' + 
-                      query.value + rights;
-                break;
+         case "openclipart":
+             url = 'http://openclipart.org/cchost/media/tags/' + query.value + rights;
+             break;
                 
 			case "spin":
 				url = 'http://www.spinxpress.com/getmedia' + rights + '_searchwords=' + query.value
@@ -397,15 +391,11 @@ function doSearch() {
 			case "yahoo":
 				url = 'http://search.yahoo.com/search?cc=1&p=' + query.value + rights;
 				break;
-				
-		   
 		   
 			case "googleimg":
 			   url = 'http://images.google.com/images?as_q=' + query.value + '&as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + ((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + rights;
 			   break;
-			
-			
-				
+
 			case "google":
 			default:
 				url = 'http://google.com/search?as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + 
@@ -414,7 +404,6 @@ function doSearch() {
 				if (lang != null) url += '&hl=' + lang;
 				break;
 		}
-		//frames['results'].location.href = str;
 		window.results.location.href = url;
 		document.getElementById('stat').setAttribute('src','transparent.gif?engine='+engine+'&comm='+id('comm').checked+'&deriv='+id('deriv').checked+'&q='+query.value);
 	}
@@ -454,7 +443,8 @@ function clickFox() {
 }
 */
 function breakOut() {
-	if (url.length > 10) window.location = url;
+	//alert(window.results.location);
+	if (url.length > 10) window.location = window.results.location.href;
 }
 
 function grabOriginalLanguage() {
