@@ -352,6 +352,12 @@ function modRights() {
 // "main logic", no turning back.
 function doSearch() {
 	var query = id("q");
+
+    // We never want the search to execute with the default text
+    if ( query.value == "Enter search query" ) {
+        query.value = default_query;
+    }
+
 	url = "";
 	
 	// search only if there is something to search with
