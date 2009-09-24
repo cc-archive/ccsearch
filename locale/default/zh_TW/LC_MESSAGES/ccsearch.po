@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-13 17:29+0000\n"
+"POT-Creation-Date: 2009-09-24 12:50-0400\n"
 "PO-Revision-Date: 2009-03-11 15:01+0000\n"
 "Last-Translator: Bob Chao <bobchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,37 +213,33 @@ msgstr "開放美工圖庫"
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
-#: intro.php:51
-msgid "Learn About Creative Commons"
-msgstr "了解創用 CC"
-
-#: intro.php:54
-#, fuzzy
-msgid ""
-"For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
-"\"_new\">Wanna Work Together?</a>\""
-msgstr ""
-"想了解創用 CC？請看這段短片：「<a href=\"http://support.creativecommons.org/"
-"videos#wwt\" target=\"_new\">Wanna Work Together?</a>」"
-
-#: intro.php:59
-msgid "Using CC Search with Firefox"
-msgstr "以 Firefox 快速搜尋創用 CC 素材"
-
-#: intro.php:62
-msgid ""
-"For a quick explanation of how to use this search with Firefox, including <a "
-"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
-"\">how to change your search engine</a>, watch this video.</a>"
-msgstr ""
-"這段影片介紹如何利用 Firefox 快速搜尋創用 CC 素材，也告訴你<a  href=\"http://"
-"wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new\">如何更換搜尋"
-"引擎</a>。快瞧瞧吧！"
-
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "語言"
+
+#~ msgid "Learn About Creative Commons"
+#~ msgstr "了解創用 CC"
+
+#, fuzzy
+#~ msgid ""
+#~ "For a quick intro to Creative Commons, check out this short video, "
+#~ "entitled \"<a href=\"http://creativecommons.org/videos/wanna-work-together"
+#~ "\" target=\"_new\">Wanna Work Together?</a>\""
+#~ msgstr ""
+#~ "想了解創用 CC？請看這段短片：「<a href=\"http://support.creativecommons."
+#~ "org/videos#wwt\" target=\"_new\">Wanna Work Together?</a>」"
+
+#~ msgid "Using CC Search with Firefox"
+#~ msgstr "以 Firefox 快速搜尋創用 CC 素材"
+
+#~ msgid ""
+#~ "For a quick explanation of how to use this search with Firefox, including "
+#~ "<a href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target="
+#~ "\"_new\">how to change your search engine</a>, watch this video.</a>"
+#~ msgstr ""
+#~ "這段影片介紹如何利用 Firefox 快速搜尋創用 CC 素材，也告訴你<a  href="
+#~ "\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new\">"
+#~ "如何更換搜尋引擎</a>。快瞧瞧吧！"
 
 #~ msgid "Remove Frame"
 #~ msgstr "脫離頁框"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-13 17:29+0000\n"
+"POT-Creation-Date: 2009-09-24 12:50-0400\n"
 "PO-Revision-Date: 2008-06-24 12:56-0500\n"
 "Last-Translator: zhengyi   <zhengyi@cn.creativecommons.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -212,33 +212,17 @@ msgstr "Open Clip Art Library"
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
-#: intro.php:51
-#, fuzzy
-msgid "Learn About Creative Commons"
-msgstr "创作共用"
-
-#: intro.php:54
-msgid ""
-"For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
-"\"_new\">Wanna Work Together?</a>\""
-msgstr ""
-
-#: intro.php:59
-#, fuzzy
-msgid "Using CC Search with Firefox"
-msgstr "感谢您通过Firefox使用CC搜索"
-
-#: intro.php:62
-msgid ""
-"For a quick explanation of how to use this search with Firefox, including <a "
-"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
-"\">how to change your search engine</a>, watch this video.</a>"
-msgstr ""
-
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "语言"
+
+#, fuzzy
+#~ msgid "Learn About Creative Commons"
+#~ msgstr "创作共用"
+
+#, fuzzy
+#~ msgid "Using CC Search with Firefox"
+#~ msgstr "感谢您通过Firefox使用CC搜索"
 
 #~ msgid "Remove Frame"
 #~ msgstr "移除框架"
