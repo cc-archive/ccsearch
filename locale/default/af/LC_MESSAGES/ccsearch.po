@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-24 12:50-0400\n"
+"POT-Creation-Date: 2009-08-13 17:29+0000\n"
 "PO-Revision-Date: 2009-03-17 07:35+0000\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,35 +213,39 @@ msgstr "Oop Knipselkuns-biblioteek"
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
+#: intro.php:51
+msgid "Learn About Creative Commons"
+msgstr "Leer aangaande Creative Commons"
+
+#: intro.php:54
+#, fuzzy
+msgid ""
+"For a quick intro to Creative Commons, check out this short video, entitled "
+"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
+"\"_new\">Wanna Work Together?</a>\""
+msgstr ""
+"Vir 'n kort inleiding tot Creative Commons, kyk na hierdie kort video "
+"genaamd \"<a href=\"http://support.creativecommons.org/videos#wwt\" target="
+"\"_new\">Wanna Work Together?</a>\""
+
+#: intro.php:59
+msgid "Using CC Search with Firefox"
+msgstr "Gebruik CC-soek saam met Firefox"
+
+#: intro.php:62
+msgid ""
+"For a quick explanation of how to use this search with Firefox, including <a "
+"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
+"\">how to change your search engine</a>, watch this video.</a>"
+msgstr ""
+"Vir 'n kort verduideliking van hoe om hierdie soektog met Firefox te "
+"gebruik, insluitend <a href=\"http://wiki.creativecommons.org/"
+"Firefox_and_CC_Search\" target=\"_new\">hoe om die soekenjin te verander</"
+"a>, kyk na hierdie video."
+
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "Taal"
-
-#~ msgid "Learn About Creative Commons"
-#~ msgstr "Leer aangaande Creative Commons"
-
-#, fuzzy
-#~ msgid ""
-#~ "For a quick intro to Creative Commons, check out this short video, "
-#~ "entitled \"<a href=\"http://creativecommons.org/videos/wanna-work-together"
-#~ "\" target=\"_new\">Wanna Work Together?</a>\""
-#~ msgstr ""
-#~ "Vir 'n kort inleiding tot Creative Commons, kyk na hierdie kort video "
-#~ "genaamd \"<a href=\"http://support.creativecommons.org/videos#wwt\" "
-#~ "target=\"_new\">Wanna Work Together?</a>\""
-
-#~ msgid "Using CC Search with Firefox"
-#~ msgstr "Gebruik CC-soek saam met Firefox"
-
-#~ msgid ""
-#~ "For a quick explanation of how to use this search with Firefox, including "
-#~ "<a href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target="
-#~ "\"_new\">how to change your search engine</a>, watch this video.</a>"
-#~ msgstr ""
-#~ "Vir 'n kort verduideliking van hoe om hierdie soektog met Firefox te "
-#~ "gebruik, insluitend <a href=\"http://wiki.creativecommons.org/"
-#~ "Firefox_and_CC_Search\" target=\"_new\">hoe om die soekenjin te verander</"
-#~ "a>, kyk na hierdie video."
 
 #~ msgid "Remove Frame"
 #~ msgstr "Verwyder raam"
