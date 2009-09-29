@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-13 17:29+0000\n"
+"POT-Creation-Date: 2009-09-29 13:31-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:68
+#: index.php:68 intro.php:43
 msgid "Help Translate"
 msgstr "Help Translate"
 
@@ -179,50 +179,72 @@ msgstr ""
 msgid "Spin Xpress Media Search"
 msgstr ""
 
-#: index.php:226
+#: index.php:226 index.php:227
 msgid "Media"
 msgstr ""
 
-#: index.php:228 index.php:230
+#: index.php:227
+msgid "Wikimedia Commons Media Search"
+msgstr ""
+
+#: index.php:229 index.php:231
 msgid "Music Search"
 msgstr ""
 
-#: index.php:228
+#: index.php:229
 msgid "ccMixter"
 msgstr ""
 
-#: index.php:229
+#: index.php:230
 msgid "Clip Art Search"
 msgstr ""
 
-#: index.php:229
+#: index.php:230
 msgid "Open Clip Art Library"
 msgstr ""
 
-#: index.php:237
+#: index.php:238
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
-#: intro.php:51
-msgid "Learn About Creative Commons"
+#: intro.php:66
+msgid "ccSearch Intro"
 msgstr ""
 
-#: intro.php:54
+#: intro.php:130
+msgid "Enter a Search Query Above To Get Started"
+msgstr ""
+
+#: intro.php:133
 msgid ""
-"For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
-"\"_new\">Wanna Work Together?</a>\""
+"Please note that search.creativecommons.org is <em>not a search engine</em>, "
+"but rather offers convenient access to search services provided by other "
+"independent organizations. CC has no control over the results that are "
+"returned. <em>Do not assume that the results displayed in this search portal "
+"are under a CC license</em>. You should always verify that the work is "
+"actually under a CC license by following the link. Since there is no "
+"registration to use a CC license, CC has no way to determine what has and "
+"hasn't been placed under the terms of a CC license. If you are in doubt you "
+"should contact the copyright holder directly, or try to contact the site "
+"where you found the content."
 msgstr ""
 
-#: intro.php:59
-msgid "Using CC Search with Firefox"
+#: intro.php:136
+msgid "About Creative Commons"
 msgstr ""
 
-#: intro.php:62
+#: intro.php:140
 msgid ""
-"For a quick explanation of how to use this search with Firefox, including <a "
-"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
-"\">how to change your search engine</a>, watch this video.</a>"
+"Creative Commons is a <em>nonprofit</em> corporation dedicated to making it "
+"easier for people to share and build upon the work of others, consistent "
+"with the rules of copyright."
+msgstr ""
+
+#: intro.php:143
+msgid ""
+"We provide <em>free</em> licenses and other legal tools to mark creative "
+"work with the freedom the creator wants it to carry, so others can share, "
+"remix, use commercially, or any combination thereof."
 msgstr ""
 
 #: cc-language-ui.php:179

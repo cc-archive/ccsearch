@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-13 17:29+0000\n"
+"POT-Creation-Date: 2009-09-29 13:31-0400\n"
 "PO-Revision-Date: 2008-06-24 12:56-0500\n"
 "Last-Translator: zhengyi   <zhengyi@cn.creativecommons.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.0.2\n"
 
-#: index.php:68
+#: index.php:68 intro.php:43
 msgid "Help Translate"
 msgstr "帮助翻译"
 
@@ -188,57 +188,83 @@ msgstr ""
 msgid "Spin Xpress Media Search"
 msgstr "搜索多媒体作品"
 
-#: index.php:226
+#: index.php:226 index.php:227
 msgid "Media"
 msgstr ""
 
-#: index.php:228 index.php:230
+#: index.php:227
+msgid "Wikimedia Commons Media Search"
+msgstr ""
+
+#: index.php:229 index.php:231
 msgid "Music Search"
 msgstr "搜索音乐作品"
 
-#: index.php:228
+#: index.php:229
 msgid "ccMixter"
 msgstr "ccMixter"
 
-#: index.php:229
+#: index.php:230
 msgid "Clip Art Search"
 msgstr "搜索Clip Art"
 
-#: index.php:229
+#: index.php:230
 msgid "Open Clip Art Library"
 msgstr "Open Clip Art Library"
 
-#: index.php:237
+#: index.php:238
 msgid "CCSEARCH REQUIRES A BROWSER WHICH SUPPORTS IFRAMES."
 msgstr ""
 
-#: intro.php:51
+#: intro.php:66
 #, fuzzy
-msgid "Learn About Creative Commons"
-msgstr "创作共用"
+msgid "ccSearch Intro"
+msgstr "搜索"
 
-#: intro.php:54
-msgid ""
-"For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://creativecommons.org/videos/wanna-work-together\" target="
-"\"_new\">Wanna Work Together?</a>\""
+#: intro.php:130
+msgid "Enter a Search Query Above To Get Started"
 msgstr ""
 
-#: intro.php:59
-#, fuzzy
-msgid "Using CC Search with Firefox"
-msgstr "感谢您通过Firefox使用CC搜索"
-
-#: intro.php:62
+#: intro.php:133
 msgid ""
-"For a quick explanation of how to use this search with Firefox, including <a "
-"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
-"\">how to change your search engine</a>, watch this video.</a>"
+"Please note that search.creativecommons.org is <em>not a search engine</em>, "
+"but rather offers convenient access to search services provided by other "
+"independent organizations. CC has no control over the results that are "
+"returned. <em>Do not assume that the results displayed in this search portal "
+"are under a CC license</em>. You should always verify that the work is "
+"actually under a CC license by following the link. Since there is no "
+"registration to use a CC license, CC has no way to determine what has and "
+"hasn't been placed under the terms of a CC license. If you are in doubt you "
+"should contact the copyright holder directly, or try to contact the site "
+"where you found the content."
+msgstr ""
+
+#: intro.php:136
+#, fuzzy
+msgid "About Creative Commons"
+msgstr "创作共用"
+
+#: intro.php:140
+msgid ""
+"Creative Commons is a <em>nonprofit</em> corporation dedicated to making it "
+"easier for people to share and build upon the work of others, consistent "
+"with the rules of copyright."
+msgstr ""
+
+#: intro.php:143
+msgid ""
+"We provide <em>free</em> licenses and other legal tools to mark creative "
+"work with the freedom the creator wants it to carry, so others can share, "
+"remix, use commercially, or any combination thereof."
 msgstr ""
 
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr "语言"
+
+#, fuzzy
+#~ msgid "Using CC Search with Firefox"
+#~ msgstr "感谢您通过Firefox使用CC搜索"
 
 #~ msgid "Remove Frame"
 #~ msgstr "移除框架"
