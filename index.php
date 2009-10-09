@@ -124,7 +124,7 @@ if ($use_i18n) {
       <div id="header">
 	
 <p id="remove-frame-button">
-<a href="#" onclick="breakOut(); return false;" title="<?php echo _('Only show search results') ?>">
+<a href="#" onclick="window.location=url" title="<?php echo _('Only show search results') ?>">
           X
 </a>
 </p>
