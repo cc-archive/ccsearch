@@ -344,8 +344,10 @@ function modRights() {
 	       rights += "+attribution";
 	       } */
             break;
-	}
+	case "wikimediacommons":
+		rights = "";
 	if (rights.length < 5) rights = "";
+	}
 	
 }
 
@@ -401,6 +403,10 @@ function doSearch() {
 			case "googleimg":
 			   url = 'http://images.google.com/images?as_q=' + query.value + '&as_rights=(cc_publicdomain|cc_attribute|cc_sharealike' + ((id('comm').checked) ? "" : "|cc_noncommercial") + ((id('deriv').checked) ? "" : "|cc_nonderived") + ')' + rights;
 			   break;
+			case "wikimediacommons":
+				url ='http://commons.wikimedia.org/w/index.php?title=Special%3ASearch&redirs=0&search=' + query.value + '&fulltext=Search&ns0=1&ns6=1&ns14=1&title=Special%3ASearch&advanced=1&fulltext=Advanced+search';
+				break;
+
 
 			case "google":
 			default:

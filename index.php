@@ -224,6 +224,9 @@ which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.o
           <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Blip.tv Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /><span>(<?php echo _('Video') ?>)</span></a></li>
           <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Jamendo Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /><span>(<?php echo _('Music') ?>)</span></a></li>
 	       <li id="spin" class="inactive"><a href="#" onclick="setEngine('spin')" title="<?php echo _('Spin Xpress Media Search') ?>"><img src="images/cc-spinxpress.png" border="0" class="png"/><span>(<?php echo _('Media') ?>)</span></a></li>
+	       <li id="wikimediacommons" class="inactive"><a href="#" onclick="setEngine('wikimediacommons')" title="<?php echo _('Wikimedia Commons Media Search') ?>">
+	       <div id="wmcimg">WIKIMEDIA <br />COMMONS</div><!--<img src="images/cc-wikimediacommons.png" border="0" class="png"/>-->
+	       <span>(<?php echo _('Media') ?>)</span></a></li>
 <!--
 	<li id="ccmixter" class="inactive"><a href="#" onclick="setEngine('ccmixter')" title="<?php echo _('Music Search') ?>"><img src="images/cc-ccmixter.png" border="0" class="png" alt="<?php echo _('ccMixter') ?>" /></a></li>
           <li id="openclipart" class="inactive"><a href="#" onclick="setEngine('openclipart')" title="<?php echo _('Clip Art Search') ?>"><img src="#" border="0" class="png" alt="<?php echo _('Open Clip Art Library') ?>" /></a></li>

@@ -309,6 +309,23 @@ padding: 0;
 	*/
 }
 
+#wmcimg{
+   font-size: 1.1em;
+   vertical-align: center;
+   font-weight: bold;
+   /*margin-top: 200px;
+   height: 30px;*/
+   /*position: relative;
+   top: 5px;*/
+   padding: 0px;
+   margin: 0px;
+   display: inline-block;
+   font-family: gill sans, arial, sans-serif;
+   line-height: 1em;
+   text-align: center;
+}
+
+
 #menu {
 	margin-top: 17px;
 	margin-left: 6px;
