@@ -320,7 +320,7 @@ padding: 0;
    padding: 0px;
    margin: 0px;
    display: inline-block;
-   font-family: gill sans, arial black, arial;
+   font-family: gill sans, arial, sans-serif;
    line-height: 1em;
    text-align: center;
 }
