@@ -99,7 +99,6 @@ if ($use_i18n) {
 
       <!--this is all for the help.js tooltip boxes-->
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-      <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/referrer/deed.js"></script>
       <script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
       <script type="text/javascript" src="http://creativecommons.org/@@/cc/includes/help.js"></script>
       <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" /> 
