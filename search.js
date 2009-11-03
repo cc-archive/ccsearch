@@ -143,8 +143,16 @@ function setupQuery() {
 	window.onresize = function() { resizeResults(); }
 	
 	// set commercial + derivative checkboxes
-	if (docom) id('comm').checked = true;
-	if (doder) id('deriv').checked = true;
+	if (docom != 'false') {
+		id('comm').checked = true;
+	} else {
+		id('comm').checked = false;
+	}
+	if (doder != 'false') {
+		id('deriv').checked = true;
+	} else {
+		id('deriv').checked = false;
+	}
 	
 	query.value = qs;
 	
