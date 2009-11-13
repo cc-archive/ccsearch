@@ -236,6 +236,16 @@ function modRights() {
 	switch (engine) {
 	     
 		case "google":
+
+            // Google apparently doesn't like .-() appended to the
+            // as_rights query string variable, so if neither the
+            // commercial or deriv checkboxes are checked then rights
+            // should just be empty.
+            if ( id('comm').checked == false && id('deriv').checked == false ) {
+                rights = "";
+                break;
+            }
+
 			//.-(cc_noncommercial|cc_nonderived)
 			rights = ".-(";
 			
@@ -253,6 +263,16 @@ function modRights() {
 			
 		case "googleimg":
 			//.-(cc_noncommercial|cc_nonderived)
+
+            // Google apparently doesn't like .-() appended to the
+            // as_rights query string variable, so if neither the
+            // commercial or deriv checkboxes are checked then rights
+            // should just be empty.
+            if ( id('comm').checked == false && id('deriv').checked == false ) {
+                rights = "";
+                break;
+            }
+
 			rights = ".-(";
 			
 			if (id('comm').checked) {
