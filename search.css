@@ -53,6 +53,7 @@ a, a:link, a:visited {
    text-align: left;
    padding-bottom: 0px;
 	height: 100px;
+	min-width: 940px;
 }
 
 #header a {
@@ -399,7 +400,8 @@ ul.tabs a:hover {
     width: 150px;
 
 }
-    #campaign {
+/*
+#campaign {
 position: relative;
 padding-top: 0px;
 margin-bottom: 10px;
@@ -450,3 +452,4 @@ background: url('http://creativecommons.org/images/support/progress.png');
 #campaign .results a {
 	color: #333;
 }
+		*/

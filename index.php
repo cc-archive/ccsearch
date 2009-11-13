@@ -113,8 +113,8 @@ if ($use_i18n) {
       @import "search.css";
     </style>
 
-
-    <link rel="stylesheet" type="text/css" media="screen" href="http://creativecommons.org/includes/progress.css" />
+	<link href="progress.css" rel="stylesheet" type="text/css" />
+	<link href="http://creativecommons.org/includes/total.css?<?= rand()?>" rel="stylesheet" type="text/css" />
 
     <!--[if IE]><link rel="stylesheet" type="text/css" media="screen" href="search-ie.css" /><![endif]-->
     
@@ -128,6 +128,7 @@ if ($use_i18n) {
 </a>
 </p>
 
+<? include "progress.php"; ?>
         <div id="title">
             <a href="./"><img src="images/cc-search-2.png" alt="<?php echo _('ccSearch') ?>" width="183" height="52" border="0" class="png" /></a>
 	      </div>
