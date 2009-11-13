@@ -142,7 +142,9 @@ h2{
 <p class="aboutcc">
 <?php echo _('We provide <em>free</em> licenses and other legal tools to mark creative work with the freedom the creator wants it to carry, so others can share, remix, use commercially, or any combination thereof.') ?>
 </p>
-
+<p class="aboutcc">
+<?php echo _('We rely on the generous support of forward-thinkers like you to help us continue the work we do. Consider <a href="https://support.creativecommons.org/donate?utm_source=search&utm_medium=intro&utm_campaign=fall2009" target="_parent">donating to our annual campaign</a>, today!'); ?>
+</p>
 
 </body>
 </html>
