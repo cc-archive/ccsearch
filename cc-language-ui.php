@@ -187,8 +187,8 @@ class CCLanguageUISelector extends CCLanguageUI
             $language_pretty_name = grab_string($this->_original_language, $key, "lang.$key", "cc_org");
 
             if ($language_pretty_name == ("lang." . $key)) {
-                // now try looking in the default domain
-                $language_pretty_name = gettext("lang.$key");
+                // now try looking in $key's strings for default domain
+                $language_pretty_name = grab_string($this->_original_language, $key, "lang.$key", "ccsearch");
                 if ($language_pretty_name == ("lang." . $key)) {
                     // revert to using just the language short name - but this should never happen
                     $language_pretty_name = $key;
