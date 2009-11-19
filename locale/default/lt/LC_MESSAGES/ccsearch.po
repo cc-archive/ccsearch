@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.3-svn\n"
 
-#: fallback for a language's name in the lang dropdown if it
-#: happens to not exist in the cc_org svn external
+# fallback for a language's name in the lang dropdown if it
+# happens to not exist in the cc_org svn external
 msgid "lang.lt"
 msgstr "Lietuviškai"
 
