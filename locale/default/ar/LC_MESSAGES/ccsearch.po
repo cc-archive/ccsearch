@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-10 06:55-0700\n"
-"PO-Revision-Date: 2009-06-08 13:04+0000\n"
+"PO-Revision-Date: 2009-10-13 13:52+0000\n"
 "Last-Translator: ziad maraqa <zmaraqa@tagi.com>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
 "Language: ar\n"
@@ -52,7 +52,7 @@ msgstr "البحث عن أعمال يمكنني استخدامها لأغراض 
 
 #: index.php:130
 msgid "Search for works I can modify, adapt, or build upon."
-msgstr "البحث عن اعمال يمكنني تعديل ، أو تكييف ، أو البناء عليها."
+msgstr "البحث عن اعمال يمكنني تعديلها، أو تكييفها، أو البناء عليها."
 
 #: index.php:138
 msgid "Understand your search results"
@@ -136,7 +136,7 @@ msgstr "الاتصال"
 
 #: index.php:172
 msgid "Support CC"
-msgstr "دعم CC"
+msgstr "دعم المشاع الابداعي"
 
 #: intro.php:51
 msgid "Learn About Creative Commons"
