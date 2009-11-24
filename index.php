@@ -62,14 +62,10 @@ if ($use_i18n) {
   }
 
   $cc_lang->Init();
-  $cc_lang_help = 
-      new CCLanguageUIHelp(
-          "http://translate.creativecommons.org/projects/ccsearch",
-          _("Help Translate"));
   $cc_lang_selector = 
       new CCLanguageUISelector(&$cc_lang, 
                                "<div id=\"language_selector\">", 
-                               $cc_lang_help->get('_text') . "</div>", true, false);
+                               "</div>", true, false);
 
 }
 
@@ -187,7 +183,11 @@ which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.o
             </p>
 <?php if ($use_i18n) $cc_lang_selector->output(); ?>
 
-            <span id="contact-support">| 
+            <span id="contact-support">
+               <a href="http://translate.creativecommons.org/projects/ccsearch">
+                  <?php echo _('Help Translate') ?>
+               </a>
+               | 
                <a href="http://creativecommons.org/contact">
                   <?php echo _('Contact') ?>
                </a>
