@@ -124,7 +124,6 @@ if ($use_i18n) {
 </a>
 </p>
 
-<? include "progress.php"; ?>
         <div id="title">
             <a href="./"><img src="images/cc-search-2.png" alt="<?php echo _('ccSearch') ?>" width="183" height="52" border="0" class="png" /></a>
 	      </div>
