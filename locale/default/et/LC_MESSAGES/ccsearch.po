@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "lang.et"
-msgstr "eesti keel"
+msgstr "eesti"
 
 #: index.php:68
 #: intro.php:43
