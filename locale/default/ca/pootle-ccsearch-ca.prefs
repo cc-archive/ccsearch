@@ -1,4 +1,5 @@
 rights:
-  default = u'archive,pocompile,suggest,view'
-  ignasi = u'admin,archive,assign,commit,overwrite,pocompile,review,suggest,translate,view'
+  default = u'view, suggest, archive, pocompile'
+  ignasi = u'view, suggest, translate, overwrite, review, archive, pocompile, assign, admin, commit'
   nobody = u'view'
+  ilabastida = u'view, suggest, translate, overwrite, review, archive, pocompile, assign, admin, commit'

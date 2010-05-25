@@ -43,3 +43,15 @@ msgid ""
 "_: suggested by Lvova\n"
 "Understand Your Search Results"
 msgstr "Истолкование результатов поиска"
+
+#: index.php:141
+msgid ""
+"_: suggested by TarzanASG\n"
+"Go"
+msgstr "Искать"
+
+#: index.php:161
+msgid ""
+"_: suggested by TarzanASG\n"
+"<em>modify</em>, <em>adapt</em>, or <em>build upon</em>"
+msgstr "<em>изменять</em>, <em>адаптировать</em> или <em>брать за основу</em>"

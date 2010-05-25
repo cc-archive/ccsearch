@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-10 06:55-0700\n"
-"PO-Revision-Date: 2009-06-08 13:04+0000\n"
+"PO-Revision-Date: 2009-12-21 15:14+0000\n"
 "Last-Translator: ziad maraqa <zmaraqa@tagi.com>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
 "Language: ar\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: index.php:66
 msgid "Help Translate"
-msgstr "Help Translate"
+msgstr "مساعدة في ترجمة"
 
 #: index.php:90 index.php:172
 msgid "Creative Commons"
