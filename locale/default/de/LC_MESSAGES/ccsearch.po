@@ -33,7 +33,6 @@ msgid "Enter search query"
 msgstr "Eingabe Suchbegriff"
 
 #: index.php:110
-#, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "Danke, dass Sie die CC Suche über %sFirefox%s genutzt haben."
 

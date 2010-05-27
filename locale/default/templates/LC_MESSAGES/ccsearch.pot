@@ -29,7 +29,6 @@ msgid "Search"
 msgstr ""
 
 #: index.php:95
-#, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr ""
 
