@@ -222,12 +222,3 @@ msgstr ""
 #: intro.php:143
 msgid "We provide <em>free</em> licenses and other legal tools to mark creative work with the freedom the creator wants it to carry, so others can share, remix, use commercially, or any combination thereof."
 msgstr ""
-
-#~ msgid "I want something that I can..."
-#~ msgstr "Mi volas ion kion mi rajtas…"
-
-#~ msgid "Support CC"
-#~ msgstr "Subteni CC"
-
-#~ msgid "Image"
-#~ msgstr "Bildo"
