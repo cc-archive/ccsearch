@@ -29,7 +29,7 @@ msgstr "Serĉi"
 
 #: index.php:95
 msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr "Nathan Kinkade Test"
+msgstr ""
 
 #: index.php:111
 #, fuzzy
