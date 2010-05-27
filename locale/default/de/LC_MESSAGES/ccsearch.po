@@ -4,7 +4,7 @@
 # Jon Phillips <jon@rejon.org>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-10 06:55-0700\n"
 "PO-Revision-Date: 2009-06-09 17:06+0000\n"
