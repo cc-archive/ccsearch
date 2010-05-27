@@ -249,3 +249,12 @@ msgstr ""
 #: cc-language-ui.php:179
 msgid "Language"
 msgstr ""
+
+#~ msgid "I want something that I can..."
+#~ msgstr "Mi volas ion kion mi rajtas…"
+
+#~ msgid "Support CC"
+#~ msgstr "Subteni CC"
+
+#~ msgid "Image"
+#~ msgstr "Bildo"
