@@ -62,7 +62,7 @@ msgstr "Montri nur serĉrezultojn"
 
 #: index.php:134 index.php:135
 msgid "Remove Frame"
-msgstr ""
+msgstr "Forigi Kadron"
 
 #: index.php:140 index.php:141
 msgid "Web Search"
@@ -97,9 +97,8 @@ msgid "Music Search"
 msgstr ""
 
 #: index.php:145
-#, fuzzy
 msgid "Media Search"
-msgstr "Serĉi"
+msgstr ""
 
 #: index.php:147
 msgid "jamendo"
