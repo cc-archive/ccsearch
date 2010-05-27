@@ -70,14 +70,13 @@ msgstr ""
 
 #: index.php:140
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: index.php:141
 msgid "Yahoo"
 msgstr ""
 
 #: index.php:142
-#, fuzzy
 msgid "Image Search"
 msgstr "Serĉi"
 
@@ -86,9 +85,8 @@ msgid "flickr"
 msgstr ""
 
 #: index.php:143
-#, fuzzy
 msgid "Video Search"
-msgstr "Serĉi"
+msgstr ""
 
 #: index.php:143
 msgid "blip.tv"
