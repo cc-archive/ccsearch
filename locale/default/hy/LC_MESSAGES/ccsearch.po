@@ -34,7 +34,6 @@ msgid "Enter search query"
 msgstr "Մուտքագրեք որոնվող բառը"
 
 #: index.php:110
-#, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "Շնորհակալություն CC Search օգտագործելու համար, Firefox-ի միջոցով."
 

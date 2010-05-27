@@ -34,7 +34,6 @@ msgid "Enter search query"
 msgstr "Unesi upit"
 
 #: index.php:110
-#, php-format
 msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "Hvala Vam što koristite CC Search na Firefoxu."
 
