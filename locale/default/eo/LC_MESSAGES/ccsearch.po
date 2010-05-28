@@ -33,7 +33,7 @@ msgstr "Dankon por uzado de CC Serĉo per %sFajrovulpo%s."
 
 #: index.php:111
 msgid "Search for works I can use for commercial purposes."
-msgstr "uzi por <em>komercaj celoj</em>"
+msgstr "Serĉi verkojn, kiujn mi rajtas uzi por komercaj celoj."
 
 #: index.php:115
 msgid "Search for works I can modify, adapt, or build upon."
@@ -77,7 +77,7 @@ msgstr "Yahoo"
 
 #: index.php:142
 msgid "Image Search"
-msgstr "Serĉi"
+msgstr "Serĉo de Bildoj"
 
 #: index.php:142
 msgid "flickr"
@@ -109,11 +109,11 @@ msgstr "ccMixter"
 
 #: index.php:149
 msgid "Clip Art Search"
-msgstr "Serĉo en Bildetaro"
+msgstr "Clip Art Serĉo"
 
 #: index.php:149
 msgid "Open Clip Art Library"
-msgstr "Open Clip Art Library (Libera Bilda Biblioteko)"
+msgstr "Libera Bilda Biblioteko (Open Clip Art Library)"
 
 #: index.php:158
 msgid "Contact"
