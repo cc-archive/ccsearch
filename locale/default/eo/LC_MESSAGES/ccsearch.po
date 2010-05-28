@@ -37,7 +37,7 @@ msgstr "uzi por <em>komercaj celoj</em>"
 
 #: index.php:115
 msgid "Search for works I can modify, adapt, or build upon."
-msgstr ""
+msgstr "Serĉi verkojn, kiujn mi rajtas aliigi, adapti aŭ krei devenaĵojn."
 
 #: index.php:123
 msgid "Understand your search results"
@@ -49,11 +49,11 @@ msgstr "Kio ĝi estas?"
 
 #: index.php:129
 msgid "Browse directories of licensed images, sounds, videos and more"
-msgstr ""
+msgstr "Esplori en katalogoj de laŭ permesilo disponeblaj bildoj, sonoj, filmoj kaj plu"
 
 #: index.php:130 index.php:131
 msgid "Content Directories"
-msgstr ""
+msgstr "Enhava Katalogo"
 
 #: index.php:133
 msgid "Only show search results"
@@ -85,7 +85,7 @@ msgstr "flickr"
 
 #: index.php:143
 msgid "Video Search"
-msgstr ""
+msgstr "Serĉo de Filmoj"
 
 #: index.php:143
 msgid "blip.tv"
@@ -97,7 +97,7 @@ msgstr "Serĉo de Muziko"
 
 #: index.php:145
 msgid "Media Search"
-msgstr ""
+msgstr "Serĉo de Aŭdvidaĵoj"
 
 #: index.php:147
 msgid "jamendo"
@@ -105,15 +105,15 @@ msgstr "jamendo"
 
 #: index.php:148
 msgid "ccMixter"
-msgstr ""
+msgstr "ccMixter"
 
 #: index.php:149
 msgid "Clip Art Search"
-msgstr ""
+msgstr "Serĉo en Bildetaro"
 
 #: index.php:149
 msgid "Open Clip Art Library"
-msgstr ""
+msgstr "Open Clip Art Library (Libera Bilda Biblioteko)"
 
 #: index.php:158
 msgid "Contact"
