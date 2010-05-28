@@ -17,7 +17,7 @@ msgstr ""
 
 #: index.php:62
 msgid "Help Translate"
-msgstr "Help Translate"
+msgstr "Helpi traduki"
 
 #: index.php:81 index.php:158
 msgid "Creative Commons"
@@ -29,10 +29,9 @@ msgstr "Serĉi"
 
 #: index.php:95
 msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr ""
+msgstr "Dankon por uzado de CC Serĉo per %sFajrovulpo%s."
 
 #: index.php:111
-#, fuzzy
 msgid "Search for works I can use for commercial purposes."
 msgstr "uzi por <em>komercaj celoj</em>"
 
@@ -42,11 +41,11 @@ msgstr ""
 
 #: index.php:123
 msgid "Understand your search results"
-msgstr ""
+msgstr "Kompreni la serĉrezultojn"
 
 #: index.php:125 index.php:126
 msgid "What is this?"
-msgstr ""
+msgstr "Kio ĝi estas?"
 
 #: index.php:129
 msgid "Browse directories of licensed images, sounds, videos and more"
@@ -66,7 +65,7 @@ msgstr "Forigi Kadron"
 
 #: index.php:140 index.php:141
 msgid "Web Search"
-msgstr ""
+msgstr "Reta Serĉo"
 
 #: index.php:140
 msgid "Google"
@@ -74,7 +73,7 @@ msgstr "Google"
 
 #: index.php:141
 msgid "Yahoo"
-msgstr ""
+msgstr "Yahoo"
 
 #: index.php:142
 msgid "Image Search"
@@ -82,7 +81,7 @@ msgstr "Serĉi"
 
 #: index.php:142
 msgid "flickr"
-msgstr ""
+msgstr "flickr"
 
 #: index.php:143
 msgid "Video Search"
@@ -90,11 +89,11 @@ msgstr ""
 
 #: index.php:143
 msgid "blip.tv"
-msgstr ""
+msgstr "blip.tv"
 
 #: index.php:144 index.php:147 index.php:148
 msgid "Music Search"
-msgstr ""
+msgstr "Serĉo de Muziko"
 
 #: index.php:145
 msgid "Media Search"
@@ -102,7 +101,7 @@ msgstr ""
 
 #: index.php:147
 msgid "jamendo"
-msgstr ""
+msgstr "jamendo"
 
 #: index.php:148
 msgid "ccMixter"
@@ -122,7 +121,7 @@ msgstr "Kontakto"
 
 #: cc-language-ui.php:178
 msgid "Language"
-msgstr ""
+msgstr "Lingvo"
 
 #~ msgid "ccSearch"
 #~ msgstr "ccSerĉo"
