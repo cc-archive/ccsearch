@@ -21,6 +21,14 @@
  * Creative Commons Search Interface
  *
  */
+
+// Check for beta cookie and redirect poste haste
+if (!$_GET['noBeta'] && $_COOKIE['__ccSearchBeta'] == "1") header("Location: http://labs.creativecommons.org/demos/search/?q=" . $_GET['q']);
+
+if ($_GET['noBeta']) {
+	setcookie("__ccSearchBeta", "0", mktime(1, 0, 0, 1, 1, 2020), ".creativecommons.org");
+}
+
 header("X-UA-Compatible: IE=EmulateIE7");
 
 // turn off i18n for now.
@@ -175,7 +183,8 @@ which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.o
    </div>
 </p>
 
-<div id="subheader">
+<div id="subheader" style="position:relative">
+	<p style="position:absolute; left: 10px; top: 0px; padding: 1px 10px 0 10px; margin:4px 0 0 0; background-color: #223212; color:#fbff00; -webkit-box-shadow: 0 1px 0 rgba(120, 178, 62, 0.5), inset 0 2px 3px rgba(0, 0, 0, 0.45); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5); -webkit-border-radius: 10px;" id="switcher"><a id="betaSwitch" href="#" onClick="useBeta(); return false;" style="color:#fbff00;">Use <strong>beta</strong> search interface</a></p>
 
             <p id="ffx-search-bar-info">
                <a href="http://wiki.creativecommons.org/Firefox"><?php echo _('Learn about setting your Firefox search engine') ?> &raquo;</a>

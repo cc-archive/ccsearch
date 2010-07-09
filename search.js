@@ -27,6 +27,17 @@ alert("cookie planted!  mwahahahaha");
 // \DEBUG!!!!!
 */
 
+function useBeta() {
+	var d = new Date(); d.setFullYear(2020,0,1);
+	setCookie("__ccSearchBeta", "1", d, '/', cookie_domain);
+	window.location.href = 'http://labs.creativecommons.org/demos/search/?q=' + id('q').value;
+}
+
+function resetBeta() {
+	var d = new Date(); d.setFullYear(2020,0,1);
+    setCookie("__ccSearchBeta", "0", d, '/', cookie_domain);
+}
+
 // mmm, cookies...
 function setCookie(name, value, expires, path, domain, secure) {
     document.cookie = name + "=" + escape(value) +
