@@ -30,7 +30,7 @@ alert("cookie planted!  mwahahahaha");
 function useBeta() {
 	var d = new Date(); d.setFullYear(2020,0,1);
 	setCookie("__ccSearchBeta", "1", d, '/', cookie_domain);
-	window.location.href = 'http://labs.creativecommons.org/demos/search/?q=' + id('q').value;
+	window.location.href = 'http://labs.creativecommons.org/demos/search/?q=' + ((id('q').value == "Enter search query") ? '' : id('q').value);
 }
 
 function resetBeta() {
