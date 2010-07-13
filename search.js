@@ -30,11 +30,11 @@ alert("cookie planted!  mwahahahaha");
 function useBeta() {
 	var d = new Date(); d.setFullYear(2020,0,1);
 	setCookie("__ccSearchBeta", "1", d, '/', cookie_domain);
-	window.location.href = 'http://labs.creativecommons.org/demos/search/?q=' + ((id('q').value == "Enter search query") ? '' : id('q').value);
+	window.location.href = 'http://labs.creativecommons.org/demos/search/?q=' + ((id('q').className == "inactive") ? '' : id('q').value);
 }
 
 function resetBeta() {
-	var d = new Date(); d.setFullYear(2020,0,1);
+	var d = new Date(); d.setFullYear(2009,0,1);
     setCookie("__ccSearchBeta", "0", d, '/', cookie_domain);
 }
 
@@ -66,7 +66,7 @@ function getCookie(name) {
 
 var cookie_name = 'ccsearch';
 var cookie_break_text = "[-]";
-var cookie_domain = '.creativecommons.org';
+var cookie_domain = 'search.creativecommons.org';
 //var cookie_domain = '';
 
 function saveSettings(){
@@ -169,6 +169,7 @@ function setupQuery() {
 	
 	if ((query.value == "") || (query.value == "null") || !(query.value)) {
 		query.value = d;
+		query.className = "inactive";
 		window.results.location.href = 'intro.php';
 	} else if (query.value != d){
 		query.className = "active";
@@ -395,8 +396,9 @@ function doSearch() {
 	var query = id("q");
 
     // We never want the search to execute with the default text
-    if ( query.value == "Enter search query" ) {
+	if (query.className == "inactive") {
         query.value = default_query;
+		query.className = "active";
     }
 
 	url = "";
@@ -528,4 +530,6 @@ function grabChosenLanguage() {
     }
     return null;
 }
-	
+
+// reset beta cookie if noBeta query paramter is sent
+if (getQueryStrVariable("noBeta") != null) resetBeta();
