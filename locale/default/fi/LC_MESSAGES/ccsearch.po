@@ -71,12 +71,10 @@ msgid "Web Search"
 msgstr "Web-haku"
 
 #: index.php:140
-#, fuzzy
 msgid "Google"
 msgstr "Google"
 
 #: index.php:141
-#, fuzzy
 msgid "Yahoo"
 msgstr "Yahoo"
 
@@ -85,7 +83,6 @@ msgid "Image Search"
 msgstr "Kuvahaku"
 
 #: index.php:142
-#, fuzzy
 msgid "flickr"
 msgstr "flickr"
 
@@ -94,7 +91,6 @@ msgid "Video Search"
 msgstr "Video-haku"
 
 #: index.php:143
-#, fuzzy
 msgid "blip.tv"
 msgstr "blip.tv"
 
@@ -107,12 +103,10 @@ msgid "Media Search"
 msgstr "Media-haku"
 
 #: index.php:147
-#, fuzzy
 msgid "jamendo"
 msgstr "jamendo"
 
 #: index.php:148
-#, fuzzy
 msgid "ccMixter"
 msgstr "ccMixter"
 
