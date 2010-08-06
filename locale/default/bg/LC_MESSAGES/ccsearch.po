@@ -21,7 +21,7 @@ msgstr "Help Translate"
 
 #: index.php:81 index.php:158
 msgid "Creative Commons"
-msgstr ""
+msgstr "Творческа общност (Creative Commons)"
 
 #: index.php:81
 msgid "Search"
@@ -101,24 +101,24 @@ msgstr "Търсене на медия"
 
 #: index.php:147
 msgid "jamendo"
-msgstr ""
+msgstr "jamendo"
 
 #: index.php:148
 msgid "ccMixter"
-msgstr ""
+msgstr "ccMixter"
 
 #: index.php:149
 msgid "Clip Art Search"
-msgstr ""
+msgstr "Търсене на свободни изображения"
 
 #: index.php:149
 msgid "Open Clip Art Library"
-msgstr ""
+msgstr "Отвори библиотеката със свободни изображения"
 
 #: index.php:158
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #: cc-language-ui.php:178
 msgid "Language"
-msgstr ""
+msgstr "Език"
