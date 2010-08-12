@@ -35,7 +35,7 @@ msgstr "Работы доступные для использования в <em
 
 #: index.php:115
 msgid "Search for works I can modify, adapt, or build upon."
-msgstr "Работы доступные для изменения, адаптации, или использования в своих работах."
+msgstr "Работы доступные для изменения, адаптации, или использования как основы."
 
 #: index.php:123
 msgid "Understand your search results"
@@ -59,7 +59,7 @@ msgstr "Показывать только результаты поиска"
 
 #: index.php:134 index.php:135
 msgid "Remove Frame"
-msgstr "Удалить рамка"
+msgstr "Удалить рамку"
 
 #: index.php:140 index.php:141
 msgid "Web Search"
@@ -107,11 +107,11 @@ msgstr "ccMixter"
 
 #: index.php:149
 msgid "Clip Art Search"
-msgstr "Поиск Clip Art"
+msgstr "Поиск клип-артов"
 
 #: index.php:149
 msgid "Open Clip Art Library"
-msgstr "Открытая библиотека Clip Art"
+msgstr "Открытая библиотека клип-артов"
 
 #: index.php:158
 msgid "Contact"
