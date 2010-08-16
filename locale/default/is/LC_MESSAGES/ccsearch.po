@@ -1,0 +1,128 @@
+# translation of CC.ccsearch.ccsearch.po to Icelandic
+# ccSearch English-US PO File
+# This file is distributed under the same license as the ccSearch package.
+# Copyright (C) 2006 Creative Commons
+#
+# Jon Phillips <jon@rejon.org>, 2006.
+# Sveinn í Felli <sveinki@nett.is>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: CC.ccsearch.ccsearch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-18 17:06-0700\n"
+"PO-Revision-Date: 2010-08-16 08:42+0000\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic <openoffice@openoffice.is>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: index.php:62
+msgid "Help Translate"
+msgstr "Hjálp við þýðingu"
+
+#: index.php:81 index.php:158
+msgid "Creative Commons"
+msgstr "Creative Commons"
+
+#: index.php:81
+msgid "Search"
+msgstr "Leita"
+
+#: index.php:95
+msgid "Thanks for using CC Search via %sFirefox%s."
+msgstr "Takk fyrir að nota CC-Leitina með %sFirefox%s."
+
+#: index.php:111
+msgid "Search for works I can use for commercial purposes."
+msgstr "Leita að verkum sem ég get notað í ágóðaskyni."
+
+#: index.php:115
+msgid "Search for works I can modify, adapt, or build upon."
+msgstr "Leita að verkum sem ég get breytt, aðlagað eða byggt á."
+
+#: index.php:123
+msgid "Understand your search results"
+msgstr "Áttaðu þig á leitarniðurstöðunum"
+
+#: index.php:125 index.php:126
+msgid "What is this?"
+msgstr "Hvað er þetta?"
+
+#: index.php:129
+msgid "Browse directories of licensed images, sounds, videos and more"
+msgstr "Skoðaðu möppur með leyfistengdum myndum, hljóðupptökum, myndskeiðum og öðru efni"
+
+#: index.php:130 index.php:131
+msgid "Content Directories"
+msgstr "Efnismöppur"
+
+#: index.php:133
+msgid "Only show search results"
+msgstr "Einungis birta leitarniðurstöður"
+
+#: index.php:134 index.php:135
+msgid "Remove Frame"
+msgstr "Fjarlægja ramma"
+
+#: index.php:140 index.php:141
+msgid "Web Search"
+msgstr "Leita á netinu"
+
+#: index.php:140
+msgid "Google"
+msgstr "Google"
+
+#: index.php:141
+msgid "Yahoo"
+msgstr "Yahoo"
+
+#: index.php:142
+msgid "Image Search"
+msgstr "Leit að myndum"
+
+#: index.php:142
+msgid "flickr"
+msgstr "Flickr"
+
+#: index.php:143
+msgid "Video Search"
+msgstr "Leit að myndskeiðum"
+
+#: index.php:143
+msgid "blip.tv"
+msgstr "Blip.tv"
+
+#: index.php:144 index.php:147 index.php:148
+msgid "Music Search"
+msgstr "Leit að tónlist"
+
+#: index.php:145
+msgid "Media Search"
+msgstr "Leit að miðlunarefni"
+
+#: index.php:147
+msgid "jamendo"
+msgstr "Jamendo"
+
+#: index.php:148
+msgid "ccMixter"
+msgstr "ccMixter"
+
+#: index.php:149
+msgid "Clip Art Search"
+msgstr "Leit að myndaklippum"
+
+#: index.php:149
+msgid "Open Clip Art Library"
+msgstr "Opið myndaklippusafn (Open Clip Art Library)"
+
+#: index.php:158
+msgid "Contact"
+msgstr "Hafa samband"
+
+#: cc-language-ui.php:178
+msgid "Language"
+msgstr "Tungumál"
+
