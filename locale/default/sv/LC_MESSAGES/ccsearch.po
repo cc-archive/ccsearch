@@ -36,7 +36,6 @@ msgid "Search for works I can use for commercial purposes."
 msgstr "Sök efter verk jag kan använda kommersiellt."
 
 #: index.php:115
-#, fuzzy
 msgid "Search for works I can modify, adapt, or build upon."
 msgstr "Sök efter verk jag kan ändra, bearbeta eller bygga vidare på."
 
@@ -109,12 +108,10 @@ msgid "ccMixter"
 msgstr "ccMixter"
 
 #: index.php:149
-#, fuzzy
 msgid "Clip Art Search"
-msgstr "Klipp art-sökning"
+msgstr "Clip art-sökning"
 
 #: index.php:149
-#, fuzzy
 msgid "Open Clip Art Library"
 msgstr "Open Clip Art Library"
 
