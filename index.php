@@ -228,7 +228,9 @@ which are not Creative Commons licensed.  <a href="http://wiki.creativecommons.o
 	<ul class="tabs">
           <li id="google" class="inactive"><a href="#" onclick="setEngine('google')" title="<?php echo _('Google Web Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /><span>(<?php echo _('Web') ?>)</span></a></li>
           <li id="googleimg" class="inactive"><a href="#" onclick="setEngine('googleimg')" title="<?php echo _('Google Image Search') ?>"><img src="images/cc-google.gif" class="google" border="0" alt="<?php echo _('Google') ?>" /><span>(<?php echo _('Image') ?>)</span></a></li>
+<!--
           <li id="yahoo"  class="inactive"><a href="#" onclick="setEngine('yahoo')" title="<?php echo _('Web Search') ?>"><img src="images/cc-yahoo.gif" border="0" alt="<?php echo _('Yahoo') ?>" /><span>(<?php echo _('Web') ?>)</span></a></li>
+-->
           <li id="flickr" class="inactive"><a href="#" onclick="setEngine('flickr')" title="<?php echo _('Flickr Image Search') ?>"><img src="images/cc-flickr.png" border="0" class="png" width="48" height="18" alt="<?php echo _('flickr') ?>" /><span>(<?php echo _('Image') ?>)</span></a></li>
           <li id="blip" class="inactive"><a href="#" onclick="setEngine('blip')" title="<?php echo _('Blip.tv Video Search') ?>"><img src="images/cc-blip.png" border="0" class="png" width="42" height="20" alt="<?php echo _('blip.tv') ?>" /><span>(<?php echo _('Video') ?>)</span></a></li>
           <li id="jamendo" class="inactive"><a href="#" onclick="setEngine('jamendo')" title="<?php echo _('Jamendo Music Search') ?>"><img src="images/cc-jamendo.png" border="0" class="png" alt="<?php echo _('jamendo') ?>" /><span>(<?php echo _('Music') ?>)</span></a></li>
