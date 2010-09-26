@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the ccSearch package.
 # Copyright (C) 2006 Creative Commons
 # Jon Phillips <jon@rejon.org>, 2006
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
@@ -19,8 +19,7 @@ msgstr ""
 msgid "Help Translate"
 msgstr "Segíts fordítani!"
 
-#: index.php:81
-#: index.php:158
+#: index.php:81 index.php:158
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
@@ -29,9 +28,8 @@ msgid "Search"
 msgstr "Keresés"
 
 #: index.php:95
-#, fuzzy
 msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr "Köszönjük a CC Keresés %sFirefox%s-sel történő használatát."
+msgstr "Köszönjük a Creative Commons Keresés %sFirefox%s-sel történő használatát."
 
 #: index.php:111
 msgid "Search for works I can use for commercial purposes."
@@ -46,17 +44,16 @@ msgstr "Átalakítható, feldolgozható művek kesesése."
 msgid "Understand your search results"
 msgstr "A keresési eredmények megértése"
 
-#: index.php:125
-#: index.php:126
+#: index.php:125 index.php:126
 msgid "What is this?"
 msgstr "Mi ez?"
 
 #: index.php:129
+#, fuzzy
 msgid "Browse directories of licensed images, sounds, videos and more"
-msgstr ""
+msgstr "Licenszelt képek, hangok videók és egyéb tartalmak keresése"
 
-#: index.php:130
-#: index.php:131
+#: index.php:130 index.php:131
 msgid "Content Directories"
 msgstr ""
 
@@ -64,13 +61,11 @@ msgstr ""
 msgid "Only show search results"
 msgstr "Csak a keresési találatok mutatása"
 
-#: index.php:134
-#: index.php:135
+#: index.php:134 index.php:135
 msgid "Remove Frame"
 msgstr "Keret eltávolítása"
 
-#: index.php:140
-#: index.php:141
+#: index.php:140 index.php:141
 msgid "Web Search"
 msgstr "webes keresés"
 
@@ -98,9 +93,7 @@ msgstr "videó-keresés"
 msgid "blip.tv"
 msgstr "blip.tv"
 
-#: index.php:144
-#: index.php:147
-#: index.php:148
+#: index.php:144 index.php:147 index.php:148
 msgid "Music Search"
 msgstr "zene-keresés"
 
@@ -131,4 +124,3 @@ msgstr "Kapcsolat"
 #: cc-language-ui.php:178
 msgid "Language"
 msgstr "Nyelv"
-
