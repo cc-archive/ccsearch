@@ -46,7 +46,7 @@ msgstr "검색결과가 의미하는 바는? "
 
 #: index.php:125 index.php:126
 msgid "What is this?"
-msgstr "씨씨검색(CC Search)란? "
+msgstr "씨씨검색(CC Search)이란? "
 
 #: index.php:129
 msgid "Browse directories of licensed images, sounds, videos and more"
