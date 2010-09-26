@@ -54,8 +54,9 @@ msgid "Browse directories of licensed images, sounds, videos and more"
 msgstr "Licenszelt képek, hangok videók és egyéb tartalmak keresése"
 
 #: index.php:130 index.php:131
+#, fuzzy
 msgid "Content Directories"
-msgstr ""
+msgstr "Tartalmi könyvtárak"
 
 #: index.php:133
 msgid "Only show search results"
