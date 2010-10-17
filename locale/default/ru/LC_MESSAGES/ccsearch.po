@@ -30,8 +30,9 @@ msgid "Thanks for using CC Search via %sFirefox%s."
 msgstr "Спасибо за использование CC Search через %sFirefox%s."
 
 #: index.php:111
+#, fuzzy
 msgid "Search for works I can use for commercial purposes."
-msgstr "Работы доступные для использования в <em>коммерческих целях</em>"
+msgstr "Искать произведения, которые я могу использовать в коммерческих целях."
 
 #: index.php:115
 #, fuzzy
@@ -39,8 +40,9 @@ msgid "Search for works I can modify, adapt, or build upon."
 msgstr "Искать произведения, которые я могу измененять, адаптировать или брать за основу."
 
 #: index.php:123
+#, fuzzy
 msgid "Understand your search results"
-msgstr "Разобраться в результатах поиска"
+msgstr "Разберитесь в результатах поиска"
 
 #: index.php:125 index.php:126
 msgid "What is this?"
@@ -95,8 +97,9 @@ msgid "Music Search"
 msgstr "Поиск музыки"
 
 #: index.php:145
+#, fuzzy
 msgid "Media Search"
-msgstr "Поиск музыки"
+msgstr "Поиск медиа"
 
 #: index.php:147
 msgid "jamendo"
