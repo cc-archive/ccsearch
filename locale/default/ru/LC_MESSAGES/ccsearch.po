@@ -34,8 +34,9 @@ msgid "Search for works I can use for commercial purposes."
 msgstr "Работы доступные для использования в <em>коммерческих целях</em>"
 
 #: index.php:115
+#, fuzzy
 msgid "Search for works I can modify, adapt, or build upon."
-msgstr "Работы доступные для изменения, адаптации, или использования как основы."
+msgstr "Искать произведения, которые я могу измененять, адаптировать или брать за основу."
 
 #: index.php:123
 msgid "Understand your search results"
