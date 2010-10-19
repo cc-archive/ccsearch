@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the ccSearch package.
 # Copyright (C) 2006 Creative Commons
 # Jon Phillips <jon@rejon.org>, 2006
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: ccSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-10 06:55-0700\n"
+"POT-Creation-Date: 2007-09-18 17:06-0700\n"
 "PO-Revision-Date: 2010-05-27 16:38+0000\n"
 "Last-Translator: Jon Phillips <jon@rejon.org>\n"
 "Language-Team: English <cc-devel@lists.ibiblio.org>\n"
@@ -15,148 +15,110 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: index.php:66
+#: index.php:62
 msgid "Help Translate"
-msgstr "Help Translate"
+msgstr "幫助翻譯"
 
-#: index.php:90 index.php:172
+#: index.php:81 index.php:158
 msgid "Creative Commons"
-msgstr ""
+msgstr "創作共享"
 
-#: index.php:90
+#: index.php:81
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
-#: index.php:98
-msgid "Enter search query"
-msgstr ""
-
-#: index.php:110
+#: index.php:95
 msgid "Thanks for using CC Search via %sFirefox%s."
-msgstr ""
+msgstr "感謝您通過％sFirefox％s使用CC搜索"
+
+#: index.php:111
+msgid "Search for works I can use for commercial purposes."
+msgstr "搜尋工作，我可以用於商業用途。"
 
 #: index.php:115
-msgid "by <a href=\"http://creativecommons.org/\">Creative Commons</a>"
-msgstr ""
-
-#: index.php:120
-msgid "go"
-msgstr ""
-
-#: index.php:126
-msgid "Search for works I can use for commercial purposes."
-msgstr ""
-
-#: index.php:130
 msgid "Search for works I can modify, adapt, or build upon."
-msgstr ""
+msgstr "搜尋工作，我可以修改，改編，或借重。"
 
-#: index.php:138
+#: index.php:123
 msgid "Understand your search results"
-msgstr ""
+msgstr "了解您的搜索結果"
+
+#: index.php:125 index.php:126
+msgid "What is this?"
+msgstr "這是什麼？"
+
+#: index.php:129
+msgid "Browse directories of licensed images, sounds, videos and more"
+msgstr "瀏覽目錄的授權圖像，聲音，視頻等"
+
+#: index.php:130 index.php:131
+msgid "Content Directories"
+msgstr "內容目錄"
+
+#: index.php:133
+msgid "Only show search results"
+msgstr "僅顯示搜索結果"
+
+#: index.php:134 index.php:135
+msgid "Remove Frame"
+msgstr "刪除框"
 
 #: index.php:140 index.php:141
-msgid "What is this?"
-msgstr ""
+msgid "Web Search"
+msgstr "網頁搜索"
 
-#: index.php:144
-msgid "Browse directories of licensed images, sounds, videos and more"
-msgstr ""
+#: index.php:140
+msgid "Google"
+msgstr "谷歌"
 
-#: index.php:145 index.php:146
-msgid "Content Directories"
-msgstr ""
+#: index.php:141
+msgid "Yahoo"
+msgstr "雅虎"
+
+#: index.php:142
+msgid "Image Search"
+msgstr "圖片搜索"
+
+#: index.php:142
+msgid "flickr"
+msgstr "Flickr"
+
+#: index.php:143
+msgid "Video Search"
+msgstr "視頻搜索"
+
+#: index.php:143
+msgid "blip.tv"
+msgstr "blip.tv"
+
+#: index.php:144 index.php:147 index.php:148
+msgid "Music Search"
+msgstr "音樂搜索"
+
+#: index.php:145
+msgid "Media Search"
+msgstr "媒體搜索"
+
+#: index.php:147
+msgid "jamendo"
+msgstr "jamendo"
 
 #: index.php:148
-msgid "Only show search results"
-msgstr ""
-
-#: index.php:149 index.php:150
-msgid "Remove Frame"
-msgstr ""
-
-#: index.php:154 index.php:155
-msgid "Web Search"
-msgstr ""
-
-#: index.php:154
-msgid "Google"
-msgstr ""
-
-#: index.php:155
-msgid "Yahoo"
-msgstr ""
-
-#: index.php:156
-msgid "Image Search"
-msgstr ""
-
-#: index.php:156
-msgid "flickr"
-msgstr ""
-
-#: index.php:157
-msgid "Video Search"
-msgstr ""
-
-#: index.php:157
-msgid "blip.tv"
-msgstr ""
-
-#: index.php:158 index.php:161 index.php:162
-msgid "Music Search"
-msgstr ""
-
-#: index.php:159
-msgid "Media Search"
-msgstr ""
-
-#: index.php:161
-msgid "jamendo"
-msgstr ""
-
-#: index.php:162
 msgid "ccMixter"
-msgstr ""
+msgstr "ccMixter"
 
-#: index.php:163
+#: index.php:149
 msgid "Clip Art Search"
-msgstr ""
+msgstr "搜索剪貼畫"
 
-#: index.php:163
+#: index.php:149
 msgid "Open Clip Art Library"
-msgstr ""
+msgstr "打開剪貼畫庫"
 
-#: index.php:172
+#: index.php:158
 msgid "Contact"
-msgstr ""
+msgstr "聯繫"
 
-#: index.php:172
-msgid "Support CC"
-msgstr ""
-
-#: intro.php:51
-msgid "Learn About Creative Commons"
-msgstr ""
-
-#: intro.php:54
-msgid ""
-"For a quick intro to Creative Commons, check out this short video, entitled "
-"\"<a href=\"http://support.creativecommons.org/videos#wwt\" target=\"_new"
-"\">Wanna Work Together?</a>\""
-msgstr ""
-
-#: intro.php:59
-msgid "Using CC Search with Firefox"
-msgstr ""
-
-#: intro.php:62
-msgid ""
-"For a quick explanation of how to use this search with Firefox, including <a "
-"href=\"http://wiki.creativecommons.org/Firefox_and_CC_Search\" target=\"_new"
-"\">how to change your search engine</a>, watch this video.</a>"
-msgstr ""
-
-#: cc-language-ui.php:179
+#: cc-language-ui.php:178
 msgid "Language"
-msgstr ""
+msgstr "語言"
